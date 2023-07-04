@@ -19,15 +19,16 @@ const SomethingSchema = new mongoose.Schema({
     age: Number
 }, { timestamps: true })
 
-const database = mongoose.model('Product', SomethingSchema)
+const database = mongoose.model('Doctors', SomethingSchema)
 
-app.get('/wexer', async (req:Request, res:Response) => {
+app.get('/doctors', async (req:Request, res:Response) => {
     const doctors = await database.find()
     res.status(200).json({doctors});
 })
 
-app.post('/wexer', async (req:Request, res:Response) => {
-    await database.create({name: 'brian', age: 23})
+app.post('/doctors', async (req:Request, res:Response) => {
+    const {body} = req
+    await database.create(body)
     res.status(201).json({msg: 'created'});
 })
 
