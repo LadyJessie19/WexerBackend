@@ -1,0 +1,231 @@
+Third Module of Arnia Project - Wexer Psi Backend
+Project Specifications ⬇
+
+Class: T32022
+Project Type: Patient and Medical Records Manager
+Delivery Date: 07/30/23
+
+🟣 Good luck with the project! 🟣
+
+First - Start:
+    Github:
+        ✔ Initialize repository on Github; @done(23-07-04 04:51)
+        ✔ Create staging branch; @done(23-07-04 04:51)
+        ✔ TODO: Each planning section is a branch; @done(23-07-04 04:51)
+        ✔ TODO: Each task is a commit; @done(23-07-04 04:51)
+    Docs:
+        ✔ Is planning ready? @done(23-07-04 04:51)
+        ✔ Project documentation - start; @done(23-07-04 04:51)
+        ✔ Create .env.example file; @done(23-07-04 05:10)
+    Node.js:
+        ✔ Initialize Node project; @done(23-07-04 16:44)
+        ✔ Install libraries: @done(23-07-04 21:43)
+        Hint: You can install more than one at a time.
+            ✔ Express; @done(23-07-04 16:45)
+            ✔ Mongoose; @done(23-07-04 16:45)
+            ✔ Typescript; @done(23-07-04 16:45)
+            ✔ Dotenv; @done(23-07-04 16:45)
+            ✔ Yup; @done(23-07-04 21:43)
+            ✔ Jest; @done(23-07-04 21:43)
+            ✔ Bcrypt; @done(23-07-04 21:43)
+            ✔ Jsonwebtoken; @done(23-07-04 21:43)
+            ✔ ts-node-dev; @done(23-07-04 16:46)
+            ✔ multer; @done(23-07-04 21:43)
+        ✔ Install types: @done(23-07-04 21:43)
+            ✔ @types/node; @done(23-07-04 16:45)
+            ✔ @types/express; @done(23-07-04 16:45)
+            ✔ @types/jest; @done(23-07-04 21:43)
+            ✔ @types/bcrypt; @done(23-07-04 21:43)
+            ✔ @types/jsonwebtoken; @done(23-07-04 21:43)
+            ✔ @types/multer; @done(23-07-04 21:43)
+        ✔ Configure tsconfig.json: @done(23-07-04 17:27)
+        ✔ Configure `npm run dev`("dev": "tsnd src/server.ts"); @done(23-07-04 16:49)
+        ✔ Configure Environment Variables; @done(23-07-04 17:27)
+        ✔ Create a collection in Insomnia; @done(23-07-04 19:11)
+    Express.js:
+        ✔ Create server.ts file in the src folder of the project; @done(23-07-04 19:11)
+        ✔ Initialize Express server; @done(23-07-04 19:11)
+    MongoDB | Mongoose:
+        ✔ Define MongoDB URL in the .env file; @done(23-07-04 21:45)
+        ✔ Create a database folder and a config.ts file; @done(23-07-04 21:47)
+        obs: It's db.ts the database config file.
+        ✔ Initialize database connection; @done(23-07-04 21:47)
+Second - Folder Creation | Entity Sketches:
+    Folders:
+        ☐ root (dotenv | package.json | tsconfig | gitignore | node_modules | uploads)
+            ☐ src (app | database | routes | server.ts file | utils | middlewares)
+    App Folder:
+        Legend: *these words are very long*
+            con -> controllers
+            ser -> services
+            rep -> repositories
+            ent -> entities
+            fac -> factories
+
+        Note: Each task in this section is a folder. Inside the parentheses are the files in that folder.
+
+        ☐ Auth (con|dtos|schemas|ser|module);
+        Note: The repository to be used with the Auth service is the Doctor repository.
+        ☐ User|Doctor:(con|dtos|ent|fac|mapper|rep|schema|ser|module)
+        Note: I'll use the word Doctor for User.
+        ☐ Patient;(con|dtos|ent|rep|schemas|ser)
+        ☐ Timeline;(con|dtos|ent|rep|schemas|ser)
+        ☐ Occurrence;(con|dtos|ent|rep|schemas|ser)
+        ☐ File;(con|dtos|ent|rep|schemas|ser)
+Third - Middlewares | Models | Interfaces | DTOs:
+    Middlewares:
+        ☐ Authentication verification middleware;
+        ☐ File upload middleware;
+    Functions:
+        Note: Where to put this function? utils, maybe.
+        ☐ Error handling function;
+    Entity Modeling:
+        ☐ Yup validation schema in the Controller;
+        ☐ Mongoose schema and model;
+        ☐ DTO for "inter-layer communication";
+        TODO: Find a better definition term.
+        ☐ Don't forget the module, which creates everything;
+        Note: The module will be used in the entity routes to initiate the controller with its dependencies.
+        Counter:
+            ☐ Auth;
+            ☐ Doctor;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+Fourth - Layers | Routes:
+    Connecting the Layers:
+        ☐ /routes -> (http-req | middleware | controller dependency)
+        ☐ -> controller -> (yup validation | response return | service dependency)
+        ☐ -> service -> (all logic | error layer | repository dependency)
+        ☐ -> repository \ (mongoose functions | populate | model dependency)
+    Counter:
+        ☐ Auth;
+        ☐ Doctor;
+        ☐ Patient;
+        ☐ Timeline;
+        ☐ Occurrence;
+        ☐ File;
+Fifth - Features:
+    Note: The next section is for entity relations. I might be wrong, but I found it easier this way.
+    Functions:
+        ☐ Create Doctor;
+        ☐ Find Doctor - just noting;
+        ☐ Add pagination to GET - extra;
+        ☐ Find by email - just noting;
+        ☐ Authentication;
+        ☐ Update Doctor;
+        ☐ Delete Doctor;
+        ☐ Profile picture - extra;
+
+        ☐ *take a breath and keep going*
+
+        ☐ Create patient -> relationship with Doctor;
+        ☐ Find all patients of a Doctor;
+        ☐ Add pagination to GET - extra;
+        ☐ Find patient by id;
+        ☐ Update patient;
+        ☐ Delete patient - extra;
+        
+        ☐ *take another breath*
+        
+        ☐ Create timeline -> relationship with a Patient;
+        ☐ Find all timelines of a Patient;
+        ☐ Add pagination to GET - extra;
+        ☐ Find timeline by id;
+        ☐ Update timeline;
+        ☐ Delete timeline - extra;
+
+        ☐ *now it's easier*
+
+        ☐ Create occurrence -> relationship with a Timeline;
+        ☐ Find all occurrences of a Timeline;
+        ☐ Add pagination to GET - extra;
+        ☐ Find occurrences by id;
+        ☐ Update occurrences;
+        ☐ Delete occurrences - extra;
+
+        Note: File entity is extra.
+        ☐ Create a file -> relationship with Doctor and Occurrence;
+        ☐ Associate a file with a Doctor - extra;
+        Note: The file has a relationship with the Doctor because of the profile picture and with the occurrence because of the patient's attachments.
+        
+        Note: These are ideas - not in the briefing.
+        ☐ Find all files of a Doctor;
+        ☐ Associate a file with Occurrence;
+        ☐ Find all files of an Occurrence;
+        ☐ Find all files of a Patient;
+        Note: It seems difficult, but use query for this.
+        ☐ Delete a file;
+    Counter:
+        ☐ Auth;
+        ☐ Doctor;
+        ☐ Patient;
+        ☐ Timeline;
+        ☐ Occurrence;
+        ☐ File;
+Sixth - Relationships (<- Hardest part!):
+    ☐ Who with whom?
+    _Relationships_:
+        ☐ Doctor - Main Entity, Parent of Patient and File;
+        ☐ Patient - Child of Doctor and Parent of Timeline;
+        ☐ Timeline - Child of Patient and Parent of Occurrences;
+        ☐ Occurrences - Child of Timeline and Parent of File;
+        ☐ File - Child of Doctor and Occurrences;
+        Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
+Seventh - Jest:
+    Initialization:
+        ☐ Configure jest;
+        ☐ Add jest execution snippet to the script;
+        Note: Not sure if jest.config.ts file needs to be created.
+    Testing - Controllers, Services, and Repositories Layers:
+        ☐ First Step - Preparation;
+        ☐ Second Step - Execution;
+        ☐ Third Step
+
+ - Expected Result;
+        ☐ Test for success and check if all assertions are correct;
+        Tip: It's not a rule, but each return can be a separate test.
+        ☐ That's it. You can do it =)
+    Counter:
+        Note: Coverage should be 70% for each layer.
+        Controller:
+            ☐ Auth;
+            ☐ Doctor;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Service:
+            ☐ Auth;
+            ☐ Doctor;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Repository:
+            ☐ Auth;
+            ☐ Doctor;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Supertest:
+            Note: This supertest is optional.
+            ☐ Integration test on a user route with supertest;
+Eighth - Finalization:
+    Deploy:
+        ☐ Railway account;
+    Documentation:
+        ☐ Finish documentation;
+
+Extras_ToDo:
+    ☐ Clean Architecture;
+    ☐ Port/Adapter;
+    ☐ Hexagonal Architecture;
+    ☐ Better folder structure -> 03.2-http-3 -> user;
+    ☐ Soft Delete;
+    ☐ Mapper - link to files;
+    ☐ Pagination;
+    ☐ Request typing -> use the revision exercise;
+    ☐ Capitalize first letter;
