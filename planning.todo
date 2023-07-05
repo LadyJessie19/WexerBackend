@@ -51,9 +51,10 @@ First - Start:
         obs: It's db.ts the database config file.
         ✔ Initialize database connection; @done(23-07-04 21:47)
 Second - Folder Creation | Entity Sketches:
+    ✔ branch creation - second_folders; @done(23-07-04 23:00)
     Folders:
-        ☐ root (dotenv | package.json | tsconfig | gitignore | node_modules | uploads)
-            ☐ src (app | database | routes | server.ts file | utils | middlewares)
+        ✔ root (dotenv | package.json | tsconfig | gitignore | node_modules | uploads) @done(23-07-04 23:01)
+            ✔ src (app | database | routes | server.ts file | utils | middlewares) @done(23-07-04 23:02)
     App Folder:
         Legend: *these words are very long*
             con -> controllers
@@ -61,24 +62,28 @@ Second - Folder Creation | Entity Sketches:
             rep -> repositories
             ent -> entities
             fac -> factories
+            mod -> module
 
         Note: Each task in this section is a folder. Inside the parentheses are the files in that folder.
 
-        ☐ Auth (con|dtos|schemas|ser|module);
+        ✔ Auth (con|dtos|schemas|ser|mod); @done(23-07-04 23:11)
         Note: The repository to be used with the Auth service is the Doctor repository.
-        ☐ User|Doctor:(con|dtos|ent|fac|mapper|rep|schema|ser|module)
+        ✔ User|Doctor:(con|dtos|ent|fac|mapper|rep|schema|ser|mod) @done(23-07-05 00:06)
         Note: I'll use the word Doctor for User.
-        ☐ Patient;(con|dtos|ent|rep|schemas|ser)
-        ☐ Timeline;(con|dtos|ent|rep|schemas|ser)
-        ☐ Occurrence;(con|dtos|ent|rep|schemas|ser)
-        ☐ File;(con|dtos|ent|rep|schemas|ser)
+        ✔ Patient;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
+        ✔ Timeline;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
+        ✔ Occurrence;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
+        ✔ File;(con|dtos|ent|rep|schemas|fac|ser|mod) @done(23-07-05 00:32)
+    ☐ Merge branch and delete;
 Third - Middlewares | Models | Interfaces | DTOs:
+    ☐ branch creation - third_middlewares;
     Middlewares:
         ☐ Authentication verification middleware;
         ☐ File upload middleware;
     Functions:
         Note: Where to put this function? utils, maybe.
         ☐ Error handling function;
+        ☐ encrypt data;
     Entity Modeling:
         ☐ Yup validation schema in the Controller;
         ☐ Mongoose schema and model;
@@ -93,7 +98,9 @@ Third - Middlewares | Models | Interfaces | DTOs:
             ☐ Timeline;
             ☐ Occurrence;
             ☐ File;
+    ☐ Merge and delete branch;
 Fourth - Layers | Routes:
+    ☐ create branch - fourth_layers
     Connecting the Layers:
         ☐ /routes -> (http-req | middleware | controller dependency)
         ☐ -> controller -> (yup validation | response return | service dependency)
@@ -106,8 +113,10 @@ Fourth - Layers | Routes:
         ☐ Timeline;
         ☐ Occurrence;
         ☐ File;
+    ☐ Merge and delete branch;
 Fifth - Features:
     Note: The next section is for entity relations. I might be wrong, but I found it easier this way.
+    ☐ create branch - fifty_features
     Functions:
         ☐ Create Doctor;
         ☐ Find Doctor - just noting;
@@ -157,6 +166,7 @@ Fifth - Features:
         ☐ Find all files of a Patient;
         Note: It seems difficult, but use query for this.
         ☐ Delete a file;
+        ☐ Build the Doctor Mapper
     Counter:
         ☐ Auth;
         ☐ Doctor;
@@ -164,7 +174,9 @@ Fifth - Features:
         ☐ Timeline;
         ☐ Occurrence;
         ☐ File;
+    ☐ merge and delete the fudging branch;
 Sixth - Relationships (<- Hardest part!):
+    ☐ create branch - sixth_relations
     ☐ Who with whom?
     _Relationships_:
         ☐ Doctor - Main Entity, Parent of Patient and File;
@@ -173,7 +185,9 @@ Sixth - Relationships (<- Hardest part!):
         ☐ Occurrences - Child of Timeline and Parent of File;
         ☐ File - Child of Doctor and Occurrences;
         Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
+    ☐ merge and delete... you know!
 Seventh - Jest:
+    ☐ create branch - seventh_tests
     Initialization:
         ☐ Configure jest;
         ☐ Add jest execution snippet to the script;
@@ -181,9 +195,7 @@ Seventh - Jest:
     Testing - Controllers, Services, and Repositories Layers:
         ☐ First Step - Preparation;
         ☐ Second Step - Execution;
-        ☐ Third Step
-
- - Expected Result;
+        ☐ Third Step - Expected Result;
         ☐ Test for success and check if all assertions are correct;
         Tip: It's not a rule, but each return can be a separate test.
         ☐ That's it. You can do it =)
