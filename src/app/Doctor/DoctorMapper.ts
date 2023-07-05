@@ -1,0 +1,1 @@
+//Mais para frente nós iremos fazer esse mapper para retornar no banco de dados os links das imagens enviadas pelos usuários
