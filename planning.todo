@@ -74,9 +74,9 @@ Second - Folder Creation | Entity Sketches:
         ✔ Timeline;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
         ✔ Occurrence;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
         ✔ File;(con|dtos|ent|rep|schemas|fac|ser|mod) @done(23-07-05 00:32)
-    ☐ Merge branch and delete;
+    ✔ Merge branch and delete; @done(23-07-05 00:43)
 Third - Middlewares | Models | Interfaces | DTOs:
-    ☐ branch creation - third_middlewares;
+    ✔ branch creation - third_middlewares; @done(23-07-05 00:46)
     Middlewares:
         ☐ Authentication verification middleware;
         ☐ File upload middleware;
