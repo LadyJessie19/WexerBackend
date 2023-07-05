@@ -13,40 +13,43 @@ First - Start:
         ✔ Create staging branch; @done(23-07-04 04:51)
         ✔ TODO: Each planning section is a branch; @done(23-07-04 04:51)
         ✔ TODO: Each task is a commit; @done(23-07-04 04:51)
-    Node.js:
+    Docs:
         ✔ Is planning ready? @done(23-07-04 04:51)
         ✔ Project documentation - start; @done(23-07-04 04:51)
-        ☐ Initialize Node project;
-        ☐ Install libraries:
+        ✔ Create .env.example file; @done(23-07-04 05:10)
+    Node.js:
+        ✔ Initialize Node project; @done(23-07-04 16:44)
+        ✔ Install libraries: @done(23-07-04 21:43)
         Hint: You can install more than one at a time.
-            ☐ Express;
-            ☐ Mongoose;
-            ☐ Typescript;
-            ☐ Dotenv;
-            ☐ Yup;
-            ☐ Jest;
-            ☐ Bcrypt;
-            ☐ Jsonwebtoken;
-            ☐ ts-node-dev;
-            ☐ multer;
-        ☐ Install types:
-            ☐ @types/node;
-            ☐ @types/express;
-            ☐ @types/jest;
-            ☐ @types/bcrypt;
-            ☐ @types/jsonwebtoken;
-            ☐ @types/multer;
-        ☐ Configure tsconfig.json:
-        ☐ Configure `npm run dev`("dev": "tsnd src/server.ts");
-        ☐ Configure Environment Variables;
-        ☐ Create a collection in Insomnia;
+            ✔ Express; @done(23-07-04 16:45)
+            ✔ Mongoose; @done(23-07-04 16:45)
+            ✔ Typescript; @done(23-07-04 16:45)
+            ✔ Dotenv; @done(23-07-04 16:45)
+            ✔ Yup; @done(23-07-04 21:43)
+            ✔ Jest; @done(23-07-04 21:43)
+            ✔ Bcrypt; @done(23-07-04 21:43)
+            ✔ Jsonwebtoken; @done(23-07-04 21:43)
+            ✔ ts-node-dev; @done(23-07-04 16:46)
+            ✔ multer; @done(23-07-04 21:43)
+        ✔ Install types: @done(23-07-04 21:43)
+            ✔ @types/node; @done(23-07-04 16:45)
+            ✔ @types/express; @done(23-07-04 16:45)
+            ✔ @types/jest; @done(23-07-04 21:43)
+            ✔ @types/bcrypt; @done(23-07-04 21:43)
+            ✔ @types/jsonwebtoken; @done(23-07-04 21:43)
+            ✔ @types/multer; @done(23-07-04 21:43)
+        ✔ Configure tsconfig.json: @done(23-07-04 17:27)
+        ✔ Configure `npm run dev`("dev": "tsnd src/server.ts"); @done(23-07-04 16:49)
+        ✔ Configure Environment Variables; @done(23-07-04 17:27)
+        ✔ Create a collection in Insomnia; @done(23-07-04 19:11)
     Express.js:
-        ☐ Create server.ts file in the src folder of the project;
-        ☐ Initialize Express server;
+        ✔ Create server.ts file in the src folder of the project; @done(23-07-04 19:11)
+        ✔ Initialize Express server; @done(23-07-04 19:11)
     MongoDB | Mongoose:
-        ☐ Define MongoDB URL in the .env file;
-        ☐ Create a database folder and a config.ts file;
-        ☐ Initialize database connection;
+        ✔ Define MongoDB URL in the .env file; @done(23-07-04 21:45)
+        ✔ Create a database folder and a config.ts file; @done(23-07-04 21:47)
+        obs: It's db.ts the database config file.
+        ✔ Initialize database connection; @done(23-07-04 21:47)
 Second - Folder Creation | Entity Sketches:
     Folders:
         ☐ root (dotenv | package.json | tsconfig | gitignore | node_modules | uploads)
@@ -86,9 +89,7 @@ Third - Middlewares | Models | Interfaces | DTOs:
         Counter:
             ☐ Auth;
             ☐ Doctor;
-           
-
- ☐ Patient;
+            ☐ Patient;
             ☐ Timeline;
             ☐ Occurrence;
             ☐ File;
