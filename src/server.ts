@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from 'mongoose'
 import {Request, Response } from 'express'
 import dotenv from 'dotenv';
-import db from "./database/db";
+import db from "./configs/databaseConfig";
 dotenv.config()
 
 const app = express();
