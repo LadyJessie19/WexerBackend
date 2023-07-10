@@ -7,7 +7,7 @@ const url = process.env.URL
 async function db() {
 mongoose.connection
 .once("open", () => {
-    console.log("Connected successfully to mongo")
+    console.log("Connected successfully to MongoDB")
 })
     await mongoose.connect(url as string)
 }
