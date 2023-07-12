@@ -47,8 +47,9 @@ First - Start:
         ✔ Initialize Express server; @done(23-07-04 19:11)
     MongoDB | Mongoose:
         ✔ Define MongoDB URL in the .env file; @done(23-07-04 21:45)
-        ✔ Create a database folder and a config.ts file; @done(23-07-04 21:47)
+        ✔ Create a database folder and a config.ts file; @done(23-07-04 21:47) 
         obs: It's db.ts the database config file.
+        update(2023-07-10): I'm deleting this folder and putting the mongo connection at configs/databaseConfig.ts
         ✔ Initialize database connection; @done(23-07-04 21:47)
 Second - Folder Creation | Entity Sketches:
     ✔ branch creation - second_folders; @done(23-07-04 23:00)
@@ -78,26 +79,32 @@ Second - Folder Creation | Entity Sketches:
 Third - Middlewares | Models | Interfaces | DTOs:
     ✔ branch creation - third_middlewares; @done(23-07-05 00:46)
     Middlewares:
-        ☐ Authentication verification middleware;
-        ☐ File upload middleware;
+        ✔ Authentication verification middleware; @done(23-07-10 16:47)
+        ✔ File upload middleware; @done(23-07-10 18:33)
+        note: I have no idea what is this. Hope won't miss this in the future.
+        ✔ Create configs folder; @done(23-07-10 17:22)
+        ✔ Storage Configuration File; @done(23-07-10 17:14)
     Functions:
         Note: Where to put this function? utils, maybe.
-        ☐ Error handling function;
-        ☐ encrypt data;
+        ✔ Error handling function; @done(23-07-10 16:48)
+        ✔ encrypt data; @done(23-07-10 17:08)
+        ✔ Token Verification Class; @done(23-07-10 16:28)
     Entity Modeling:
-        ☐ Yup validation schema in the Controller;
-        ☐ Mongoose schema and model;
-        ☐ DTO for "inter-layer communication";
+        ✔ Yup validation schema in the Controller;////// @done(23-07-11 17:07)
+        ✔ Mongoose schema and model;////// @done(23-07-11 20:01)
+        ✔ DTO for "inter-layer communication";////// @done(23-07-11 18:26)
         TODO: Find a better definition term.
-        ☐ Don't forget the module, which creates everything;
+        ✔ Don't forget the module, which creates everything;////// @done(23-07-11 21:04)
         Note: The module will be used in the entity routes to initiate the controller with its dependencies.
         Counter:
-            ☐ Auth;
-            ☐ Doctor;
-            ☐ Patient;
-            ☐ Timeline;
-            ☐ Occurrence;
-            ☐ File;
+            ✔ Auth; @done(23-07-11 21:04)
+            ✔ Doctor; @done(23-07-10 23:07)
+            ✔ Patient; @done(23-07-11 21:04)
+            ✔ Timeline; @done(23-07-11 21:05)
+            ✔ Occurrence; @done(23-07-11 21:05)
+            ✔ File; @done(23-07-11 21:05)
+    ✔ Make a routes testing; @done(23-07-11 15:40)
+    ✔ Read all the files to check if there is any mistakes; @done(23-07-12 16:42)
     ☐ Merge and delete branch;
 Fourth - Layers | Routes:
     ☐ create branch - fourth_layers
@@ -108,7 +115,7 @@ Fourth - Layers | Routes:
         ☐ -> repository \ (mongoose functions | populate | model dependency)
     Counter:
         ☐ Auth;
-        ☐ Doctor;
+        ✔ Doctor; @done(23-07-10 23:07)
         ☐ Patient;
         ☐ Timeline;
         ☐ Occurrence;
@@ -118,10 +125,10 @@ Fifth - Features:
     Note: The next section is for entity relations. I might be wrong, but I found it easier this way.
     ☐ create branch - fifty_features
     Functions:
-        ☐ Create Doctor;
+        ✔ Create Doctor; @done(23-07-10 23:08)
         ☐ Find Doctor - just noting;
         ☐ Add pagination to GET - extra;
-        ☐ Find by email - just noting;
+        ✔ Find by email - just noting; @done(23-07-10 23:08)
         ☐ Authentication;
         ☐ Update Doctor;
         ☐ Delete Doctor;
@@ -240,4 +247,4 @@ Extras_ToDo:
     ☐ Mapper - link to files;
     ☐ Pagination;
     ☐ Request typing -> use the revision exercise;
-    ☐ Capitalize first letter;
+    ☐ Config babel - watch the july, 7th video;
