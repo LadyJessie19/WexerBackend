@@ -7,7 +7,7 @@ class DataEncrypt{
      * @param iterations 
      * @returns 
      */
-    async hash(data:string, iterations:number){
+    static async hash(data:string, iterations:number){
         return await bcrypt.hash(data, iterations)
     }
     /**
@@ -16,7 +16,7 @@ class DataEncrypt{
      * @param encryptedData encryptated. Got it?!
      * @returns 
      */
-    async compare(normalData:string, encryptedData:string){
+    static async compare(normalData:string, encryptedData:string){
         return await bcrypt.compare(normalData, encryptedData)
     }
 }
