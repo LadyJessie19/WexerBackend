@@ -30,6 +30,10 @@ class DoctorController {
 
         return res.status(201).json(result)
     }
+
+    async something(){
+        return {msg: "something was here"}
+    }
 }
 
 export default DoctorController
