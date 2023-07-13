@@ -105,21 +105,21 @@ Third - Middlewares | Models | Interfaces | DTOs:
             ✔ File; @done(23-07-11 21:05)
     ✔ Make a routes testing; @done(23-07-11 15:40)
     ✔ Read all the files to check if there is any mistakes; @done(23-07-12 16:42)
-    ☐ Merge and delete branch;
+    ✔ Merge and delete branch; @done(23-07-12 16:53)
 Fourth - Layers | Routes:
-    ☐ create branch - fourth_layers
+    ✔ create branch - fourth_layers @done(23-07-12 16:53)
     Connecting the Layers:
-        ☐ /routes -> (http-req | middleware | controller dependency)
-        ☐ -> controller -> (yup validation | response return | service dependency)
-        ☐ -> service -> (all logic | error layer | repository dependency)
-        ☐ -> repository \ (mongoose functions | populate | model dependency)
+        ✔ /routes -> (http-req | middleware | controller dependency) @done(23-07-12 19:51)
+        ✔ -> controller -> (yup validation | response return | service dependency) @done(23-07-12 20:33)
+        ✔ -> service -> (all logic | error layer | repository dependency) @done(23-07-12 21:45)
+        ✔ -> repository \ (mongoose functions | populate | model dependency) @done(23-07-12 22:20)
     Counter:
-        ☐ Auth;
+        ✔ Auth; @done(23-07-12 21:59)
         ✔ Doctor; @done(23-07-10 23:07)
-        ☐ Patient;
-        ☐ Timeline;
-        ☐ Occurrence;
-        ☐ File;
+        ✔ Patient; @done(23-07-12 22:20)
+        ✔ Timeline; @done(23-07-12 22:20)
+        ✔ Occurrence; @done(23-07-12 22:21)
+        ✔ File; @done(23-07-12 22:21)
     ☐ Merge and delete branch;
 Fifth - Features:
     Note: The next section is for entity relations. I might be wrong, but I found it easier this way.
