@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 class AuthenticateMiddleware{
-    static async execute(req: Request, res: Response, next: NextFunction) {
+    static async checkToken(req: Request, res: Response, next: NextFunction) {
         const { headers : { authorization } } = req
         
         if(!authorization){
@@ -25,3 +25,5 @@ class AuthenticateMiddleware{
         }
     }
 }
+
+export default AuthenticateMiddleware
