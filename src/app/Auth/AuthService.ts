@@ -1,16 +1,51 @@
 import DoctorRepository from "../Doctor/DoctorRepository";
 import { LoginDTO } from "./AuthDTO";
+import dotenv from "dotenv"
 
-//Note: The repository to be used with the Auth service is the Doctor repository.
+import DataEncrypt from "../../utils/DataEncrypt";
+import TokenHandler from "../../utils/TokenHandler";
+
+import newError from "../../utils/ErrorHandler";
+import serverError from "../../utils/ServerError";
+import newSuccess from "../../utils/SuccessHandler";
+
+dotenv.config()
+
 class AuthService{
     constructor(private repository: DoctorRepository){}
 
-    //add error verification
+    async authSer(body:LoginDTO){
+        const { email, password } = body
+        const secretKey = process.env.SECRET_KEY as string
+        const currentToken = new TokenHandler(secretKey)
 
-    async createSer(body:LoginDTO){
-        const mockBody = {name: "Name", email: "email@email.com", password:"password"}
-        const result = await this.repository.createRep(mockBody)
-        return {message: "Auth is served!", result}
+        try {
+            const doctor = await this.repository.findByEmail(email)
+            if (!doctor) {
+                return newError("Not valid email/password.", 403, "!doctor")
+            }
+            
+            const isThePasswordValid = DataEncrypt.compare(password, doctor.password);
+            if (!isThePasswordValid) {
+                return newError("Not valid email/password.", 403, "!isThePasswordValid")
+            }
+
+            const payload = {
+            userId: doctor._id,
+            name: doctor.name,
+            email: doctor.email
+            };
+        
+            const options = {
+            expiresIn: "7d",
+            };
+        
+            const token = await currentToken.sign(payload, options)
+            return newSuccess("Login was successfully. Token created.", 200, undefined, token)
+
+        } catch (error: any) {
+            return serverError(error, "Auth service catch")
+        }
     }
 }
 

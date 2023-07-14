@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { AuthModule } from "../app/Auth/AuthModule";
+import AuthModule from "../app/Auth/AuthModule";
 
 const AuthRoutes = Router()
-const authController = AuthModule.build().controller
+const authController = AuthModule.build()
 
-AuthRoutes.post('/auth', authController.something.bind(authController))
+AuthRoutes.post('/auth', authController.authCon)
 
 export default AuthRoutes

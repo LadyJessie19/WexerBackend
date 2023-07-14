@@ -6,8 +6,8 @@ class AuthModule {
   static build() {
     const service = new AuthService(DoctorModule.build().repository);
     const controller = new AuthController(service);
-    return { service, controller }
+    return controller
   }
 }
 
-export { AuthModule }
+export default AuthModule
