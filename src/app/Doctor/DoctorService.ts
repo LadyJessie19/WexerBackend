@@ -1,30 +1,23 @@
 import DoctorRepository from "./DoctorRepository"
-import newError from "../../utils/ErrorHandler";
-import DataEncrypt from "../../utils/DataEncrypt";
-import { CreateDoctorDTO } from "./DoctorDTO";
+import { ServiceDoctorDTO } from "./DoctorDTO";
+
+import createDoctor from "./features/createDoctor.service";
+import getOneDoctor from "./features/getOneDoctor.service";
+import getAllDoctors from "./features/getAllDoctors.service";
 
 class DoctorService{
-    constructor(private repository:DoctorRepository){}
-    //After, add photoRepository
-    async createSer(body:CreateDoctorDTO){//exchange the DTO to the one with photo
-        //Verify if user exists
-        const isNewDoctor = await this.repository.findByEmail(body.email)
-        if(!isNewDoctor){
-            return newError('A doctor with this email already exists', 400)
-        }
+    constructor(private repository:DoctorRepository){}//After, add photoRepository
 
-        //connecting the body.photo with photo repository
-        // const photo = await this.photoRepository.createRep(body.photo)
-        //attention! the createRep must return the photo object
+    async createSer(body:ServiceDoctorDTO){//exchange the DTO to the one with photo
+        return await createDoctor(body, this.repository)
+    }
 
-        //create doctor
-        // const payload = {...body, password: DataEncrypt.hash(body.password, 8), photo:photo.id}
-        const payload = {...body, password: DataEncrypt.hash(body.password, 8)}
+    async getOneSer(id:string){
+        return await getOneDoctor(id, this.repository)
+    }
 
-        const result = await this.repository.createRep(payload)
-
-        return {message: "Doctor created!", result}
-        //return { ...(result as any)._doc, photo }
+    async getAllSer(){
+        return await getAllDoctors(this.repository)
     }
 }
 
