@@ -120,15 +120,30 @@ Fourth - Layers | Routes:
         ✔ Timeline; @done(23-07-12 22:20)
         ✔ Occurrence; @done(23-07-12 22:21)
         ✔ File; @done(23-07-12 22:21)
-    ☐ Merge and delete branch;
+    ✔ Merge and delete branch; @done(23-07-12 22:49)
 Fifth - Features:
     Note: The next section is for entity relations. I might be wrong, but I found it easier this way.
-    ☐ create branch - fifty_features
+    ✔ create branch - fifty_features @done(23-07-12 22:50)
     Functions:
+        ✔ Create a utils function - newSuccess @done(23-07-13 20:37)
+        ✔ Create a utils function - ServerError @done(23-07-13 20:37)
+
+        ✔ Auth Routes; @done(23-07-13 23:22)
+        ✔ Auth Controller; @done(23-07-13 23:22)
+        ✔ Auth Service; @done(23-07-13 23:22)
+        ✔ Auth uses the Doctor repository; @done(23-07-13 23:22)
+        
         ✔ Create Doctor; @done(23-07-10 23:08)
-        ☐ Find Doctor - just noting;
-        ☐ Add pagination to GET - extra;
+        ✔ Rebuild create Doctor; @done(23-07-13 23:33)
+        ✔ Find Doctor - just noting; @done(23-07-13 23:23)
+        ✔ Find All Doctors; @done(23-07-13 23:23)
         ✔ Find by email - just noting; @done(23-07-10 23:08)
+
+        ☐ Stoped at auth middleware; 
+        ☐ How I know that the user is with his correct token?
+        ☐ PARAMS!
+        
+        ☐ Add pagination to GET - extra;
         ☐ Authentication;
         ☐ Update Doctor;
         ☐ Delete Doctor;
