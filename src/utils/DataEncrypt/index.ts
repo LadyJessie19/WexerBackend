@@ -7,8 +7,8 @@ class DataEncrypt{
      * @param iterations 
      * @returns 
      */
-    static async hash(data:string, iterations:number){
-        return await bcrypt.hash(data, iterations)
+    static hash(data:string, iterations:number){
+        return bcrypt.hashSync(data, iterations)
     }
     /**
      * Compares if the both information has any similarities.
@@ -16,8 +16,8 @@ class DataEncrypt{
      * @param encryptedData encryptated. Got it?!
      * @returns 
      */
-    static async compare(normalData:string, encryptedData:string){
-        return await bcrypt.compare(normalData, encryptedData)
+    static compare(normalData:string, encryptedData:string){
+        return bcrypt.compareSync(normalData, encryptedData)
     }
 }
 
