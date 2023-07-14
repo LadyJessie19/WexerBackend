@@ -8,15 +8,20 @@ class DoctorRepository {
         return this.model.create(doctor);
     }
 
-    async findByEmail(email:string){
-        return this.model.findOne({ email })
-        //don't forget: .populate("photo")
-    }
-    
     async getAllRep(){
         return this.model.find().populate("patients")
+        //don't forget: .populate("photo")
         //how to populate images?
     }
+
+    async getOneRep(id:string){
+        return this.model.findById(id)
+    }
+    
+    async findByEmail(email:string){
+        return await this.model.findOne({ email })
+    }
+    
 }
 
 export default DoctorRepository
