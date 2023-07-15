@@ -18,16 +18,13 @@ class AuthenticateMiddleware{
         }
         
         const [, token] = authorization.split(" ")
-
-        const isTheTokenValid = await currentToken.verify(token)
-        
-        if(isTheTokenValid){
-            req.user = await currentToken.decode(token)
-            return res.status(200).json(newSuccess("Auth completed.", 200, req.user))
-            next()
-        } else{
-            return res.status(401).json(newError('The token isn`t valid.', 401, "isTheTokenValid"))
+    
+        try {
+            req.user = await currentToken.verify(token)
+        } catch (error) {
+            return res.status(401).json(newError("Invalid token", 401, "AuthMiddle catch"))
         }
+        next()
     }
 }
 

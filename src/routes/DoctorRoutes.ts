@@ -9,7 +9,6 @@ const doctorController = DoctorModule.build().controller
 DoctorRoutes.post('/doctors', doctorController.createCon.bind(doctorController))
 //Read
 DoctorRoutes.get('/doctors', doctorController.getAllCon.bind(doctorController))
-DoctorRoutes.get('/doctors/:id', AuthenticateMiddleware.checkToken, doctorController.getOneCon.bind(doctorController))
 //Update
 DoctorRoutes.patch('/doctors/:id', AuthenticateMiddleware.checkToken, doctorController.updateCon.bind(doctorController))
 //Delete
