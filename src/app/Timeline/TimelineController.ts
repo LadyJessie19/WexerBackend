@@ -14,3 +14,20 @@ class TimelineController{
 }
 
 export default TimelineController
+
+/* 
+const { body, params: { board_id } } = req
+
+    try {
+      await makeCreateTaskSchema().validate(body)
+    } catch (error: any) {
+      return res.status(400).json({ errors: error.errors })
+    }
+
+    const result = await this.service.create({ ...body, boardId: board_id }) as any
+    if ('error' in result) {
+      return res.status(result.status).json(result)
+    }
+
+    return res.status(201).json(result)
+*/
