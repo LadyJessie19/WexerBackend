@@ -1,10 +1,10 @@
 import PatientRepository from "./PatientRepository"
-import DoctorRepository from "../Doctor/DoctorRepository";
+import UserRepository from "../User/UserRepository";
 
-import { PatientWithDoctorIdDTO, ServicePatientDTO } from "./PatientDTO";
+import { PatientWithUserIdDTO, ServicePatientDTO } from "./PatientDTO";
 
 import createPatient from "./features/createPatient.service";
-import getFromDoctor from "./features/getFromDoctor.service";
+import getFromUser from "./features/getFromUser.service";
 import getAllPatients from "./features/getAllPatients.service";
 import getOnePatient from "./features/getOnePatient.service";
 import updatePatient from "./features/updatePatient.service";
@@ -12,14 +12,14 @@ import deletePatient from "./features/deletePatient.service";
 import { ObjectId } from "mongoose";
 
 class PatientService{
-    constructor(private repository:PatientRepository, private DoctorRepository:DoctorRepository){}
+    constructor(private repository:PatientRepository, private UserRepository:UserRepository){}
 
-    async createSer(patient:PatientWithDoctorIdDTO){
-      return createPatient(patient, this.repository, this.DoctorRepository)
+    async createSer(patient:PatientWithUserIdDTO){
+      return createPatient(patient, this.repository, this.UserRepository)
     }
 
-    async getFromDoctorSer(doctorId:ObjectId, page:number, limit:number){
-      return getFromDoctor(doctorId, page, limit, this.repository)
+    async getFromUserSer(userId:ObjectId, page:number, limit:number){
+      return getFromUser(userId, page, limit, this.repository)
     }
 
     async getAllSer(page:number, limit:number){

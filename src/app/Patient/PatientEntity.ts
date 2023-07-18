@@ -25,9 +25,9 @@ const PatientSchema = new mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId, 
         ref: 'Timeline'
     }],
-    doctorId: {
+    userId: {
         type: mongoose.SchemaTypes.ObjectId,
-        ref: 'Doctor'
+        ref: 'User'
     }
 }, { timestamps:true })
 

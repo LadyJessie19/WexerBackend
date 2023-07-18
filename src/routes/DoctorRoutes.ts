@@ -1,21 +1,21 @@
 import { Router } from "express";
-import DoctorModule from "../app/Doctor/DoctorModule";
+import UserModule from "../app/User/UserModule";
 import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware";
 
-const DoctorRoutes = Router()
-const doctorController = DoctorModule.build().controller
+const UserRoutes = Router()
+const userController = UserModule.build().controller
 
-const commonPath = '/doctors';
-const pathWithId = '/doctors/:id';
+const commonPath = '/users';
+const pathWithId = '/users/:id';
 
 //Create
-DoctorRoutes.post(commonPath, doctorController.createCon.bind(doctorController))
+UserRoutes.post(commonPath, userController.createCon.bind(userController))
 //Read
-DoctorRoutes.get(commonPath, AuthenticateMiddleware.checkToken, doctorController.getAllCon.bind(doctorController))
-DoctorRoutes.get(pathWithId, AuthenticateMiddleware.checkToken, doctorController.getOneCon.bind(doctorController))
+UserRoutes.get(commonPath, AuthenticateMiddleware.checkToken, userController.getAllCon.bind(userController))
+UserRoutes.get(pathWithId, AuthenticateMiddleware.checkToken, userController.getOneCon.bind(userController))
 //Update
-DoctorRoutes.patch(pathWithId, AuthenticateMiddleware.checkToken, doctorController.updateCon.bind(doctorController))
+UserRoutes.patch(pathWithId, AuthenticateMiddleware.checkToken, userController.updateCon.bind(userController))
 //Delete
-DoctorRoutes.delete(pathWithId, AuthenticateMiddleware.checkToken, doctorController.deleteCon.bind(doctorController))
+UserRoutes.delete(pathWithId, AuthenticateMiddleware.checkToken, userController.deleteCon.bind(userController))
 
-export default DoctorRoutes
+export default UserRoutes

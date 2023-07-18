@@ -1,20 +1,20 @@
-import Doctor from './DoctorEntity'
+import User from './UserEntity'
 
-import { CreateDoctorDTO } from "./DoctorDTO";
+import { CreateUserDTO } from "./UserDTO";
 
 import { ObjectId } from 'mongoose';
 
-class DoctorRepository {
-    constructor(private model: typeof Doctor){}
+class UserRepository {
+    constructor(private model: typeof User){}
 
-    async createRep(doctor:CreateDoctorDTO){
-        return await this.model.create(doctor);
+    async createRep(user:CreateUserDTO){
+        return await this.model.create(user);
     }
 
     async getAllRep(skip:number, limit:number){
-        const totalDoctors = await this.model.countDocuments();
+        const totalUsers = await this.model.countDocuments();
         const result = await this.model.find().skip(skip).limit(limit)//.populate("patients")
-        return { totalDoctors, result }
+        return { totalUsers, result }
         //don't forget: .populate("photo")
         //how to populate images?
     }
@@ -23,7 +23,7 @@ class DoctorRepository {
         return await this.model.findById(id).populate('patients')
     }
 
-    async updateRep(id:ObjectId, body:CreateDoctorDTO){
+    async updateRep(id:ObjectId, body:CreateUserDTO){
         return await this.model.findByIdAndUpdate(id, { $set: body }, { new: true })
     }
 
@@ -35,11 +35,11 @@ class DoctorRepository {
         return await this.model.findOne({ email })
     }
     
-    async pushPatient(doctorId: ObjectId, patientId: ObjectId){
-        return await this.model.findByIdAndUpdate(doctorId, {
+    async pushPatient(userId: ObjectId, patientId: ObjectId){
+        return await this.model.findByIdAndUpdate(userId, {
             $push: { patients: [patientId] }
         }, { new: true })
     }
 }
 
-export default DoctorRepository
+export default UserRepository

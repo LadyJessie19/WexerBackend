@@ -1,20 +1,20 @@
 import { Request, Response } from "express"
-import DoctorService from "./DoctorService"
+import UserService from "./UserService"
 
-import DoctorYupSchema from "./DoctorSchema"
+import UserYupSchema from "./UserSchema"
 
 import serverError from "../../utils/ServerError"
 import newError from "../../utils/ErrorHandler"
 import { ObjectId } from "mongoose"
 
-class DoctorController {
-    constructor(private service:DoctorService){}
+class UserController {
+    constructor(private service:UserService){}
 
     async createCon(req:Request, res:Response){
         const { body } = req //don't forget to add _file_ to req destruct
     
         try{
-            await DoctorYupSchema.create().validate(body)
+            await UserYupSchema.create().validate(body)
         } catch(err:any){
             return res.status(400).json({errors:err.errors})
         }
@@ -55,7 +55,7 @@ class DoctorController {
         const payload = {id, body}
 
         try {
-            await DoctorYupSchema.update().validate(payload)
+            await UserYupSchema.update().validate(payload)
         } catch (error: any) {
             return res.status(400).json(newError("The id/body is invalid", 400))
         }
@@ -73,7 +73,7 @@ class DoctorController {
         const { id } = req.params
         
         try {
-            await DoctorYupSchema.delete().validate(req.params)
+            await UserYupSchema.delete().validate(req.params)
         } catch (error:any) {
             return res.status(400).json(serverError(error))
         }
@@ -83,4 +83,4 @@ class DoctorController {
     }
 }
 
-export default DoctorController
+export default UserController

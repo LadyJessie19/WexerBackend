@@ -10,9 +10,9 @@ class PatientController{
     constructor(private service: PatientService){}
 
     async createCon(req: Request, res: Response){
-        const { body, params: { doctor_id } } = req
+        const { body, params: { user_id } } = req
 
-        const payload = { ...body, doctorId: doctor_id }
+        const payload = { ...body, userId: user_id }
 
         try {
             await PatientYupSchema.create().validate(payload)
@@ -29,9 +29,9 @@ class PatientController{
         return res.status(result.statusCode).send(result)
     }
 
-    async getFromDoctorCon(req: Request, res: Response){
-      const { query:{ page = 1, limit = 10}, params:{ doctor_id } } = req
-        const result = await this.service.getFromDoctorSer(doctor_id as unknown as ObjectId, Number(page), Number(limit))
+    async getFromUserCon(req: Request, res: Response){
+      const { query:{ page = 1, limit = 10}, params:{ user_id } } = req
+        const result = await this.service.getFromUserSer(user_id as unknown as ObjectId, Number(page), Number(limit))
         
         if('error' in result) {
         return res.status(result.statusCode).json(result)

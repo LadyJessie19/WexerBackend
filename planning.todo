@@ -68,9 +68,9 @@ Second - Folder Creation | Entity Sketches:
         Note: Each task in this section is a folder. Inside the parentheses are the files in that folder.
 
         ✔ Auth (con|dtos|schemas|ser|mod); @done(23-07-04 23:11)
-        Note: The repository to be used with the Auth service is the Doctor repository.
-        ✔ User|Doctor:(con|dtos|ent|fac|mapper|rep|schema|ser|mod) @done(23-07-05 00:06)
-        Note: I'll use the word Doctor for User.
+        Note: The repository to be used with the Auth service is the User repository.
+        ✔ User|User:(con|dtos|ent|fac|mapper|rep|schema|ser|mod) @done(23-07-05 00:06)
+        Note: I'll use the word User for User. NO!!!!!
         ✔ Patient;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
         ✔ Timeline;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
         ✔ Occurrence;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
@@ -98,7 +98,7 @@ Third - Middlewares | Models | Interfaces | DTOs:
         Note: The module will be used in the entity routes to initiate the controller with its dependencies.
         Counter:
             ✔ Auth; @done(23-07-11 21:04)
-            ✔ Doctor; @done(23-07-10 23:07)
+            ✔ User; @done(23-07-10 23:07)
             ✔ Patient; @done(23-07-11 21:04)
             ✔ Timeline; @done(23-07-11 21:05)
             ✔ Occurrence; @done(23-07-11 21:05)
@@ -115,7 +115,7 @@ Fourth - Layers | Routes:
         ✔ -> repository \ (mongoose functions | populate | model dependency) @done(23-07-12 22:20)
     Counter:
         ✔ Auth; @done(23-07-12 21:59)
-        ✔ Doctor; @done(23-07-10 23:07)
+        ✔ User; @done(23-07-10 23:07)
         ✔ Patient; @done(23-07-12 22:20)
         ✔ Timeline; @done(23-07-12 22:20)
         ✔ Occurrence; @done(23-07-12 22:21)
@@ -131,12 +131,12 @@ Fifth - Features:
         ✔ Auth Routes; @done(23-07-13 23:22)
         ✔ Auth Controller; @done(23-07-13 23:22)
         ✔ Auth Service; @done(23-07-13 23:22)
-        ✔ Auth uses the Doctor repository; @done(23-07-13 23:22)
+        ✔ Auth uses the User repository; @done(23-07-13 23:22)
         
-        ✔ Create Doctor; @done(23-07-10 23:08)
-        ✔ Rebuild create Doctor; @done(23-07-13 23:33)
-        ✔ Find Doctor - just noting; @done(23-07-13 23:23)
-        ✔ Find All Doctors; @done(23-07-13 23:23)
+        ✔ Create User; @done(23-07-10 23:08)
+        ✔ Rebuild create User; @done(23-07-13 23:33)
+        ✔ Find User - just noting; @done(23-07-13 23:23)
+        ✔ Find All Users; @done(23-07-13 23:23)
         ✔ Find by email - just noting; @done(23-07-10 23:08)
 
         ✔ Stoped at auth middleware; @est(2023-07-14 23:59) @done(23-07-14 15:40)
@@ -145,26 +145,38 @@ Fifth - Features:
 
         ✔ Add pagination to GET - extra; @done(23-07-14 20:11)
         ✔ Authentication; @done(23-07-14 15:40)
-        ✔ Update Doctor; @done(23-07-14 18:53)
-        ✔ Delete Doctor; @done(23-07-14 18:53)
+        ✔ Update User; @done(23-07-14 18:53)
+        ✔ Delete User; @done(23-07-14 18:53)
         ☐ Profile picture - extra;
         ✔ pushPatient function; @done(23-07-17 20:45)
 
         ✔ *take a breath and keep going* @done(23-07-17 20:45)
 
-        ✔ Create patient -> relationship with Doctor; @done(23-07-17 20:45)
+        ✔ Create patient -> relationship with User; @done(23-07-17 20:45)
         ✔ Find patient by id; @done(23-07-17 22:58)
         ✔ Update patient; @done(23-07-17 22:58)
         ✔ Delete patient - extra; @done(23-07-17 22:58)
         
-        ✔ Put the getOne Doctor back at his place; @done(23-07-17 22:03)
+        ✔ Put the getOne User back at his place; @done(23-07-17 22:03)
 
-        ☐ Find all patients of a Doctor;
-        To achive this I need to place the current doctor Id at the patient. 
+        ✔ Find all patients of a User; @done(23-07-18 19:27)
+        To achive this I need to place the current User Id at the patient. 
         I CAN'T BELIEVE I FORGOT THIS!!!!
         Please, tomorrow-jessie: fix this. Thanks
-        ☐ Add pagination to GET - extra;
-        ☐ PushTimeline;
+        ✔ Add pagination to GET - extra; @done(23-07-18 19:27)
+        ✔ PushTimeline; @done(23-07-18 19:27)
+
+        ☐ Trocar TODAS as palavras "Doctor" para "User". QUE REEEIVAAAA!
+            ✔ server.ts @done(23-07-18 19:33)
+            ✔ utils @done(23-07-18 19:33)
+            ✔ routes @done(23-07-18 19:39)
+            ✔ middlewares @done(23-07-18 19:42)
+            ✔ configs @done(23-07-18 19:42)
+            ☐ app
+                ✔ Auth @done(23-07-18 19:42)
+                ☐ User. grrrrrrrrrr!!!!
+                ✔ Patient @done(23-07-18 19:56)
+        ☐ Testar todas as paginações. OUTRA REEEEIVA!
 
         ☐ *take another breath*
         
@@ -187,39 +199,43 @@ Fifth - Features:
         ☐ pushFile
 
         Note: File entity is extra.
-        ☐ Create a file -> relationship with Doctor and Occurrence;
-        ☐ Associate a file with a Doctor - extra;
-        Note: The file has a relationship with the Doctor because of the profile picture and with the occurrence because of the patient's attachments.
+        ☐ Create a file -> relationship with User and Occurrence;
+        ☐ Associate a file with a User - extra;
+        Note: The file has a relationship with the User because of the profile picture and with the occurrence because of the patient's attachments.
         
         Note: These are ideas - not in the briefing.
-        ☐ Find all files of a Doctor;
+        ☐ Find all files of a User;
         ☐ Associate a file with Occurrence;
         ☐ Find all files of an Occurrence;
         ☐ Find all files of a Patient;
         Note: It seems difficult, but use query for this.
         ☐ Delete a file;
-        ☐ Build the Doctor Mapper
-
-        ☐ Trocar TODAS as palavras "Doctor" para "Psychology". QUE REEEIVAAAA!
-        ☐ Testar todas as paginações. OUTRA REEEEIVA!
+        ☐ Build the User Mapper
 
     Counter:
         ✔ Auth; @done(23-07-13 23:01)
-        ✔ Doctor; @done(23-07-17 23:01)
-        ☐ Patient;
+        ✔ User; @done(23-07-17 23:01)
+        ✔ Patient; @done(23-07-18 19:28)
         ☐ Timeline;
         ☐ Occurrence;
         ☐ File;
     ☐ merge and delete the fudging branch;
+
+
+    Notes:
+        ☐ Factory pattern;
+        ☐ File Middleware;
+        ☐ Consertar as paginações;
+
 Sixth - Relationships (<- Hardest part!):
     ☐ create branch - sixth_relations
     ☐ Who with whom?
     _Relationships_:
-        ☐ Doctor - Main Entity, Parent of Patient and File;
-        ☐ Patient - Child of Doctor and Parent of Timeline;
+        ☐ User - Main Entity, Parent of Patient and File;
+        ☐ Patient - Child of User and Parent of Timeline;
         ☐ Timeline - Child of Patient and Parent of Occurrences;
         ☐ Occurrences - Child of Timeline and Parent of File;
-        ☐ File - Child of Doctor and Occurrences;
+        ☐ File - Child of User and Occurrences;
         Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
     ☐ merge and delete... you know!
 Seventh - Jest:
@@ -239,21 +255,21 @@ Seventh - Jest:
         Note: Coverage should be 70% for each layer.
         Controller:
             ☐ Auth;
-            ☐ Doctor;
+            ☐ User;
             ☐ Patient;
             ☐ Timeline;
             ☐ Occurrence;
             ☐ File;
         Service:
             ☐ Auth;
-            ☐ Doctor;
+            ☐ User;
             ☐ Patient;
             ☐ Timeline;
             ☐ Occurrence;
             ☐ File;
         Repository:
             ☐ Auth;
-            ☐ Doctor;
+            ☐ User;
             ☐ Patient;
             ☐ Timeline;
             ☐ Occurrence;
@@ -267,7 +283,7 @@ Eighth - Finalization:
     Documentation:
         ☐ Finish documentation;
     ☐ Review:
-        ☐ Padrão REST - revisar a entidade doctor;
+        ☐ Padrão REST - revisar a entidade User;
         ☐ Query através de params? Seria maneiro!
 
 Extras_ToDo:

@@ -5,8 +5,8 @@ import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware";
 const PatientRoutes = Router()
 const patientController = PatientModule.build().controller
 
-//Create and get all from a Doctor;
-const userPath = '/doctors/:doctor_id/patients';
+//Create and get all from a Psychologist;
+const userPath = '/users/:user_id/patients';
 //Get all patients
 const commonPath = '/patients'
 //Get one patient, update and delete;
@@ -17,7 +17,7 @@ PatientRoutes.use(AuthenticateMiddleware.checkToken)
 //Create
 PatientRoutes.post(userPath, patientController.createCon.bind(patientController))
 //Read
-PatientRoutes.get(userPath, patientController.getFromDoctorCon.bind(patientController))
+PatientRoutes.get(userPath, patientController.getFromUserCon.bind(patientController))
 PatientRoutes.get(commonPath, patientController.getAllCon.bind(patientController))
 PatientRoutes.get(pathWithId, patientController.getOneCon.bind(patientController))
 //Update

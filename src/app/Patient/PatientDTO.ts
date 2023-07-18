@@ -9,12 +9,12 @@ interface CreatePatientDTO {
     personalAnnotations:string
 }
 
-interface PatientWithDoctorIdDTO extends CreatePatientDTO{
-    doctorId:ObjectId
+interface PatientWithUserIdDTO extends CreatePatientDTO{
+    userId:ObjectId
 }
 
-interface ServicePatientDTO extends PatientWithDoctorIdDTO {
+interface ServicePatientDTO extends PatientWithUserIdDTO {
     timelines: Array<CreateTimelineDTO>
 }
 
-export { CreatePatientDTO, ServicePatientDTO, PatientWithDoctorIdDTO }
+export { CreatePatientDTO, ServicePatientDTO, PatientWithUserIdDTO }

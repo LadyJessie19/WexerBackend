@@ -1,7 +1,7 @@
 import { Types } from "mongoose"
 import * as yup from "yup"
 
-class DoctorYupSchema {
+class UserYupSchema {
     static create(){
         return yup.object().shape({
             name: yup.string().required(),
@@ -25,4 +25,4 @@ class DoctorYupSchema {
     })
     }
 }
-export default DoctorYupSchema
+export default UserYupSchema

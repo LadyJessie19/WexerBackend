@@ -5,10 +5,10 @@ import serverError from "../../../utils/ServerError";
 import newSuccess from "../../../utils/SuccessHandler";
 import { ObjectId } from "mongoose";
 
-async function getFromDoctor(doctorId:ObjectId, page: number, limit: number, repository:PatientRepository) {
+async function getFromUser(userId:ObjectId, page: number, limit: number, repository:PatientRepository) {
     try {
         const skip = (page - 1) * limit;
-        const result = await repository.getFromDoctorRep(doctorId, skip, limit);
+        const result = await repository.getFromUserRep(userId, skip, limit);
         const totalPatients = result.length;
         const patientCall = totalPatients < 2 ? "patient" : "patients";
 
@@ -36,8 +36,8 @@ async function getFromDoctor(doctorId:ObjectId, page: number, limit: number, rep
         return newSuccess(`There is ${totalPatients} ${patientCall} from this psychologist.`, 200, payload)
 
     } catch (error: any) {
-        return serverError(error, "getFromDoctor catch")
+        return serverError(error, "getFromUser catch")
     }
 }
 
-export default getFromDoctor
+export default getFromUser

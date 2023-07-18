@@ -1,15 +1,15 @@
 import { CreateFileDTO } from "../File/FileDTO"
 import { CreatePatientDTO } from "../Patient/PatientDTO";
 
-interface CreateDoctorDTO {
+interface CreateUserDTO {
     name:string,
     email:string,
     password:any
 }
 
-interface ServiceDoctorDTO extends CreateDoctorDTO {
+interface ServiceUserDTO extends CreateUserDTO {
     patients: Array<CreatePatientDTO>
     image: CreateFileDTO;
 }
 
-export { CreateDoctorDTO, ServiceDoctorDTO }
+export { CreateUserDTO, ServiceUserDTO }

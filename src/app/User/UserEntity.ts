@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const DoctorSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -24,6 +24,6 @@ const DoctorSchema = new mongoose.Schema({
     // photo: { type: mongoose.SchemaTypes.ObjectId, ref: 'Photo', required: true },
 }, {timestamps: true})
 
-const Doctor = mongoose.model("Doctor", DoctorSchema)
+const User = mongoose.model("User", UserSchema)
 
-export default Doctor
+export default User

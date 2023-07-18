@@ -1,4 +1,4 @@
-import DoctorRepository from "../Doctor/DoctorRepository";
+import UserRepository from "../User/UserRepository";
 import { LoginDTO } from "./AuthDTO";
 import dotenv from "dotenv"
 
@@ -12,7 +12,7 @@ import newSuccess from "../../utils/SuccessHandler";
 dotenv.config()
 
 class AuthService{
-    constructor(private repository: DoctorRepository){}
+    constructor(private repository: UserRepository){}
 
     async authSer(body:LoginDTO){
         const { email, password } = body
@@ -20,20 +20,20 @@ class AuthService{
         const currentToken = new TokenHandler(secretKey)
 
         try {
-            const doctor = await this.repository.findByEmail(email)
-            if (!doctor) {
-                return newError("Not valid email/password.", 403, "!doctor")
+            const user = await this.repository.findByEmail(email)
+            if (!user) {
+                return newError("Not valid email/password.", 403, "!user")
             }
             
-            const isThePasswordValid = DataEncrypt.compare(password, doctor.password);
+            const isThePasswordValid = DataEncrypt.compare(password, user.password);
             if (!isThePasswordValid) {
                 return newError("Not valid email/password.", 403, "!isThePasswordValid")
             }
 
             const payload = {
-            userId: doctor._id,
-            name: doctor.name,
-            email: doctor.email
+            userId: user._id,
+            name: user.name,
+            email: user.email
             };
         
             const options = {

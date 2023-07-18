@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 import AuthRoutes from "./AuthRoutes";
-import DoctorRoutes from "./DoctorRoutes";
+import UserRoutes from "./UserRoutes";
 import FileRoutes from "./FileRoutes";
 import OccurrenceRoutes from "./OccurrenceRoutes";
 import PatientRoutes from "./PatientRoutes";
@@ -13,7 +13,7 @@ const MainRouter = Router()
 
 /* Public Routes */
 MainRouter.use(AuthRoutes)
-MainRouter.use(DoctorRoutes)
+MainRouter.use(UserRoutes)
 
 /* Private Routes */
 MainRouter.use(AuthenticateMiddleware.checkToken)

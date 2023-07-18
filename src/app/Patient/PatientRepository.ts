@@ -1,18 +1,18 @@
 import Patient from './PatientEntity'
 
-import { CreatePatientDTO, PatientWithDoctorIdDTO } from "./PatientDTO";
+import { CreatePatientDTO, PatientWithUserIdDTO } from "./PatientDTO";
 
 import { ObjectId } from 'mongoose';
 
 class PatientRepository {
     constructor(private model: typeof Patient){}
 
-    async createRep(patient:PatientWithDoctorIdDTO){
+    async createRep(patient:PatientWithUserIdDTO){
         return await this.model.create(patient);
     }
 
-    async getFromDoctorRep(doctorId:ObjectId, skip:number, limit:number){
-        return await this.model.find({doctorId}).skip(skip).limit(limit)//.populate("timelines")
+    async getFromUserRep(userId:ObjectId, skip:number, limit:number){
+        return await this.model.find({userId}).skip(skip).limit(limit)//.populate("timelines")
     }
 
     async getAllRep(skip:number, limit:number){
@@ -20,7 +20,7 @@ class PatientRepository {
     }
 
     async getOneRep(id:ObjectId){
-        return await this.model.findById(id).populate("doctorId").populate('timelines')
+        return await this.model.findById(id).populate("userId").populate('timelines')
     }
 
     async updateRep(id:ObjectId, body:CreatePatientDTO){
