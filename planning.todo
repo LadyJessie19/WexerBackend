@@ -166,16 +166,17 @@ Fifth - Features:
         ✔ Add pagination to GET - extra; @done(23-07-18 19:27)
         ✔ PushTimeline; @done(23-07-18 19:27)
 
-        ☐ Trocar TODAS as palavras "Doctor" para "User". QUE REEEIVAAAA!
+        ✔ Trocar TODAS as palavras "Doctor" para "User". QUE REEEIVAAAA! @done(23-07-18 20:27)
             ✔ server.ts @done(23-07-18 19:33)
             ✔ utils @done(23-07-18 19:33)
             ✔ routes @done(23-07-18 19:39)
             ✔ middlewares @done(23-07-18 19:42)
             ✔ configs @done(23-07-18 19:42)
-            ☐ app
+            ✔ app @done(23-07-18 20:27)
                 ✔ Auth @done(23-07-18 19:42)
-                ☐ User. grrrrrrrrrr!!!!
+                ✔ User. grrrrrrrrrr!!!! @done(23-07-18 20:27)
                 ✔ Patient @done(23-07-18 19:56)
+
         ☐ Testar todas as paginações. OUTRA REEEEIVA!
 
         ☐ *take another breath*
