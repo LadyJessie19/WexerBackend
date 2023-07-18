@@ -148,18 +148,24 @@ Fifth - Features:
         ✔ Update Doctor; @done(23-07-14 18:53)
         ✔ Delete Doctor; @done(23-07-14 18:53)
         ☐ Profile picture - extra;
-        ☐ pushPatient function;
+        ✔ pushPatient function; @done(23-07-17 20:45)
 
-        ☐ *take a breath and keep going*
+        ✔ *take a breath and keep going* @done(23-07-17 20:45)
 
-        ☐ Create patient -> relationship with Doctor;
-        ☐ Find all patients of a Doctor;
-        ☐ Add pagination to GET - extra;
-        ☐ Find patient by id;
-        ☐ Update patient;
-        ☐ Delete patient - extra;
-        ☐ PushTimeline;
+        ✔ Create patient -> relationship with Doctor; @done(23-07-17 20:45)
+        ✔ Find patient by id; @done(23-07-17 22:58)
+        ✔ Update patient; @done(23-07-17 22:58)
+        ✔ Delete patient - extra; @done(23-07-17 22:58)
         
+        ✔ Put the getOne Doctor back at his place; @done(23-07-17 22:03)
+
+        ☐ Find all patients of a Doctor;
+        To achive this I need to place the current doctor Id at the patient. 
+        I CAN'T BELIEVE I FORGOT THIS!!!!
+        Please, tomorrow-jessie: fix this. Thanks
+        ☐ Add pagination to GET - extra;
+        ☐ PushTimeline;
+
         ☐ *take another breath*
         
         ☐ Create timeline -> relationship with a Patient;
@@ -194,8 +200,8 @@ Fifth - Features:
         ☐ Delete a file;
         ☐ Build the Doctor Mapper
     Counter:
-        ☐ Auth;
-        ☐ Doctor;
+        ✔ Auth; @done(23-07-13 23:01)
+        ✔ Doctor; @done(23-07-17 23:01)
         ☐ Patient;
         ☐ Timeline;
         ☐ Occurrence;
@@ -256,6 +262,9 @@ Eighth - Finalization:
         ☐ Railway account;
     Documentation:
         ☐ Finish documentation;
+    ☐ Review:
+        ☐ Padrão REST - revisar a entidade doctor;
+        ☐ Query através de params? Seria maneiro!
 
 Extras_ToDo:
     ☐ Clean Architecture;
@@ -264,6 +273,6 @@ Extras_ToDo:
     ☐ Better folder structure -> 03.2-http-3 -> user;
     ☐ Soft Delete;
     ☐ Mapper - link to files;
-    ☐ Pagination;
+    ✔ Pagination; @done(23-07-17 20:44)
     ☐ Request typing -> use the revision exercise;
     ☐ Config babel - watch the july, 7th video;
