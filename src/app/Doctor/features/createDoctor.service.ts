@@ -1,10 +1,10 @@
 import DoctorRepository from "../DoctorRepository"
+
 import { ServiceDoctorDTO } from "../DoctorDTO"
 
 import newError from "../../../utils/ErrorHandler"
 import serverError from "../../../utils/ServerError"
 import newSuccess from "../../../utils/SuccessHandler"
-
 import DataEncrypt from "../../../utils/DataEncrypt"
 
 async function createDoctor(payload:ServiceDoctorDTO, repository:DoctorRepository) {
@@ -18,14 +18,13 @@ async function createDoctor(payload:ServiceDoctorDTO, repository:DoctorRepositor
         const passwordHashed = DataEncrypt.hash(payload.password, 8)
         const doctor = {...payload, password: passwordHashed}
         const result = await repository.createRep(doctor)
-        return newSuccess("Doctor created!", 201, result)
+        return newSuccess("Doctor created with success!", 201, result)
 
     } catch (error:any) {
         if (error.errors) {
         return newError(error.message, 400, "createDoctor catch")
     }
-    //last-return
-    return serverError(error, "last-return")
+    return serverError(error)
 }
 }
 

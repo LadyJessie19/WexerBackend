@@ -1,8 +1,10 @@
-import { ObjectId } from "mongoose";
-import { CreateDoctorDTO } from "../DoctorDTO";
 import DoctorRepository from "../DoctorRepository";
+
+import { CreateDoctorDTO } from "../DoctorDTO";
+
 import newSuccess from "../../../utils/SuccessHandler";
 import serverError from "../../../utils/ServerError";
+import { ObjectId } from "mongoose";
 
 async function updateDoctor(id:ObjectId, body:CreateDoctorDTO, repository:DoctorRepository){
     const update:any = await repository.updateRep(id, body)

@@ -1,11 +1,13 @@
 import DoctorRepository from "./DoctorRepository"
+
 import { ServiceDoctorDTO } from "./DoctorDTO";
 
 import createDoctor from "./features/createDoctor.service";
 import getAllDoctors from "./features/getAllDoctors.service";
+import getOneDoctor from "./features/getOneDoctor.service";
+import updateDoctor from "./features/updateDoctor.service";
 import deleteDoctor from "./features/deleteDoctor.service";
 import { ObjectId } from "mongoose";
-import updateDoctor from "./features/updateDoctor.service";
 
 class DoctorService{
     constructor(private repository:DoctorRepository){}//After, add photoRepository
@@ -15,7 +17,11 @@ class DoctorService{
     }
 
     async getAllSer(page:number, limit:number){
-        return await getAllDoctors(this.repository, Number(page), Number(limit))
+        return await getAllDoctors(Number(page), Number(limit), this.repository)
+    }
+
+    async getOneSer(id:ObjectId){
+        return await getOneDoctor(id, this.repository)
     }
 
     async updateSer(id:ObjectId, body:ServiceDoctorDTO){

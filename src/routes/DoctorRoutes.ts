@@ -5,13 +5,17 @@ import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware";
 const DoctorRoutes = Router()
 const doctorController = DoctorModule.build().controller
 
+const commonPath = '/doctors';
+const pathWithId = '/doctors/:id';
+
 //Create
-DoctorRoutes.post('/doctors', doctorController.createCon.bind(doctorController))
+DoctorRoutes.post(commonPath, doctorController.createCon.bind(doctorController))
 //Read
-DoctorRoutes.get('/doctors', doctorController.getAllCon.bind(doctorController))
+DoctorRoutes.get(commonPath, AuthenticateMiddleware.checkToken, doctorController.getAllCon.bind(doctorController))
+DoctorRoutes.get(pathWithId, AuthenticateMiddleware.checkToken, doctorController.getOneCon.bind(doctorController))
 //Update
-DoctorRoutes.patch('/doctors/:id', AuthenticateMiddleware.checkToken, doctorController.updateCon.bind(doctorController))
+DoctorRoutes.patch(pathWithId, AuthenticateMiddleware.checkToken, doctorController.updateCon.bind(doctorController))
 //Delete
-DoctorRoutes.delete('/doctors/:id', AuthenticateMiddleware.checkToken, doctorController.deleteCon.bind(doctorController))
+DoctorRoutes.delete(pathWithId, AuthenticateMiddleware.checkToken, doctorController.deleteCon.bind(doctorController))
 
 export default DoctorRoutes

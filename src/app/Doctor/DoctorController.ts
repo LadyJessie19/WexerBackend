@@ -1,9 +1,11 @@
 import { Request, Response } from "express"
-import DoctorYupSchema from "./DoctorSchema"
 import DoctorService from "./DoctorService"
+
+import DoctorYupSchema from "./DoctorSchema"
+
 import serverError from "../../utils/ServerError"
-import { ObjectId } from "mongoose"
 import newError from "../../utils/ErrorHandler"
+import { ObjectId } from "mongoose"
 
 class DoctorController {
     constructor(private service:DoctorService){}
@@ -32,6 +34,17 @@ class DoctorController {
         
         if('error' in result) {
         return res.status(result.statusCode).json(result)
+        }
+
+        return res.status(result.statusCode).json(result)
+    }
+
+    async getOneCon(req:Request, res:Response){
+        const { params:{ id } } = req
+        const result = await this.service.getOneSer(id as unknown as ObjectId)
+
+        if("error" in result){
+            return res.status(result.statusCode).json(result)
         }
 
         return res.status(result.statusCode).json(result)

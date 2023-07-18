@@ -17,8 +17,7 @@ const DoctorSchema = new mongoose.Schema({
     },
     patients:[{
         type: mongoose.SchemaTypes.ObjectId, 
-        ref: 'Patient',
-        autopopulate: true
+        ref: 'Patient'
     }]
     //this is for the photo
     // photo: { type: mongoose.SchemaTypes.ObjectId, ref: 'Photo', required: true },
