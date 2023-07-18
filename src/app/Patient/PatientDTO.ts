@@ -1,3 +1,4 @@
+import { ObjectId } from "mongoose"
 import { CreateTimelineDTO } from "../Timeline/TimelineDTO"
 
 interface CreatePatientDTO {
@@ -8,8 +9,12 @@ interface CreatePatientDTO {
     personalAnnotations:string
 }
 
-interface ServicePatientDTO extends CreatePatientDTO {
+interface PatientWithDoctorIdDTO extends CreatePatientDTO{
+    doctorId:ObjectId
+}
+
+interface ServicePatientDTO extends PatientWithDoctorIdDTO {
     timelines: Array<CreateTimelineDTO>
 }
 
-export { CreatePatientDTO, ServicePatientDTO }
+export { CreatePatientDTO, ServicePatientDTO, PatientWithDoctorIdDTO }

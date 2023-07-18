@@ -1,28 +1,37 @@
 import PatientRepository from "./PatientRepository"
-import { CreatePatientDTO } from "./PatientDTO";
+import DoctorRepository from "../Doctor/DoctorRepository";
+
+import { PatientWithDoctorIdDTO, ServicePatientDTO } from "./PatientDTO";
+
+import createPatient from "./features/createPatient.service";
+import getAllPatients from "./features/getAllPatients.service";
+import getOnePatient from "./features/getOnePatient.service";
+import updatePatient from "./features/updatePatient.service";
+import deletePatient from "./features/deletePatient.service";
+import { ObjectId } from "mongoose";
 
 class PatientService{
-    constructor(private repository:PatientRepository){}
+    constructor(private repository:PatientRepository, private DoctorRepository:DoctorRepository){}
 
-    //add error verification
+    async createSer(patient:PatientWithDoctorIdDTO){
+      return createPatient(patient, this.repository, this.DoctorRepository)
+    }
 
-    async createSer(body:CreatePatientDTO){
-        const result = await this.repository.createRep(body)
-        return {message: "Patient created!", result}
+    async getAllSer(doctorId:ObjectId, page:number, limit:number){
+      return getAllPatients(doctorId, Number(page), Number(limit), this.repository)
+    }
+
+    async getOneSer(id:ObjectId){
+      return await getOnePatient(id, this.repository)
+    }
+
+    async updateSer(id:ObjectId, body:ServicePatientDTO){
+      return await updatePatient(id, body, this.repository)
+    }
+
+    async deleteSer(id:ObjectId){
+      return await deletePatient(id, this.repository)
     }
 }
 
 export default PatientService
-
-/* 
-async create(task: CreateTaskDTO) {
-    try {
-     const taskCreated = await this.repository.create(task);
-
-      return this.boardRepository.pushTask(task.boardId as string, taskCreated.id)
-    } catch(error) {
-      console.log('error creating board', error)
-      return { error: true, message: "Internal server error", status: 500 }
-    }
-  }
-*/

@@ -1,22 +1,36 @@
 import Patient from './PatientEntity'
-import { CreatePatientDTO } from "./PatientDTO";
+
+import { CreatePatientDTO, PatientWithDoctorIdDTO } from "./PatientDTO";
+
 import { ObjectId } from 'mongoose';
 
 class PatientRepository {
     constructor(private model: typeof Patient){}
 
-    async createRep(patient:CreatePatientDTO){
-        return this.model.create(patient);
+    async createRep(patient:PatientWithDoctorIdDTO){
+        return await this.model.create(patient);
     }
 
-    async getAllRep(){
-        return this.model.find().populate("timelines")
+    async getAllRep(doctorId:ObjectId, skip:number, limit:number){
+        return await this.model.find().skip(skip).limit(limit)//.populate("timelines")
+    }
+
+    async getOneRep(id:ObjectId){
+        return await this.model.findById(id).populate('timelines')
+    }
+
+    async updateRep(id:ObjectId, body:CreatePatientDTO){
+        return await this.model.findByIdAndUpdate(id, { $set: body }, { new: true })
+    }
+
+    async deleteRep(id:ObjectId){
+        return await this.model.findByIdAndDelete(id)
     }
 
     async pushTimeline(patientId: ObjectId, timelineId: ObjectId){
-        return this.model.findByIdAndUpdate(patientId, {
-            $push: { users: [timelineId] }
-        }, { new: true }).populate('timelines')
+        return await this.model.findByIdAndUpdate(patientId, {
+            $push: { timelines: [timelineId] }
+        }, { new: true })
     }
 }
 

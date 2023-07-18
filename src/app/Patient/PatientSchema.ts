@@ -1,3 +1,4 @@
+import { Types } from "mongoose"
 import * as yup from "yup"
 
 const dateNow = Date.now()
@@ -11,6 +12,21 @@ class PatientYupSchema {
             demands: yup.string().required(),
             personalAnnotations: yup.string().required()
         })
+    }
+    static update(){
+        return yup.object().shape({
+            id: yup
+            .mixed()
+            .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any)),
+            body: yup.object().required("The body is empty")
+        })
+    }
+    static delete(){
+        return yup.object().shape({
+            id: yup
+            .mixed()
+            .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any))
+    })
     }
 }
 
