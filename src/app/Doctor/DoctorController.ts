@@ -30,7 +30,7 @@ class DoctorController {
 
     async getAllCon(req:Request, res:Response){
         const { query:{ page = 1, limit = 10} } = req
-        const result = await this.service.getAllSer(page as number, limit as number)
+        const result = await this.service.getAllSer(Number(page), Number(limit))
         
         if('error' in result) {
         return res.status(result.statusCode).json(result)
@@ -66,7 +66,7 @@ class DoctorController {
         return res.status(400).json(newError("The request failed", 400, "result updateCon"))
         }
 
-        return res.status(400).json(result)
+        return res.status(result.statusCode).json(result)
     }
 
     async deleteCon(req:Request, res:Response){

@@ -23,9 +23,12 @@ const PatientSchema = new mongoose.Schema({
     },
     timelines:[{
         type: mongoose.SchemaTypes.ObjectId, 
-        ref: 'Timeline',
-        autopopulate: true
-    }]
+        ref: 'Timeline'
+    }],
+    doctorId: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Doctor'
+    }
 }, { timestamps:true })
 
 const Patient = mongoose.model("Patient", PatientSchema)

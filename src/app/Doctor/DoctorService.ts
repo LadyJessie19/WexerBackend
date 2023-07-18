@@ -17,7 +17,7 @@ class DoctorService{
     }
 
     async getAllSer(page:number, limit:number){
-        return await getAllDoctors(Number(page), Number(limit), this.repository)
+        return await getAllDoctors(page, limit, this.repository)
     }
 
     async getOneSer(id:ObjectId){

@@ -11,12 +11,16 @@ class PatientRepository {
         return await this.model.create(patient);
     }
 
-    async getAllRep(doctorId:ObjectId, skip:number, limit:number){
+    async getFromDoctorRep(doctorId:ObjectId, skip:number, limit:number){
+        return await this.model.find({doctorId}).skip(skip).limit(limit)//.populate("timelines")
+    }
+
+    async getAllRep(skip:number, limit:number){
         return await this.model.find().skip(skip).limit(limit)//.populate("timelines")
     }
 
     async getOneRep(id:ObjectId){
-        return await this.model.findById(id).populate('timelines')
+        return await this.model.findById(id).populate("doctorId").populate('timelines')
     }
 
     async updateRep(id:ObjectId, body:CreatePatientDTO){

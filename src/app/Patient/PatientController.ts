@@ -4,7 +4,6 @@ import PatientService from "./PatientService";
 import PatientYupSchema from "./PatientSchema";
 
 import newError from "../../utils/ErrorHandler";
-import serverError from "../../utils/ServerError";
 import { ObjectId } from "mongoose";
 
 class PatientController{
@@ -13,13 +12,15 @@ class PatientController{
     async createCon(req: Request, res: Response){
         const { body, params: { doctor_id } } = req
 
+        const payload = { ...body, doctorId: doctor_id }
+
         try {
-            await PatientYupSchema.create().validate(body)
+            await PatientYupSchema.create().validate(payload)
           } catch (error: any) {
             return res.status(400).json({ errors: error.errors })
           }
 
-        const result = await this.service.createSer({...body, doctorId: doctor_id as unknown as ObjectId})
+        const result = await this.service.createSer(payload)
 
         if ('error' in result) {
           return res.status(result.statusCode).json(result)
@@ -28,10 +29,20 @@ class PatientController{
         return res.status(result.statusCode).send(result)
     }
 
-    async getAllCon(req: Request, res: Response){
+    async getFromDoctorCon(req: Request, res: Response){
       const { query:{ page = 1, limit = 10}, params:{ doctor_id } } = req
-      console.log()
-        const result = await this.service.getAllSer(doctor_id as unknown as ObjectId, page as number, limit as number)
+        const result = await this.service.getFromDoctorSer(doctor_id as unknown as ObjectId, Number(page), Number(limit))
+        
+        if('error' in result) {
+        return res.status(result.statusCode).json(result)
+        }
+
+        return res.status(result.statusCode).json(result)
+    }
+
+    async getAllCon(req: Request, res: Response){
+      const { query:{ page = 1, limit = 10} } = req
+        const result = await this.service.getAllSer(Number(page), Number(limit))
         
         if('error' in result) {
         return res.status(result.statusCode).json(result)

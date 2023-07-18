@@ -6,15 +6,18 @@ const PatientRoutes = Router()
 const patientController = PatientModule.build().controller
 
 //Create and get all from a Doctor;
-const commonPath = '/doctors/:doctor_id/patients';
+const userPath = '/doctors/:doctor_id/patients';
+//Get all patients
+const commonPath = '/patients'
 //Get one patient, update and delete;
 const pathWithId = '/patients/:patient_id';
 
 PatientRoutes.use(AuthenticateMiddleware.checkToken)
 
 //Create
-PatientRoutes.post(commonPath, patientController.createCon.bind(patientController))
+PatientRoutes.post(userPath, patientController.createCon.bind(patientController))
 //Read
+PatientRoutes.get(userPath, patientController.getFromDoctorCon.bind(patientController))
 PatientRoutes.get(commonPath, patientController.getAllCon.bind(patientController))
 PatientRoutes.get(pathWithId, patientController.getOneCon.bind(patientController))
 //Update

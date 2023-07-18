@@ -4,6 +4,7 @@ import DoctorRepository from "../Doctor/DoctorRepository";
 import { PatientWithDoctorIdDTO, ServicePatientDTO } from "./PatientDTO";
 
 import createPatient from "./features/createPatient.service";
+import getFromDoctor from "./features/getFromDoctor.service";
 import getAllPatients from "./features/getAllPatients.service";
 import getOnePatient from "./features/getOnePatient.service";
 import updatePatient from "./features/updatePatient.service";
@@ -17,8 +18,12 @@ class PatientService{
       return createPatient(patient, this.repository, this.DoctorRepository)
     }
 
-    async getAllSer(doctorId:ObjectId, page:number, limit:number){
-      return getAllPatients(doctorId, Number(page), Number(limit), this.repository)
+    async getFromDoctorSer(doctorId:ObjectId, page:number, limit:number){
+      return getFromDoctor(doctorId, page, limit, this.repository)
+    }
+
+    async getAllSer(page:number, limit:number){
+      return getAllPatients(page, limit, this.repository)
     }
 
     async getOneSer(id:ObjectId){

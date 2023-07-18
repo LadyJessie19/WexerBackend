@@ -5,10 +5,10 @@ import serverError from "../../../utils/ServerError";
 import newSuccess from "../../../utils/SuccessHandler";
 import { ObjectId } from "mongoose";
 
-async function getAllPatients(page: number, limit: number, repository:PatientRepository) {
+async function getFromDoctor(doctorId:ObjectId, page: number, limit: number, repository:PatientRepository) {
     try {
         const skip = (page - 1) * limit;
-        const result = await repository.getAllRep(skip, limit);
+        const result = await repository.getFromDoctorRep(doctorId, skip, limit);
         const totalPatients = result.length;
         const patientCall = totalPatients < 2 ? "patient" : "patients";
 
@@ -26,18 +26,18 @@ async function getAllPatients(page: number, limit: number, repository:PatientRep
         }
 
         if(page > totalPages){
-            return newError(`The current page is empty. Return to page ${totalPages}.`, 404)
+            return newError(`The current page is empty. Return to page ${totalPages == 0 ? 1: totalPages}.`, 404)
         }
 
         if (totalPatients < 1) {
         return newError("The patients collection is empty.", 404)
         }
         
-        return newSuccess(`There is ${totalPatients} ${patientCall} at the database`, 200, payload)
+        return newSuccess(`There is ${totalPatients} ${patientCall} from this psychologist.`, 200, payload)
 
     } catch (error: any) {
-        return serverError(error, "getAllPatients catch")
+        return serverError(error, "getFromDoctor catch")
     }
 }
 
-export default getAllPatients
+export default getFromDoctor

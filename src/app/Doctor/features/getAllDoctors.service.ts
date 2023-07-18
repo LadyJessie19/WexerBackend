@@ -18,8 +18,12 @@ async function getAllDoctors(page: number, limit: number, repository:DoctorRepos
             doctors: result
         }
 
+        if(page === 0){
+            return newError(`This page doesn't exist.`, 404)
+        }
+
         if(page > totalPages){
-            return newSuccess(`The current page is empty. Return to page ${totalPages}.`, 404)
+            return newError(`The current page is empty. Return to page ${totalPages}.`, 404)
         }
 
         if (totalDoctors < 1) {
