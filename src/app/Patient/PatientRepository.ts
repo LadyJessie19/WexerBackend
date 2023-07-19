@@ -12,7 +12,7 @@ class PatientRepository {
     }
 
     async getFromUserRep(userId:ObjectId, skip:number, limit:number){
-        return await this.model.find({userId}).skip(skip).limit(limit)//.populate("timelines")
+        return await this.model.find({userId}).skip(skip).limit(limit).populate("timelines")
     }
 
     async getAllRep(skip:number, limit:number){

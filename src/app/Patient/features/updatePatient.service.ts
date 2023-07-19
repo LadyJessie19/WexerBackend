@@ -1,6 +1,6 @@
 import PatientRepository from "../PatientRepository";
 
-import { CreatePatientDTO } from "../PatientDTO";
+import { CreatePatientDTO, ServicePatientDTO } from "../PatientDTO";
 
 import newSuccess from "../../../utils/SuccessHandler";
 import serverError from "../../../utils/ServerError";

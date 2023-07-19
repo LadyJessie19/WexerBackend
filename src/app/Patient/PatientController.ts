@@ -76,10 +76,10 @@ class PatientController{
         const result = await this.service.updateSer(patient_id as unknown as ObjectId, body)
         
         if('error' in result) {
-        return res.status(400).json(newError("The request failed", 400, "result updateCon"))
+        return res.status(400).json(newError("The update request has failed.", 400, "result updateCon"))
         }
 
-        return res.status(200).json(result)
+        return res.status(result.statusCode).json(result)
     }
 
     async deleteCon(req: Request, res: Response){

@@ -1,5 +1,5 @@
-import { ObjectId } from "mongoose"
 import { CreateTimelineDTO } from "../Timeline/TimelineDTO"
+import { ObjectId } from "mongoose"
 
 interface CreatePatientDTO {
     name:string,

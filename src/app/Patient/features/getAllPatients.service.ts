@@ -3,7 +3,6 @@ import PatientRepository from "../PatientRepository";
 import newError from "../../../utils/ErrorHandler";
 import serverError from "../../../utils/ServerError";
 import newSuccess from "../../../utils/SuccessHandler";
-import { ObjectId } from "mongoose";
 
 async function getAllPatients(page: number, limit: number, repository:PatientRepository) {
     try {
