@@ -182,13 +182,14 @@ Fifth - Features:
 
         ☐ *take another breath*
         
-        ☐ Create timeline -> relationship with a Patient;
+        ✔ Create timeline -> relationship with a Patient; @done(23-07-19 00:22)
         ☐ Find all timelines of a Patient;
+        note: Problems! Problems!
         ☐ Add pagination to GET - extra;
-        ☐ Find timeline by id;
-        ☐ Update timeline;
-        ☐ Delete timeline - extra;
-        ☐ pushOccurrence
+        ✔ Find timeline by id; @done(23-07-19 00:23)
+        ✔ Update timeline; @done(23-07-19 00:23)
+        ✔ Delete timeline - extra; @done(23-07-19 00:24)
+        ✔ pushOccurrence @done(23-07-19 00:23)
 
         ☐ *now it's easier*
 
@@ -228,6 +229,7 @@ Fifth - Features:
         ☐ Factory pattern;
         ☐ File Middleware;
         ☐ Consertar as paginações;
+        ☐ Revisar a entidade User;
 
 Sixth - Relationships (<- Hardest part!):
     ☐ create branch - sixth_relations

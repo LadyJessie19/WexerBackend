@@ -7,9 +7,12 @@ const TimelineSchema = new mongoose.Schema({
     },
     occurrences:[{
         type: mongoose.SchemaTypes.ObjectId, 
-        ref: 'Occurrence',
-        autopopulate: true
-    }]
+        ref: 'Occurrence'
+    }],
+    patientId:{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Patient'
+    }
 }, { timestamps:true })
 
 const Timeline = mongoose.model("Timeline", TimelineSchema)

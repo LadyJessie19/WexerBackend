@@ -1,11 +1,16 @@
 import { CreateOccurrenceDTO } from "../Occurrence/OccurrenceDTO"
+import { ObjectId } from "mongoose"
 
 interface CreateTimelineDTO {
     name:string
 }
 
-interface ServiceTimelineDTO extends CreateTimelineDTO {
+interface TimelineWithPatientIdDTO extends CreateTimelineDTO{
+    patientId:ObjectId
+}
+
+interface ServiceTimelineDTO extends TimelineWithPatientIdDTO {
     occurrences: Array<CreateOccurrenceDTO>
 }
 
-export { CreateTimelineDTO, ServiceTimelineDTO }
+export { CreateTimelineDTO, ServiceTimelineDTO, TimelineWithPatientIdDTO }
