@@ -23,7 +23,7 @@ async function getAllUsers(page: number, limit: number, repository:UserRepositor
         }
 
         if(page > totalPages){
-            return newError(`The current page is empty. Return to page ${totalPages}.`, 404)
+            return newError(`The current page is empty. Return to page ${totalPages == 0 ? 1 : totalPages}.`, 404)
         }
 
         if (totalUsers < 1) {
