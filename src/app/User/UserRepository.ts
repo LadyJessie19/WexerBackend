@@ -31,8 +31,8 @@ class UserRepository {
         return await this.model.findByIdAndDelete(id)
     }
     
-    async findByEmail(email:string){
-        return await this.model.findOne({ email })
+    async findByEmailRep(email:string){
+        return await this.model.findOne({ email }).select('+password')
     }
     
     async pushPatient(userId: ObjectId, patientId: ObjectId){

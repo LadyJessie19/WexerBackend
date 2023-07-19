@@ -9,7 +9,7 @@ import DataEncrypt from "../../../utils/DataEncrypt"
 
 async function createUser(payload:ServiceUserDTO, repository:UserRepository) {
     
-    const isAnOldUser = await repository.findByEmail(payload.email)
+    const isAnOldUser = await repository.findByEmailRep(payload.email)
     if(isAnOldUser){
         return newError('A psychologist with this email already exists', 400, "isAnOldUser")
     }

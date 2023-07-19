@@ -20,7 +20,8 @@ class AuthService{
         const currentToken = new TokenHandler(secretKey)
 
         try {
-            const user = await this.repository.findByEmail(email)
+            const user = await this.repository.findByEmailRep(email)
+
             if (!user) {
                 return newError("Not valid email/password.", 403, "!user")
             }
