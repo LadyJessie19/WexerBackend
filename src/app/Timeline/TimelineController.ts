@@ -7,9 +7,9 @@ import newError from "../../utils/ErrorHandler";
 import { ObjectId } from "mongoose";
 
 class TimelineController{
-    constructor(private service: TimelineService){}
+  constructor(private service: TimelineService){}
 
-    async createCon(req: Request, res: Response){
+  async createCon(req: Request, res: Response){
       const { body, params: { patient_id } } = req
 
       const payload = { ...body, patientId: patient_id }

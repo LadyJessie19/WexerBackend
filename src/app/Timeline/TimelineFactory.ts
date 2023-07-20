@@ -3,7 +3,7 @@ import { CreateTimelineDTO } from "./TimelineDTO"
 class TimelineFactory {
     static newTimeline(body:CreateTimelineDTO){
         return {
-            name: body.name,
+            name: body.name
         }
     }
 }
