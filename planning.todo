@@ -177,21 +177,21 @@ Fifth - Features:
                 ✔ User. grrrrrrrrrr!!!! @done(23-07-18 20:27)
                 ✔ Patient @done(23-07-18 19:56)
 
-        ☐ Testar todas as paginações. OUTRA REEEEIVA!
-        ☐ Fazer um utils de paginação!!!!
+        ✔ Testar todas as paginações. OUTRA REEEEIVA! @done(23-07-20 10:09)
+        ✔ Fazer um utils de paginação!!!! @done(23-07-20 10:09)
 
-        ☐ *take another breath*
+        ✔ *take another breath* @done(23-07-20 10:11)
         
         ✔ Create timeline -> relationship with a Patient; @done(23-07-19 00:22)
-        ☐ Find all timelines of a Patient;
+        ✔ Find all timelines of a Patient; @done(23-07-20 10:09)
         note: Problems! Problems!
-        ☐ Add pagination to GET - extra;
+        ✔ Add pagination to GET - extra; @done(23-07-20 10:09)
         ✔ Find timeline by id; @done(23-07-19 00:23)
         ✔ Update timeline; @done(23-07-19 00:23)
         ✔ Delete timeline - extra; @done(23-07-19 00:24)
         ✔ pushOccurrence @done(23-07-19 00:23)
 
-        ☐ *now it's easier*
+        ✔ *now it's easier* @done(23-07-20 10:11)
 
         ☐ Create occurrence -> relationship with a Timeline;
         ☐ Find all occurrences of a Timeline;
@@ -219,7 +219,7 @@ Fifth - Features:
         ✔ Auth; @done(23-07-13 23:01)
         ✔ User; @done(23-07-17 23:01)
         ✔ Patient; @done(23-07-18 19:28)
-        ☐ Timeline;
+        ✔ Timeline; @done(23-07-20 10:09)
         ☐ Occurrence;
         ☐ File;
     ☐ merge and delete the fudging branch;
@@ -228,16 +228,18 @@ Fifth - Features:
     Notes:
         ☐ Factory pattern;
         ☐ File Middleware;
-        ☐ Consertar as paginações;
+        ✔ Consertar as paginações; @done(23-07-20 10:09)
         ☐ Revisar a entidade User;
+        ☐ Ver a melhor forma de usar o middleware de auth
+        ☐ Eu devo fazer "getOneFromParent"?
 
 Sixth - Relationships (<- Hardest part!):
     ☐ create branch - sixth_relations
     ☐ Who with whom?
     _Relationships_:
-        ☐ User - Main Entity, Parent of Patient and File;
-        ☐ Patient - Child of User and Parent of Timeline;
-        ☐ Timeline - Child of Patient and Parent of Occurrences;
+        ✔ User - Main Entity, Parent of Patient and File; @done(23-07-20 10:10)
+        ✔ Patient - Child of User and Parent of Timeline; @done(23-07-20 10:10)
+        ✔ Timeline - Child of Patient and Parent of Occurrences; @done(23-07-20 10:10)
         ☐ Occurrences - Child of Timeline and Parent of File;
         ☐ File - Child of User and Occurrences;
         Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
@@ -288,7 +290,7 @@ Eighth - Finalization:
         ☐ Finish documentation;
     ☐ Review:
         ☐ Padrão REST - revisar a entidade User;
-        ☐ Query através de params? Seria maneiro!
+        ✔ Query através de params? Seria maneiro! @done(23-07-20 10:10)
 
 Extras_ToDo:
     ☐ Clean Architecture;
