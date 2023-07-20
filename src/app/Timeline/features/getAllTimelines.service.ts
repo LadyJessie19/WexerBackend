@@ -1,39 +1,15 @@
 import TimelineRepository from "../TimelineRepository";
 
-import newError from "../../../utils/ErrorHandler";
 import serverError from "../../../utils/ServerError";
 import newSuccess from "../../../utils/SuccessHandler";
+import PaginateData from "../../../utils/PaginateData";
 
 async function getAllTimelines(page: number, limit: number, repository:TimelineRepository) {
     try {
-        const skip = (page - 1) * limit;
-        const result = await repository.getAllRep(skip, limit);
-        const totalTimelines = result.length;
-        const timelineCall = totalTimelines < 2 ? "timeline" : "timelines";
+        const { message, statusCode, pageInfo, result } = await PaginateData(page, limit, 'timeline', repository)
+        const payload = { pageInfo, result }
 
-        const totalPages = Math.ceil(totalTimelines / limit);
-
-        const payload = {
-            totalPages: totalPages,
-            limitPerPage: limit,
-            currentPage: Number(page),
-            timelines: result
-        }
-
-        if(page === 0){
-            return newError(`This page doesn't exist.`, 404)
-        }
-
-        if(page > totalPages){
-            return newError(`The current page is empty. Return to page ${totalPages}.`, 404)
-        }
-
-        if (totalTimelines < 1) {
-        return newError("The timelines collection is empty.", 404)
-        }
-        
-        return newSuccess(`There is ${totalTimelines} ${timelineCall} at the database`, 200, payload)
-
+        return newSuccess(message, statusCode, payload)
     } catch (error: any) {
         return serverError(error, "getAllTimelines catch")
     }

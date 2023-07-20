@@ -1,5 +1,5 @@
 import Timeline from './TimelineEntity'
-import { CreateTimelineDTO, TimelineWithPatientIdDTO } from "./TimelineDTO";
+import { CreateTimelineDTO } from "./TimelineDTO";
 
 import { ObjectId } from 'mongoose';
 
@@ -10,12 +10,18 @@ class TimelineRepository {
         return this.model.create(timeline);
     }
 
-    async getFromPatientRep(patientId:ObjectId, skip:number, limit:number){
-        return await this.model.find({patientId}).skip(skip).limit(limit).populate("occurrences")
+    async getFromParentRep(patientId:ObjectId, skip:number, limit:number){
+        const result = await this.model.find({patientId}).skip(skip).limit(limit).populate("occurrences")
+        const totalItems = (await this.model.find({patientId})).length
+        // const totalLength = await this.model.find({patientId})
+        // const totalItems = totalLength.length
+        return { totalItems, result }
     }
 
     async getAllRep(skip:number, limit:number){
-        return this.model.find().skip(skip).limit(limit)//.populate("occurrences")
+        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("occurrences")
+        const totalItems = await this.model.countDocuments();
+        return { totalItems, result }
     }
 
     async getOneRep(id:ObjectId){

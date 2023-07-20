@@ -18,7 +18,7 @@ class TimelineService{
         return createTimeline(timeline, this.repository, this.PatientRepository)
     }
 
-    async getFromPatientSer(patientId:ObjectId, page:number, limit:number){
+    async getFromParentSer(patientId:ObjectId, page:number, limit:number){
       return getFromPatient(patientId, page, limit, this.repository)
     }
 

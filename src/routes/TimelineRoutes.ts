@@ -17,7 +17,7 @@ TimelineRoutes.use(AuthenticateMiddleware.checkToken)
 //Create
 TimelineRoutes.post(patientPath, timelineController.createCon.bind(timelineController))
 //Read
-TimelineRoutes.get(patientPath, timelineController.getFromPatientCon.bind(timelineController))
+TimelineRoutes.get(patientPath, timelineController.getFromParentCon.bind(timelineController))
 TimelineRoutes.get(commonPath, timelineController.getAllCon.bind(timelineController))
 TimelineRoutes.get(pathWithId, timelineController.getOneCon.bind(timelineController))
 //Update

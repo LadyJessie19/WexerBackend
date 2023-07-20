@@ -29,9 +29,9 @@ class TimelineController{
       return res.status(result.statusCode).send(result)
   }
 
-  async getFromPatientCon(req: Request, res: Response){
+  async getFromParentCon(req: Request, res: Response){
     const { query:{ page = 1, limit = 10}, params:{ patient_id } } = req
-      const result = await this.service.getFromPatientSer(patient_id as unknown as ObjectId, Number(page), Number(limit))
+      const result = await this.service.getFromParentSer(patient_id as unknown as ObjectId, Number(page), Number(limit))
       
       if('error' in result) {
       return res.status(result.statusCode).json(result)
