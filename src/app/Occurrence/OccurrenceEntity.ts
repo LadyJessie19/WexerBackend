@@ -16,9 +16,12 @@ const OccurrenceSchema = new mongoose.Schema({
     },
     files:[{
         type: mongoose.SchemaTypes.ObjectId, 
-        ref: 'File',
-        autopopulate: true
-    }]
+        ref: 'File'
+    }],
+    timelineId:{
+        type: mongoose.SchemaTypes.ObjectId, 
+        ref: 'Timeline',
+    }
 }, { timestamps:true })
 
 const Occurrence = mongoose.model("Occurrence", OccurrenceSchema)

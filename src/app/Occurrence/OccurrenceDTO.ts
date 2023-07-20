@@ -1,13 +1,20 @@
+import { ObjectId } from "mongoose";
 import { CreateFileDTO } from "../File/FileDTO";
+
+type OccurrencesKindType = 'session' | 'relevant-fact'
 
 interface CreateOccurrenceDTO {
     title:string,
     content:string,
-    kind:string
+    kind:OccurrencesKindType
 }
 
-interface ServiceOccurrenceDTO extends CreateOccurrenceDTO{
+interface OccurrenceWithTimelineIdDTO extends CreateOccurrenceDTO{
+    timelineId:ObjectId
+}
+
+interface ServiceOccurrenceDTO extends OccurrenceWithTimelineIdDTO{
     files: Array<CreateFileDTO>;
 }
 
-export { CreateOccurrenceDTO, ServiceOccurrenceDTO }
+export { CreateOccurrenceDTO, OccurrenceWithTimelineIdDTO, ServiceOccurrenceDTO }
