@@ -38,6 +38,12 @@ class UserRepository {
             $push: { patients: [patientId] }
         }, { new: true })
     }
+
+    async pushFile(userId:ObjectId, fileId:ObjectId){//isso precisa de revisão
+        return await this.model.findByIdAndUpdate(userId, {
+            $push: { image: [fileId] }
+        }, { new: true })
+    }
 }
 
 export default UserRepository
