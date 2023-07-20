@@ -193,13 +193,13 @@ Fifth - Features:
 
         ✔ *now it's easier* @done(23-07-20 10:11)
 
-        ☐ Create occurrence -> relationship with a Timeline;
-        ☐ Find all occurrences of a Timeline;
-        ☐ Add pagination to GET - extra;
-        ☐ Find occurrences by id;
-        ☐ Update occurrences;
-        ☐ Delete occurrences - extra;
-        ☐ pushFile
+        ✔ Create occurrence -> relationship with a Timeline; @done(23-07-20 14:07)
+        ✔ Find all occurrences of a Timeline; @done(23-07-20 14:07)
+        ✔ Add pagination to GET - extra; @done(23-07-20 14:08)
+        ✔ Find occurrences by id; @done(23-07-20 14:08)
+        ✔ Update occurrences; @done(23-07-20 14:08)
+        ✔ Delete occurrences - extra; @done(23-07-20 14:08)
+        ✔ pushFile @done(23-07-20 14:08)
 
         Note: File entity is extra.
         ☐ Create a file -> relationship with User and Occurrence;
@@ -220,7 +220,7 @@ Fifth - Features:
         ✔ User; @done(23-07-17 23:01)
         ✔ Patient; @done(23-07-18 19:28)
         ✔ Timeline; @done(23-07-20 10:09)
-        ☐ Occurrence;
+        ✔ Occurrence; @done(23-07-20 14:09)
         ☐ File;
     ☐ merge and delete the fudging branch;
 
@@ -231,7 +231,8 @@ Fifth - Features:
         ✔ Consertar as paginações; @done(23-07-20 10:09)
         ☐ Revisar a entidade User;
         ☐ Ver a melhor forma de usar o middleware de auth
-        ☐ Eu devo fazer "getOneFromParent"?
+        ☐ Eu devo fazer "getOneFromParent" na entidade file?
+        ☐ Clean this .todo!!! It's so messy!
 
 Sixth - Relationships (<- Hardest part!):
     ☐ create branch - sixth_relations
@@ -240,7 +241,7 @@ Sixth - Relationships (<- Hardest part!):
         ✔ User - Main Entity, Parent of Patient and File; @done(23-07-20 10:10)
         ✔ Patient - Child of User and Parent of Timeline; @done(23-07-20 10:10)
         ✔ Timeline - Child of Patient and Parent of Occurrences; @done(23-07-20 10:10)
-        ☐ Occurrences - Child of Timeline and Parent of File;
+        ✔ Occurrences - Child of Timeline and Parent of File; @done(23-07-20 14:19)
         ☐ File - Child of User and Occurrences;
         Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
     ☐ merge and delete... you know!
