@@ -17,7 +17,7 @@ PatientRoutes.use(AuthenticateMiddleware.checkToken)
 //Create
 PatientRoutes.post(userPath, patientController.createCon.bind(patientController))
 //Read
-PatientRoutes.get(userPath, patientController.getFromUserCon.bind(patientController))
+PatientRoutes.get(userPath, patientController.getFromParentCon.bind(patientController))
 PatientRoutes.get(commonPath, patientController.getAllCon.bind(patientController))
 PatientRoutes.get(pathWithId, patientController.getOneCon.bind(patientController))
 //Update

@@ -29,9 +29,9 @@ class PatientController{
         return res.status(result.statusCode).send(result)
     }
 
-    async getFromUserCon(req: Request, res: Response){
+    async getFromParentCon(req: Request, res: Response){
       const { query:{ page = 1, limit = 10}, params:{ user_id } } = req
-        const result = await this.service.getFromUserSer(user_id as unknown as ObjectId, Number(page), Number(limit))
+        const result = await this.service.getFromParentSer(user_id as unknown as ObjectId, Number(page), Number(limit))
         
         if('error' in result) {
         return res.status(result.statusCode).json(result)
@@ -42,11 +42,11 @@ class PatientController{
 
     async getAllCon(req: Request, res: Response){
       const { query:{ page = 1, limit = 10} } = req
-        const result = await this.service.getAllSer(Number(page), Number(limit))
-        
-        if('error' in result) {
-        return res.status(result.statusCode).json(result)
-        }
+      const result = await this.service.getAllSer(Number(page), Number(limit))
+      
+      if('error' in result) {
+      return res.status(result.statusCode).json(result)
+      }
 
         return res.status(result.statusCode).json(result)
     }

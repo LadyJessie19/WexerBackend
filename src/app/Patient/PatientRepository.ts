@@ -11,12 +11,17 @@ class PatientRepository {
         return await this.model.create(patient);
     }
 
-    async getFromUserRep(userId:ObjectId, skip:number, limit:number){
-        return await this.model.find({userId}).skip(skip).limit(limit).populate("timelines")
+    async getFromParentRep(userId:ObjectId, skip:number, limit:number){
+        const result = await this.model.find({userId}).skip(skip).limit(limit).populate("timelines")
+        const totalLength = await this.model.find({userId})
+        const totalItems = totalLength.length
+        return { totalItems, result }
     }
 
     async getAllRep(skip:number, limit:number){
-        return await this.model.find().skip(skip).limit(limit)//.populate("timelines")
+        const totalItems = await this.model.countDocuments();
+        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("timelines")
+        return { totalItems, result }
     }
 
     async getOneRep(id:ObjectId){

@@ -26,7 +26,7 @@ class PatientYupSchema {
             id: yup
             .mixed()
             .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any))
-    })
+        })
     }
 }
 

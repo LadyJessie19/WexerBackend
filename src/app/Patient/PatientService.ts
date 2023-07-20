@@ -18,7 +18,7 @@ class PatientService{
       return createPatient(patient, this.repository, this.UserRepository)
     }
 
-    async getFromUserSer(userId:ObjectId, page:number, limit:number){
+    async getFromParentSer(userId:ObjectId, page:number, limit:number){
       return getFromUser(userId, page, limit, this.repository)
     }
 
