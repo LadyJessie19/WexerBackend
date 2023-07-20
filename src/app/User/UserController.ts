@@ -25,7 +25,7 @@ class UserController {
             return res.status(result.statusCode).json(result)
         }
 
-        return res.status(201).json(result)
+        return res.status(result.statusCode).json(result)
     }
 
     async getAllCon(req:Request, res:Response){

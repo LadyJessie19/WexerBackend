@@ -12,11 +12,9 @@ class UserRepository {
     }
 
     async getAllRep(skip:number, limit:number){
-        const totalUsers = await this.model.countDocuments();
-        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("patients")
-        return { totalUsers, result }
-        //don't forget: .populate("photo")
-        //how to populate images?
+        const totalItems = await this.model.countDocuments();
+        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("patients").populate("photo")
+        return { totalItems, result }
     }
 
     async getOneRep(id:ObjectId){
