@@ -11,6 +11,12 @@ class FileController{
         const result = await this.service.createSer(body)
         return res.status(200).send({msg: "found!", result})
     }
+
+    async createCon(){}
+    async getFromParentCon(){}
+    async getAllCon(){}
+    async getOneCon(){}
+    async deleteCon(){}
 }
 
 export default FileController
