@@ -1,6 +1,5 @@
 import { Router } from "express";
 import FileModule from "../app/File/FileModule"
-import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware";
 
 const FileRoutes = Router()
 const fileController = FileModule.build().controller
@@ -13,8 +12,6 @@ const userPath = "/occurrences/:occurrence_id/files"
 const commonPath = "/files"
 //GetOne, update and delete
 const pathWithId = "/files/:file_id"
-
-// FileRoutes.use(AuthenticateMiddleware.checkToken)
 
 //Create and read from a user
 FileRoutes.post(userPath, fileController.createCon.bind(fileController))

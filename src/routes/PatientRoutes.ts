@@ -1,6 +1,5 @@
 import { Router } from "express";
 import PatientModule from "../app/Patient/PatientModule";
-import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware";
 
 const PatientRoutes = Router()
 const patientController = PatientModule.build().controller
@@ -11,8 +10,6 @@ const userPath = '/users/:user_id/patients';
 const commonPath = '/patients'
 //Get one patient, update and delete;
 const pathWithId = '/patients/:patient_id';
-
-PatientRoutes.use(AuthenticateMiddleware.checkToken)
 
 //Create
 PatientRoutes.post(userPath, patientController.createCon.bind(patientController))
