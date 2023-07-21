@@ -1,3 +1,4 @@
+import { Types } from "mongoose"
 import * as yup from "yup"
 
 class FileYupSchema {
@@ -6,6 +7,13 @@ class FileYupSchema {
             filename: yup.string().required(),
             mimetype: yup.string().required()
         })
+    }
+    static delete(){
+        return yup.object().shape({
+            id: yup
+            .mixed()
+            .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any))
+    })
     }
 }
 
