@@ -7,9 +7,9 @@ import { ObjectId } from "mongoose";
 import newError from "../../utils/ErrorHandler";
 
 class OccurrenceController{
-    constructor(private service: OccurrenceService){}
+  constructor(private service: OccurrenceService){}
 
-    async createCon(req: Request, res: Response){
+  async createCon(req: Request, res: Response){
       const { body, params: { timeline_id } } = req
 
       const payload = { ...body, timelineId: timeline_id }
