@@ -7,9 +7,9 @@ import serverError from "../../../utils/ServerError";
 import { ObjectId } from "mongoose";
 
 async function updateOccurrence(id:ObjectId, body:CreateOccurrenceDTO, repository:OccurrenceRepository){
-    const update:any = await repository.updateRep(id, body)
+    const update = await repository.updateRep(id, body)
     try {
-        return newSuccess("The occurrence was successfully updated!", 200, update)
+        return newSuccess("The occurrence was successfully updated!", 200, update as object)
     } catch(error:any) {
         return serverError(error)
     }    
