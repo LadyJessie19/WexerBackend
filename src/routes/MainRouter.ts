@@ -9,6 +9,18 @@ import TimelineRoutes from "./TimelineRoutes";
 
 import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware"
 
+declare global {
+    namespace Express {
+    interface Request {
+        user?: {
+        userId?: string;
+        name?: string;
+        email?: string;
+        }
+    }
+    }
+}
+
 const MainRouter = Router()
 
 /* Public Routes */
