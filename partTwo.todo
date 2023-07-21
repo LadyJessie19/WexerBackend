@@ -1,0 +1,79 @@
+Fifth - Features:
+    Functions:
+        ☐ Profile picture - extra;
+        Note: File entity is extra.
+        ☐ Create a file -> relationship with User and Occurrence;
+        ☐ Associate a file with a User - extra;
+        Note: The file has a relationship with the User because of the profile picture and with the occurrence because of the patient's attachments.
+        
+        Note: These are ideas - not in the briefing.
+        ☐ Find all files of a User;
+        ☐ Associate a file with Occurrence;
+        ☐ Find all files of an Occurrence;
+        ☐ Find all files of a Patient;
+        Note: It seems difficult, but use query for this.
+        ☐ Delete a file;
+    Counter:
+        ☐ File;
+    ☐ merge and delete the fudging branch;
+
+Before_Tests:
+    ☐ Factory pattern;
+    ✔ File Middleware; @done(23-07-21 18:48)
+    ✔ Padrão REST - revisar a entidade User; @done(23-07-21 17:23)
+    ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 17:17)
+    ✘ Soft Delete; @cancelled(23-07-21 17:23)
+    ☐ Mapper - link to files;
+    ✔ Request typing -> use the revision exercise; @done(23-07-21 14:44)
+    
+    Sixth - Jest:
+    ☐ Config babel - watch the july, 7th video;
+    ☐ create branch - seventh_tests
+    Initialization:
+        ☐ Configure jest;
+        ☐ Add jest execution snippet to the script;
+        Note: Not sure if jest.config.ts file needs to be created.
+    Testing - Controllers, Services, and Repositories Layers:
+        ☐ First Step - Preparation;
+        ☐ Second Step - Execution;
+        ☐ Third Step - Expected Result;
+        ☐ Test for success and check if all assertions are correct;
+        Tip: It's not a rule, but each return can be a separate test.
+        ☐ That's it. You can do it =)
+    Counter:
+        Note: Coverage should be 70% for each layer.
+        Controller:
+            Note: These are optional.
+            ☐ Auth;
+            ☐ User;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Service:
+            Nota: These are mandatory.
+            ☐ Auth;
+            ☐ User;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Repository:
+            Note: These are optional.
+            ☐ Auth;
+            ☐ User;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Supertest:
+            Note: This supertest is optional.
+            ☐ Integration test on a user route with supertest;
+Seventh - Finalization:
+    Deploy:
+        ☐ Railway account;
+    Documentation:
+        ☐ Finish documentation;
+            ☐ Explain the declare global at MainRouter;
+            ☐ Explicar o any da função de paginação!
+
