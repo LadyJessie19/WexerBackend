@@ -4,7 +4,7 @@ import { CreatePatientDTO } from "../Patient/PatientDTO";
 interface CreateUserDTO {
     name:string,
     email:string,
-    password:any
+    password:string
 }
 
 interface ServiceUserDTO extends CreateUserDTO {
