@@ -5,13 +5,8 @@ interface CreateFileDTO {
     mimetype: string | undefined;
 }
 
-interface FileWithParentIdDTO extends CreateFileDTO{
-    occurrenceId?:ObjectId,
-    userId?:ObjectId
+interface FileWithOccurrenceIdDTO extends CreateFileDTO{
+    occurrenceId:ObjectId
 }
 
-interface ServiceFileDTO extends FileWithParentIdDTO{
-    
-}
-
-export { CreateFileDTO, FileWithParentIdDTO, ServiceFileDTO }
+export { CreateFileDTO, FileWithOccurrenceIdDTO }

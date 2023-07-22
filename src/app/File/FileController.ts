@@ -5,47 +5,11 @@ import FileYupSchema from "./FileSchema";
 
 import newError from "../../utils/ErrorHandler";
 import { ObjectId, Types } from "mongoose";
-import serverError from "../../utils/ServerError";
 
 class FileController {
   constructor(private service: FileService) {}
 
-  async createFromUserCon(req: Request, res: Response) {
-    const { params:{ user_id }, file } = req;
-
-    const payload = {
-      filename: file?.filename,
-      mimetype: file?.mimetype,
-      userId: user_id as unknown as ObjectId
-    }
-
-    try {
-      await FileYupSchema.create().validate(payload);
-    } catch (error: any) {
-      return res.status(400).json({ errors: error.errors });
-    }
-
-    const result = await this.service.createFromUserSer(payload);
-
-    if ("error" in result) {
-      return res.status(result.statusCode).json(result);
-    }
-
-    return res.status(result.statusCode).send(result);
-  }
-
-  async getFromUserCon(req: Request, res: Response) {
-    const { query:{ page = 1, limit = 10}, params:{ user_id } } = req
-      const result = await this.service.getFromUserSer(user_id as unknown as ObjectId, Number(page), Number(limit))
-      
-      if('error' in result) {
-      return res.status(result.statusCode).json(result)
-      }
-
-      return res.status(result.statusCode).json(result)
-  }
-
-  async createFromOccurrenceCon(req: Request, res: Response) {
+  async createCon(req: Request, res: Response) {
     const { params: { occurrence_id }, file } = req;
 
     const payload = {
@@ -60,7 +24,7 @@ class FileController {
       return res.status(400).json({ errors: error.errors });
     }
 
-    const result = await this.service.createFromOccurrenceSer(payload);
+    const result = await this.service.createSer(payload);
 
     if ("error" in result) {
       return res.status(result.statusCode).json(result);
@@ -69,9 +33,9 @@ class FileController {
     return res.status(result.statusCode).send(result);
   }
 
-  async getFromOccurrenceCon(req: Request, res: Response) {
+  async getFromParentCon(req: Request, res: Response) {
     const { query:{ page = 1, limit = 10}, params:{ occurrence_id } } = req
-      const result = await this.service.getFromOccurrenceSer(occurrence_id as unknown as ObjectId, Number(page), Number(limit))
+      const result = await this.service.getFromParentSer(occurrence_id as unknown as ObjectId, Number(page), Number(limit))
       
       if('error' in result) {
       return res.status(result.statusCode).json(result)

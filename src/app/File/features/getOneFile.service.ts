@@ -4,12 +4,7 @@ import newError from "../../../utils/ErrorHandler";
 import serverError from "../../../utils/ServerError";
 import newSuccess from "../../../utils/SuccessHandler";
 import { ObjectId } from "mongoose";
-import { FileMapper } from "../FileMapper";
-import { config } from "dotenv"
-
-config()
-
-const url = process.env.USER_URL
+import FileMapper from "../FileMapper";
 
 async function getOneFile(id:ObjectId, repository:FileRepository){
     try {
@@ -19,7 +14,7 @@ async function getOneFile(id:ObjectId, repository:FileRepository){
         return newError(`The file with the id ${id} wasn't found`, 404, "!result")
         }
 
-        const result = FileMapper.toClient(file, url as string)
+        const result = FileMapper.toClient(file)
 
         return newSuccess("The file was successfully found.", 200, result)
 

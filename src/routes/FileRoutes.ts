@@ -8,21 +8,14 @@ const uploadSingle = UploadSingle.build("file")
 
 //Create and getAll from a occurrences;
 const occurrencePath = "/occurrences/:occurrence_id/files"
-//Create and getAll from a user;
-const userPath = "/users/:user_id/files"
-//Get Them ALL!
+//GetAll!
 const commonPath = "/files"
-//GetOne, update and delete
+//GetOne and delete. Yeah!
 const pathWithId = "/files/:file_id"
 
-// FileRoutes.use(uploadSingle)
-
-//Create and read from a user
-FileRoutes.post(userPath, uploadSingle, fileController.createFromUserCon.bind(fileController))
-FileRoutes.get(userPath, fileController.getFromUserCon.bind(fileController))
 //Create and read from a occurrence
-FileRoutes.post(occurrencePath, uploadSingle, fileController.createFromOccurrenceCon.bind(fileController))
-FileRoutes.get(occurrencePath, fileController.getFromOccurrenceCon.bind(fileController))
+FileRoutes.post(occurrencePath, uploadSingle, fileController.createCon.bind(fileController))
+FileRoutes.get(occurrencePath, fileController.getFromParentCon.bind(fileController))
 //Read
 FileRoutes.get(commonPath, fileController.getAllCon.bind(fileController))
 FileRoutes.get(pathWithId, fileController.getOneCon.bind(fileController))
