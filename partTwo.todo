@@ -2,19 +2,19 @@ Fifth - Features:
     Functions:
         ☐ Profile picture - extra;
         Note: File entity is extra.
-        ☐ Create a file -> relationship with User and Occurrence;
-        ☐ Associate a file with a User - extra;
+        ✔ Create a file -> relationship with User and Occurrence; @done(23-07-21 22:54)
+        ✔ Associate a file with a User - extra; @done(23-07-21 22:08)
         Note: The file has a relationship with the User because of the profile picture and with the occurrence because of the patient's attachments.
         
         Note: These are ideas - not in the briefing.
-        ☐ Find all files of a User;
-        ☐ Associate a file with Occurrence;
-        ☐ Find all files of an Occurrence;
-        ☐ Find all files of a Patient;
+        ✘ Find all files of a User; @cancelled(23-07-21 22:54)
+        ✔ Associate a file with Occurrence; @done(23-07-21 22:54)
+        ✔ Find all files of an Occurrence; @done(23-07-21 22:54)
+        ✘ Find all files of a Patient; @cancelled(23-07-21 22:08)
         Note: It seems difficult, but use query for this.
-        ☐ Delete a file;
+        ✔ Delete a file; @done(23-07-21 22:08)
     Counter:
-        ☐ File;
+        ✔ File; @done(23-07-21 22:54)
     ☐ merge and delete the fudging branch;
 
 Before_Tests:
@@ -23,8 +23,11 @@ Before_Tests:
     ✔ Padrão REST - revisar a entidade User; @done(23-07-21 17:23)
     ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 17:17)
     ✘ Soft Delete; @cancelled(23-07-21 17:23)
-    ☐ Mapper - link to files;
+    ✔ Mapper - link to files; @done(23-07-21 22:30)
     ✔ Request typing -> use the revision exercise; @done(23-07-21 14:44)
+    ☐ Consertar as validações das rotas get e delete.
+    ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
+    ☐ Limpar o get from User!!!!!! Urgente!
     
     Sixth - Jest:
     ☐ Config babel - watch the july, 7th video;

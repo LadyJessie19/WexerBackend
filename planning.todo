@@ -202,18 +202,18 @@ Fifth - Features:
         ✔ pushFile @done(23-07-20 14:08)
 
         Note: File entity is extra.
-        ☐ Create a file -> relationship with User and Occurrence;
-        ☐ Associate a file with a User - extra;
+        ✔ Create a file -> relationship with User and Occurrence; @done(23-07-21 22:43)
+        ✘ Associate a file with a User - extra; @cancelled(23-07-21 22:43)
         Note: The file has a relationship with the User because of the profile picture and with the occurrence because of the patient's attachments.
         
         Note: These are ideas - not in the briefing.
-        ☐ Find all files of a User;
-        ☐ Associate a file with Occurrence;
-        ☐ Find all files of an Occurrence;
-        ☐ Find all files of a Patient;
+        ✘ Find all files of a User; @cancelled(23-07-21 22:43)
+        ✔ Associate a file with Occurrence; @done(23-07-21 22:43)
+        ✔ Find all files of an Occurrence; @done(23-07-21 22:43)
+        ✘ Find all files of a Patient; @cancelled(23-07-21 22:43)
         Note: It seems difficult, but use query for this.
-        ☐ Delete a file;
-        ☐ Build the User Mapper
+        ✔ Delete a file; @done(23-07-21 22:43)
+        ✔ Build the User Mapper @done(23-07-21 22:43)
 
     Counter:
         ✔ Auth; @done(23-07-13 23:01)
@@ -224,15 +224,14 @@ Fifth - Features:
         ☐ File;
     ☐ merge and delete the fudging branch;
 
-
     Notes:
         ☐ Factory pattern;
-        ☐ File Middleware;
+        ✔ File Middleware; @done(23-07-21 22:43)
         ✔ Consertar as paginações; @done(23-07-20 10:09)
         ☐ Revisar a entidade User;
-        ☐ Ver a melhor forma de usar o middleware de auth
-        ☐ Eu devo fazer "getOneFromParent" na entidade file?
-        ☐ Clean this .todo!!! It's so messy!
+        ✔ Ver a melhor forma de usar o middleware de auth @done(23-07-21 22:43)
+        ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 22:43)
+        ✔ Clean this .todo!!! It's so messy! @done(23-07-21 22:43)
 
 Sixth - Relationships (<- Hardest part!):
     ☐ create branch - sixth_relations
@@ -242,7 +241,7 @@ Sixth - Relationships (<- Hardest part!):
         ✔ Patient - Child of User and Parent of Timeline; @done(23-07-20 10:10)
         ✔ Timeline - Child of Patient and Parent of Occurrences; @done(23-07-20 10:10)
         ✔ Occurrences - Child of Timeline and Parent of File; @done(23-07-20 14:19)
-        ☐ File - Child of User and Occurrences;
+        ✔ File - Child of User and Occurrences; @done(23-07-21 22:43)
         Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
     ☐ merge and delete... you know!
 Seventh - Jest:
@@ -294,12 +293,12 @@ Eighth - Finalization:
         ✔ Query através de params? Seria maneiro! @done(23-07-20 10:10)
 
 Extras_ToDo:
-    ☐ Clean Architecture;
-    ☐ Port/Adapter;
-    ☐ Hexagonal Architecture;
-    ☐ Better folder structure -> 03.2-http-3 -> user;
-    ☐ Soft Delete;
-    ☐ Mapper - link to files;
+    ✔ Clean Architecture; @done(23-07-21 22:45)
+    ✔ Port/Adapter; @done(23-07-21 22:45)
+    ✔ Hexagonal Architecture; @done(23-07-21 22:44)
+    ✔ Better folder structure -> 03.2-http-3 -> user; @done(23-07-21 22:45)
+    ✘ Soft Delete; @cancelled(23-07-21 22:44)
+    ✔ Mapper - link to files; @done(23-07-21 22:44)
     ✔ Pagination; @done(23-07-17 20:44)
-    ☐ Request typing -> use the revision exercise;
+    ✔ Request typing -> use the revision exercise; @done(23-07-21 22:44)
     ☐ Config babel - watch the july, 7th video;
