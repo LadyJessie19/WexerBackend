@@ -14,7 +14,7 @@ Fifth - Features:
         ✔ Delete a file; @done(23-07-21 22:08)
     Counter:
         ✔ File; @done(23-07-21 22:54)
-    ☐ merge and delete the fudging branch;
+    ✔ merge and delete the fudging branch; @done(23-07-22 01:21)
 
 Before_Tests:
     ✔ File Middleware; @done(23-07-21 18:48)

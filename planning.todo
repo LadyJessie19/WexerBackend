@@ -147,7 +147,6 @@ Fifth - Features:
         ✔ Authentication; @done(23-07-14 15:40)
         ✔ Update User; @done(23-07-14 18:53)
         ✔ Delete User; @done(23-07-14 18:53)
-        ☐ Profile picture - extra;
         ✔ pushPatient function; @done(23-07-17 20:45)
 
         ✔ *take a breath and keep going* @done(23-07-17 20:45)
@@ -207,13 +206,13 @@ Fifth - Features:
         Note: The file has a relationship with the User because of the profile picture and with the occurrence because of the patient's attachments.
         
         Note: These are ideas - not in the briefing.
-        ✘ Find all files of a User; @cancelled(23-07-21 22:43)
         ✔ Associate a file with Occurrence; @done(23-07-21 22:43)
         ✔ Find all files of an Occurrence; @done(23-07-21 22:43)
-        ✘ Find all files of a Patient; @cancelled(23-07-21 22:43)
-        Note: It seems difficult, but use query for this.
         ✔ Delete a file; @done(23-07-21 22:43)
         ✔ Build the User Mapper @done(23-07-21 22:43)
+        ✘ Find all files of a Patient; @cancelled(23-07-21 22:43)
+        Note: It seems difficult, but use query for this.
+        ✘ Find all files of a User; @cancelled(23-07-21 22:43)
 
     Counter:
         ✔ Auth; @done(23-07-13 23:01)
@@ -221,21 +220,9 @@ Fifth - Features:
         ✔ Patient; @done(23-07-18 19:28)
         ✔ Timeline; @done(23-07-20 10:09)
         ✔ Occurrence; @done(23-07-20 14:09)
-        ☐ File;
-    ☐ merge and delete the fudging branch;
-
-    Notes:
-        ☐ Factory pattern;
-        ✔ File Middleware; @done(23-07-21 22:43)
-        ✔ Consertar as paginações; @done(23-07-20 10:09)
-        ☐ Revisar a entidade User;
-        ✔ Ver a melhor forma de usar o middleware de auth @done(23-07-21 22:43)
-        ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 22:43)
-        ✔ Clean this .todo!!! It's so messy! @done(23-07-21 22:43)
-
-Sixth - Relationships (<- Hardest part!):
-    ☐ create branch - sixth_relations
-    ☐ Who with whom?
+        ✔ File; @done(23-07-22 01:16)
+    ✔ merge and delete the fudging branch; @done(23-07-22 01:16)
+    
     _Relationships_:
         ✔ User - Main Entity, Parent of Patient and File; @done(23-07-20 10:10)
         ✔ Patient - Child of User and Parent of Timeline; @done(23-07-20 10:10)
@@ -243,29 +230,58 @@ Sixth - Relationships (<- Hardest part!):
         ✔ Occurrences - Child of Timeline and Parent of File; @done(23-07-20 14:19)
         ✔ File - Child of User and Occurrences; @done(23-07-21 22:43)
         Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
+
+Sixth - Finalizations:
+    ✔ File Middleware; @done(23-07-21 22:43)
+    ✔ Consertar as paginações; @done(23-07-20 10:09)
+    ✔ Query através de params? Seria maneiro! @done(23-07-20 10:10)
+    ✔ Ver a melhor forma de usar o middleware de auth @done(23-07-21 22:43)
+    ✔ Clean this .todo!!! It's so messy! @done(23-07-21 22:43)
+    ✔ One full test to all the entities and layers @done(23-07-22 01:39)
+    ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 22:43)
+    
+    ☐ create branch - sixth_finalizations
+
+    Quick_Tasks:
+        ☐ Padrão REST - revisar a entidade User;
+        ☐ Consertar o lugar onde fazer o express.static;
+        ☐ trocars os "user" por "result";
+        ☐ Fazer um método para aparecer o link da foto quando o usuário for buscado.
+        ☐ Fazer um método para aparecer o link da foto quando a ocorrência for buscada.
+        
+    Every_Entities_Tasks:
+        ☐ Revisar os códigos das requisições;
+        ☐ Factory pattern;
+        ☐ Consertar as validações das rotas get e delete.
+        ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
+        ☐ Erro de delete - id de outra coleção - msg de sucesso;
+            
+    Larger_Tasks:
+        ☐ Profile picture - extra;
+        
+    Professor_Help:
+        ☐ Tentar consertar a tipagem do FileMapper: droga de any!
+        ☐ Consertar o @types da tipagem de Request - AuthMiddleware
+        ☐ Como remover o id da entidade pai quando ele for deletado?
+
     ☐ merge and delete... you know!
+
 Seventh - Jest:
     ☐ create branch - seventh_tests
     Initialization:
         ☐ Configure jest;
+        ☐ Config babel - watch the july, 7th video;
         ☐ Add jest execution snippet to the script;
         Note: Not sure if jest.config.ts file needs to be created.
     Testing - Controllers, Services, and Repositories Layers:
-        ☐ First Step - Preparation;
-        ☐ Second Step - Execution;
-        ☐ Third Step - Expected Result;
-        ☐ Test for success and check if all assertions are correct;
+        First Step - Preparation;
+        Second Step - Execution;
+        Third Step - Expected Result;
+        Test for success and check if all assertions are correct;
         Tip: It's not a rule, but each return can be a separate test.
-        ☐ That's it. You can do it =)
+        That's it. You can do it =)
     Counter:
         Note: Coverage should be 70% for each layer.
-        Controller:
-            ☐ Auth;
-            ☐ User;
-            ☐ Patient;
-            ☐ Timeline;
-            ☐ Occurrence;
-            ☐ File;
         Service:
             ☐ Auth;
             ☐ User;
@@ -273,32 +289,27 @@ Seventh - Jest:
             ☐ Timeline;
             ☐ Occurrence;
             ☐ File;
-        Repository:
-            ☐ Auth;
-            ☐ User;
-            ☐ Patient;
-            ☐ Timeline;
-            ☐ Occurrence;
-            ☐ File;
+        Note: The controller and service layers are optional.
         Supertest:
             Note: This supertest is optional.
             ☐ Integration test on a user route with supertest;
 Eighth - Finalization:
     Deploy:
         ☐ Railway account;
+        ☐ Set all the env var;
+        ☐ Deploy the project;
+        ☐ Test all the requisitions - the server is Railway(I think...);
     Documentation:
         ☐ Finish documentation;
-    ☐ Review:
-        ☐ Padrão REST - revisar a entidade User;
-        ✔ Query através de params? Seria maneiro! @done(23-07-20 10:10)
+            ☐ Explain the declare global at MainRouter;
+            ☐ Explicar o any da função de paginação!
 
 Extras_ToDo:
     ✔ Clean Architecture; @done(23-07-21 22:45)
     ✔ Port/Adapter; @done(23-07-21 22:45)
     ✔ Hexagonal Architecture; @done(23-07-21 22:44)
     ✔ Better folder structure -> 03.2-http-3 -> user; @done(23-07-21 22:45)
-    ✘ Soft Delete; @cancelled(23-07-21 22:44)
     ✔ Mapper - link to files; @done(23-07-21 22:44)
     ✔ Pagination; @done(23-07-17 20:44)
     ✔ Request typing -> use the revision exercise; @done(23-07-21 22:44)
-    ☐ Config babel - watch the july, 7th video;
+    ✘ Soft Delete; @cancelled(23-07-21 22:44)
