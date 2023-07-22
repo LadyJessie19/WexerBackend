@@ -6,14 +6,16 @@ const FileRoutes = Router()
 const fileController = FileModule.build().controller
 const uploadSingle = UploadSingle.build("file")
 
-//Create and getAll from a user;
-const occurrencePath = "/users/:user_id/files"
 //Create and getAll from a occurrences;
-const userPath = "/occurrences/:occurrence_id/files"
+const occurrencePath = "/occurrences/:occurrence_id/files"
+//Create and getAll from a user;
+const userPath = "/users/:user_id/files"
 //Get Them ALL!
 const commonPath = "/files"
 //GetOne, update and delete
 const pathWithId = "/files/:file_id"
+
+// FileRoutes.use(uploadSingle)
 
 //Create and read from a user
 FileRoutes.post(userPath, uploadSingle, fileController.createFromUserCon.bind(fileController))

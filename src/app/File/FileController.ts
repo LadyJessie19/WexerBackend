@@ -4,26 +4,26 @@ import FileService from "./FileService";
 import FileYupSchema from "./FileSchema";
 
 import newError from "../../utils/ErrorHandler";
-import { ObjectId } from "mongoose";
+import { ObjectId, Types } from "mongoose";
+import serverError from "../../utils/ServerError";
 
 class FileController {
   constructor(private service: FileService) {}
 
   async createFromUserCon(req: Request, res: Response) {
-    const { body, params:{ user_id }, file } = req;
+    const { params:{ user_id }, file } = req;
 
-    const payload = { ...body, userId: user_id };
+    const payload = {
+      filename: file?.filename,
+      mimetype: file?.mimetype,
+      userId: user_id as unknown as ObjectId
+    }
 
     try {
       await FileYupSchema.create().validate(payload);
     } catch (error: any) {
       return res.status(400).json({ errors: error.errors });
     }
-
-    /* const bigload = { ...payload, photo: {
-      filename: file?.filename,
-      mimetype: file?.mimetype,
-    }} */
 
     const result = await this.service.createFromUserSer(payload);
 
@@ -46,9 +46,13 @@ class FileController {
   }
 
   async createFromOccurrenceCon(req: Request, res: Response) {
-    const { body, params: { occurrence_id } } = req;
+    const { params: { occurrence_id }, file } = req;
 
-    const payload = { ...body, occurrenceId: occurrence_id };
+    const payload = {
+      filename: file?.filename,
+      mimetype: file?.mimetype,
+      occurrenceId: occurrence_id as unknown as ObjectId
+    }
 
     try {
       await FileYupSchema.create().validate(payload);
@@ -89,13 +93,19 @@ class FileController {
 
   async getOneCon(req: Request, res: Response) {
     const { params:{ file_id } } = req
-      const result = await this.service.getOneSer(file_id as unknown as ObjectId)
+    
+    const isValid = Types.ObjectId.isValid(file_id)
 
+    if(isValid){
+      const result = await this.service.getOneSer(file_id as unknown as ObjectId)
       if("error" in result){
           return res.status(result.statusCode).json(result)
       }
-
+  
       return res.status(result.statusCode).json(result)
+    } 
+
+    return res.status(400).json("The Id is not valid")
   }
 
   async deleteCon(req: Request, res: Response) {

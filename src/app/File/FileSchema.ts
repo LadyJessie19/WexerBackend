@@ -12,7 +12,14 @@ class FileYupSchema {
         return yup.object().shape({
             id: yup
             .mixed()
-            .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any))
+            .test('is-valid-objectId', 'The Id is not valid', value => Types.ObjectId.isValid(value as any))
+    })
+    }
+    static read(){
+        return yup.object().shape({
+            id: yup
+            .mixed()
+            .test('is-valid-objectId', 'The Id is not valid', value => Types.ObjectId.isValid(value as any))
     })
     }
 }

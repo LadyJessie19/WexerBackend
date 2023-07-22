@@ -1,8 +1,8 @@
 import { ObjectId } from "mongoose";
 
 interface CreateFileDTO {
-    filename: string;
-    mimetype: string;
+    filename: string | undefined;
+    mimetype: string | undefined;
 }
 
 interface FileWithParentIdDTO extends CreateFileDTO{

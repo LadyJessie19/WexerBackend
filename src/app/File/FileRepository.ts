@@ -10,7 +10,7 @@ class FileRepository {
     }
 
     async getFromUserRep(userId:ObjectId, skip:number, limit:number){
-        const result = await this.model.find({userId}).skip(skip).limit(limit).populate("userId")
+        const result = await this.model.find({userId}).skip(skip).limit(limit)
         const totalItems = (await this.model.find({userId})).length
         return { totalItems, result }
     }
@@ -22,7 +22,7 @@ class FileRepository {
     }
 
     async getAllRep(skip:number, limit:number){
-        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit).populate("userId").populate('occurrenceId')
+        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("userId").populate('occurrenceId')
         const totalItems = await this.model.countDocuments();
         return { totalItems, result }
     }

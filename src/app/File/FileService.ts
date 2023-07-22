@@ -4,7 +4,6 @@ import OccurrenceRepository from "../Occurrence/OccurrenceRepository";
 
 import { FileWithParentIdDTO } from "./FileDTO";
 
-import { ObjectId } from "mongoose";
 import createFromOccurrence from "./features/createFromOccurrence.service";
 import createFromUser from "./features/createFromUser.service";
 import getAllFiles from "./features/getAllFiles.service";
@@ -12,6 +11,8 @@ import getOneFile from "./features/getOneFile.service";
 import deleteFile from "./features/deleteFile.service";
 import getFromOccurrence from "./features/getFromOccurrence.service";
 import getFromUser from "./features/getFromUser.service";
+
+import { ObjectId } from "mongoose";
 
 class FileService{
     constructor(private repository:FileRepository,
@@ -24,7 +25,7 @@ class FileService{
 
     async getFromUserSer(userId:ObjectId, page:number, limit:number){
         return getFromUser(userId, page, limit, this.repository)
-      }
+    }
 
     async createFromOccurrenceSer(file:FileWithParentIdDTO){
         return createFromOccurrence(file, this.repository, this.occurrenceRepository)
