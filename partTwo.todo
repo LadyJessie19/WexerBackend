@@ -1,6 +1,5 @@
 Fifth - Features:
     Functions:
-        ☐ Profile picture - extra;
         Note: File entity is extra.
         ✔ Create a file -> relationship with User and Occurrence; @done(23-07-21 22:54)
         ✔ Associate a file with a User - extra; @done(23-07-21 22:08)
@@ -18,16 +17,22 @@ Fifth - Features:
     ☐ merge and delete the fudging branch;
 
 Before_Tests:
-    ☐ Factory pattern;
     ✔ File Middleware; @done(23-07-21 18:48)
     ✔ Padrão REST - revisar a entidade User; @done(23-07-21 17:23)
     ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 17:17)
     ✘ Soft Delete; @cancelled(23-07-21 17:23)
     ✔ Mapper - link to files; @done(23-07-21 22:30)
     ✔ Request typing -> use the revision exercise; @done(23-07-21 14:44)
+    ✔ Limpar o get from User!!!!!! Urgente! @done(23-07-22 01:02)
+   
+Para_Segunda:
+    ☐ Profile picture - extra;
+    ☐ Factory pattern;
+    ☐ Add a criação de file na entidade User;
+    ☐ Testar o FileMapper para o User. Criar outro metodo talvez;
+    ☐ Consertar o lugar onde fazer o express.static;
     ☐ Consertar as validações das rotas get e delete.
     ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
-    ☐ Limpar o get from User!!!!!! Urgente!
     
     Sixth - Jest:
     ☐ Config babel - watch the july, 7th video;
