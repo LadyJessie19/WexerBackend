@@ -1,0 +1,315 @@
+Third Module of Arnia Project - Wexer Psi Backend
+Project Specifications ⬇
+
+Class: T32022
+Project Type: Patient and Medical Records Manager
+Delivery Date: 07/30/23
+
+🟣 Good luck with the project! 🟣
+
+First - Start:
+    Github:
+        ✔ Initialize repository on Github; @done(23-07-04 04:51)
+        ✔ Create staging branch; @done(23-07-04 04:51)
+        ✔ TODO: Each planning section is a branch; @done(23-07-04 04:51)
+        ✔ TODO: Each task is a commit; @done(23-07-04 04:51)
+    Docs:
+        ✔ Is planning ready? @done(23-07-04 04:51)
+        ✔ Project documentation - start; @done(23-07-04 04:51)
+        ✔ Create .env.example file; @done(23-07-04 05:10)
+    Node.js:
+        ✔ Initialize Node project; @done(23-07-04 16:44)
+        ✔ Install libraries: @done(23-07-04 21:43)
+        Hint: You can install more than one at a time.
+            ✔ Express; @done(23-07-04 16:45)
+            ✔ Mongoose; @done(23-07-04 16:45)
+            ✔ Typescript; @done(23-07-04 16:45)
+            ✔ Dotenv; @done(23-07-04 16:45)
+            ✔ Yup; @done(23-07-04 21:43)
+            ✔ Jest; @done(23-07-04 21:43)
+            ✔ Bcrypt; @done(23-07-04 21:43)
+            ✔ Jsonwebtoken; @done(23-07-04 21:43)
+            ✔ ts-node-dev; @done(23-07-04 16:46)
+            ✔ multer; @done(23-07-04 21:43)
+        ✔ Install types: @done(23-07-04 21:43)
+            ✔ @types/node; @done(23-07-04 16:45)
+            ✔ @types/express; @done(23-07-04 16:45)
+            ✔ @types/jest; @done(23-07-04 21:43)
+            ✔ @types/bcrypt; @done(23-07-04 21:43)
+            ✔ @types/jsonwebtoken; @done(23-07-04 21:43)
+            ✔ @types/multer; @done(23-07-04 21:43)
+        ✔ Configure tsconfig.json: @done(23-07-04 17:27)
+        ✔ Configure `npm run dev`("dev": "tsnd src/server.ts"); @done(23-07-04 16:49)
+        ✔ Configure Environment Variables; @done(23-07-04 17:27)
+        ✔ Create a collection in Insomnia; @done(23-07-04 19:11)
+    Express.js:
+        ✔ Create server.ts file in the src folder of the project; @done(23-07-04 19:11)
+        ✔ Initialize Express server; @done(23-07-04 19:11)
+    MongoDB | Mongoose:
+        ✔ Define MongoDB URL in the .env file; @done(23-07-04 21:45)
+        ✔ Create a database folder and a config.ts file; @done(23-07-04 21:47) 
+        obs: It's db.ts the database config file.
+        update(2023-07-10): I'm deleting this folder and putting the mongo connection at configs/databaseConfig.ts
+        ✔ Initialize database connection; @done(23-07-04 21:47)
+Second - Folder Creation | Entity Sketches:
+    ✔ branch creation - second_folders; @done(23-07-04 23:00)
+    Folders:
+        ✔ root (dotenv | package.json | tsconfig | gitignore | node_modules | uploads) @done(23-07-04 23:01)
+            ✔ src (app | database | routes | server.ts file | utils | middlewares) @done(23-07-04 23:02)
+    App Folder:
+        Legend: *these words are very long*
+            con -> controllers
+            ser -> services
+            rep -> repositories
+            ent -> entities
+            fac -> factories
+            mod -> module
+
+        Note: Each task in this section is a folder. Inside the parentheses are the files in that folder.
+
+        ✔ Auth (con|dtos|schemas|ser|mod); @done(23-07-04 23:11)
+        Note: The repository to be used with the Auth service is the User repository.
+        ✔ User|User:(con|dtos|ent|fac|mapper|rep|schema|ser|mod) @done(23-07-05 00:06)
+        Note: I'll use the word User for User. NO!!!!!
+        ✔ Patient;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
+        ✔ Timeline;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
+        ✔ Occurrence;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
+        ✔ File;(con|dtos|ent|rep|schemas|fac|ser|mod) @done(23-07-05 00:32)
+    ✔ Merge branch and delete; @done(23-07-05 00:43)
+Third - Middlewares | Models | Interfaces | DTOs:
+    ✔ branch creation - third_middlewares; @done(23-07-05 00:46)
+    Middlewares:
+        ✔ Authentication verification middleware; @done(23-07-10 16:47)
+        ✔ File upload middleware; @done(23-07-10 18:33)
+        note: I have no idea what is this. Hope won't miss this in the future.
+        ✔ Create configs folder; @done(23-07-10 17:22)
+        ✔ Storage Configuration File; @done(23-07-10 17:14)
+    Functions:
+        Note: Where to put this function? utils, maybe.
+        ✔ Error handling function; @done(23-07-10 16:48)
+        ✔ encrypt data; @done(23-07-10 17:08)
+        ✔ Token Verification Class; @done(23-07-10 16:28)
+    Entity Modeling:
+        ✔ Yup validation schema in the Controller;////// @done(23-07-11 17:07)
+        ✔ Mongoose schema and model;////// @done(23-07-11 20:01)
+        ✔ DTO for "inter-layer communication";////// @done(23-07-11 18:26)
+        TODO: Find a better definition term.
+        ✔ Don't forget the module, which creates everything;////// @done(23-07-11 21:04)
+        Note: The module will be used in the entity routes to initiate the controller with its dependencies.
+        Counter:
+            ✔ Auth; @done(23-07-11 21:04)
+            ✔ User; @done(23-07-10 23:07)
+            ✔ Patient; @done(23-07-11 21:04)
+            ✔ Timeline; @done(23-07-11 21:05)
+            ✔ Occurrence; @done(23-07-11 21:05)
+            ✔ File; @done(23-07-11 21:05)
+    ✔ Make a routes testing; @done(23-07-11 15:40)
+    ✔ Read all the files to check if there is any mistakes; @done(23-07-12 16:42)
+    ✔ Merge and delete branch; @done(23-07-12 16:53)
+Fourth - Layers | Routes:
+    ✔ create branch - fourth_layers @done(23-07-12 16:53)
+    Connecting the Layers:
+        ✔ /routes -> (http-req | middleware | controller dependency) @done(23-07-12 19:51)
+        ✔ -> controller -> (yup validation | response return | service dependency) @done(23-07-12 20:33)
+        ✔ -> service -> (all logic | error layer | repository dependency) @done(23-07-12 21:45)
+        ✔ -> repository \ (mongoose functions | populate | model dependency) @done(23-07-12 22:20)
+    Counter:
+        ✔ Auth; @done(23-07-12 21:59)
+        ✔ User; @done(23-07-10 23:07)
+        ✔ Patient; @done(23-07-12 22:20)
+        ✔ Timeline; @done(23-07-12 22:20)
+        ✔ Occurrence; @done(23-07-12 22:21)
+        ✔ File; @done(23-07-12 22:21)
+    ✔ Merge and delete branch; @done(23-07-12 22:49)
+Fifth - Features:
+    Note: The next section is for entity relations. I might be wrong, but I found it easier this way.
+    ✔ create branch - fifty_features @done(23-07-12 22:50)
+    Functions:
+        ✔ Create a utils function - newSuccess @done(23-07-13 20:37)
+        ✔ Create a utils function - ServerError @done(23-07-13 20:37)
+
+        ✔ Auth Routes; @done(23-07-13 23:22)
+        ✔ Auth Controller; @done(23-07-13 23:22)
+        ✔ Auth Service; @done(23-07-13 23:22)
+        ✔ Auth uses the User repository; @done(23-07-13 23:22)
+        
+        ✔ Create User; @done(23-07-10 23:08)
+        ✔ Rebuild create User; @done(23-07-13 23:33)
+        ✔ Find User - just noting; @done(23-07-13 23:23)
+        ✔ Find All Users; @done(23-07-13 23:23)
+        ✔ Find by email - just noting; @done(23-07-10 23:08)
+
+        ✔ Stoped at auth middleware; @est(2023-07-14 23:59) @done(23-07-14 15:40)
+        ✔ How I know that the user is with his correct token? @done(23-07-14 15:39)
+        ✘ PARAMS! forget this! @cancelled(23-07-14 15:40)
+
+        ✔ Add pagination to GET - extra; @done(23-07-14 20:11)
+        ✔ Authentication; @done(23-07-14 15:40)
+        ✔ Update User; @done(23-07-14 18:53)
+        ✔ Delete User; @done(23-07-14 18:53)
+        ✔ pushPatient function; @done(23-07-17 20:45)
+
+        ✔ *take a breath and keep going* @done(23-07-17 20:45)
+
+        ✔ Create patient -> relationship with User; @done(23-07-17 20:45)
+        ✔ Find patient by id; @done(23-07-17 22:58)
+        ✔ Update patient; @done(23-07-17 22:58)
+        ✔ Delete patient - extra; @done(23-07-17 22:58)
+        
+        ✔ Put the getOne User back at his place; @done(23-07-17 22:03)
+
+        ✔ Find all patients of a User; @done(23-07-18 19:27)
+        To achive this I need to place the current User Id at the patient. 
+        I CAN'T BELIEVE I FORGOT THIS!!!!
+        Please, tomorrow-jessie: fix this. Thanks
+        ✔ Add pagination to GET - extra; @done(23-07-18 19:27)
+        ✔ PushTimeline; @done(23-07-18 19:27)
+
+        ✔ Trocar TODAS as palavras "Doctor" para "User". QUE REEEIVAAAA! @done(23-07-18 20:27)
+            ✔ server.ts @done(23-07-18 19:33)
+            ✔ utils @done(23-07-18 19:33)
+            ✔ routes @done(23-07-18 19:39)
+            ✔ middlewares @done(23-07-18 19:42)
+            ✔ configs @done(23-07-18 19:42)
+            ✔ app @done(23-07-18 20:27)
+                ✔ Auth @done(23-07-18 19:42)
+                ✔ User. grrrrrrrrrr!!!! @done(23-07-18 20:27)
+                ✔ Patient @done(23-07-18 19:56)
+
+        ✔ Testar todas as paginações. OUTRA REEEEIVA! @done(23-07-20 10:09)
+        ✔ Fazer um utils de paginação!!!! @done(23-07-20 10:09)
+
+        ✔ *take another breath* @done(23-07-20 10:11)
+        
+        ✔ Create timeline -> relationship with a Patient; @done(23-07-19 00:22)
+        ✔ Find all timelines of a Patient; @done(23-07-20 10:09)
+        note: Problems! Problems!
+        ✔ Add pagination to GET - extra; @done(23-07-20 10:09)
+        ✔ Find timeline by id; @done(23-07-19 00:23)
+        ✔ Update timeline; @done(23-07-19 00:23)
+        ✔ Delete timeline - extra; @done(23-07-19 00:24)
+        ✔ pushOccurrence @done(23-07-19 00:23)
+
+        ✔ *now it's easier* @done(23-07-20 10:11)
+
+        ✔ Create occurrence -> relationship with a Timeline; @done(23-07-20 14:07)
+        ✔ Find all occurrences of a Timeline; @done(23-07-20 14:07)
+        ✔ Add pagination to GET - extra; @done(23-07-20 14:08)
+        ✔ Find occurrences by id; @done(23-07-20 14:08)
+        ✔ Update occurrences; @done(23-07-20 14:08)
+        ✔ Delete occurrences - extra; @done(23-07-20 14:08)
+        ✔ pushFile @done(23-07-20 14:08)
+
+        Note: File entity is extra.
+        ✔ Create a file -> relationship with User and Occurrence; @done(23-07-21 22:43)
+        ✘ Associate a file with a User - extra; @cancelled(23-07-21 22:43)
+        Note: The file has a relationship with the User because of the profile picture and with the occurrence because of the patient's attachments.
+        
+        Note: These are ideas - not in the briefing.
+        ✔ Associate a file with Occurrence; @done(23-07-21 22:43)
+        ✔ Find all files of an Occurrence; @done(23-07-21 22:43)
+        ✔ Delete a file; @done(23-07-21 22:43)
+        ✔ Build the User Mapper @done(23-07-21 22:43)
+        ✘ Find all files of a Patient; @cancelled(23-07-21 22:43)
+        Note: It seems difficult, but use query for this.
+        ✘ Find all files of a User; @cancelled(23-07-21 22:43)
+
+    Counter:
+        ✔ Auth; @done(23-07-13 23:01)
+        ✔ User; @done(23-07-17 23:01)
+        ✔ Patient; @done(23-07-18 19:28)
+        ✔ Timeline; @done(23-07-20 10:09)
+        ✔ Occurrence; @done(23-07-20 14:09)
+        ✔ File; @done(23-07-22 01:16)
+    ✔ merge and delete the fudging branch; @done(23-07-22 01:16)
+    
+    _Relationships_:
+        ✔ User - Main Entity, Parent of Patient and File; @done(23-07-20 10:10)
+        ✔ Patient - Child of User and Parent of Timeline; @done(23-07-20 10:10)
+        ✔ Timeline - Child of Patient and Parent of Occurrences; @done(23-07-20 10:10)
+        ✔ Occurrences - Child of Timeline and Parent of File; @done(23-07-20 14:19)
+        ✔ File - Child of User and Occurrences; @done(23-07-21 22:43)
+        Remember: Each time a child entity is created, the parent entity is updated with { parentId, {$push: childId}}
+
+Sixth - Finalizations:
+    ✔ File Middleware; @done(23-07-21 22:43)
+    ✔ Consertar as paginações; @done(23-07-20 10:09)
+    ✔ Query através de params? Seria maneiro! @done(23-07-20 10:10)
+    ✔ Ver a melhor forma de usar o middleware de auth @done(23-07-21 22:43)
+    ✔ Clean this .todo!!! It's so messy! @done(23-07-21 22:43)
+    ✔ One full test to all the entities and layers @done(23-07-22 01:39)
+    ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 22:43)
+    
+    ☐ create branch - sixth_finalizations
+
+    Quick_Tasks:
+        ☐ Padrão REST - revisar a entidade User;
+        ☐ Consertar o lugar onde fazer o express.static;
+        ☐ trocars os "user" por "result";
+        ☐ Fazer um método para aparecer o link da foto quando o usuário for buscado.
+        ☐ Fazer um método para aparecer o link da foto quando a ocorrência for buscada.
+        
+    Every_Entities_Tasks:
+        ☐ Revisar os códigos das requisições;
+        ☐ Factory pattern;
+        ☐ Consertar as validações das rotas get e delete.
+        ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
+        ☐ Erro de delete - id de outra coleção - msg de sucesso;
+            
+    Larger_Tasks:
+        ☐ Profile picture - extra;
+        
+    Professor_Help:
+        ☐ Tentar consertar a tipagem do FileMapper: droga de any!
+        ☐ Consertar o @types da tipagem de Request - AuthMiddleware
+        ☐ Como remover o id da entidade pai quando ele for deletado?
+
+    ☐ merge and delete... you know!
+
+Seventh - Jest:
+    ☐ create branch - seventh_tests
+    Initialization:
+        ☐ Configure jest;
+        ☐ Config babel - watch the july, 7th video;
+        ☐ Add jest execution snippet to the script;
+        Note: Not sure if jest.config.ts file needs to be created.
+    Testing - Controllers, Services, and Repositories Layers:
+        First Step - Preparation;
+        Second Step - Execution;
+        Third Step - Expected Result;
+        Test for success and check if all assertions are correct;
+        Tip: It's not a rule, but each return can be a separate test.
+        That's it. You can do it =)
+    Counter:
+        Note: Coverage should be 70% for each layer.
+        Service:
+            ☐ Auth;
+            ☐ User;
+            ☐ Patient;
+            ☐ Timeline;
+            ☐ Occurrence;
+            ☐ File;
+        Note: The controller and service layers are optional.
+        Supertest:
+            Note: This supertest is optional.
+            ☐ Integration test on a user route with supertest;
+Eighth - Finalization:
+    Deploy:
+        ☐ Railway account;
+        ☐ Set all the env var;
+        ☐ Deploy the project;
+        ☐ Test all the requisitions - the server is Railway(I think...);
+    Documentation:
+        ☐ Finish documentation;
+            ☐ Explain the declare global at MainRouter;
+            ☐ Explicar o any da função de paginação!
+
+Extras_ToDo:
+    ✔ Clean Architecture; @done(23-07-21 22:45)
+    ✔ Port/Adapter; @done(23-07-21 22:45)
+    ✔ Hexagonal Architecture; @done(23-07-21 22:44)
+    ✔ Better folder structure -> 03.2-http-3 -> user; @done(23-07-21 22:45)
+    ✔ Mapper - link to files; @done(23-07-21 22:44)
+    ✔ Pagination; @done(23-07-17 20:44)
+    ✔ Request typing -> use the revision exercise; @done(23-07-21 22:44)
+    ✘ Soft Delete; @cancelled(23-07-21 22:44)
