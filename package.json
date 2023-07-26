@@ -2,7 +2,7 @@
   "name": "wexerbackend",
   "version": "1.0.0",
   "description": "Este documento serve como documentação para o projeto de backend, \r detalhando as tecnologias utilizadas, as entidades envolvidas e \r instruções sobre como executar o projeto localmente.",
-  "type": "module",
+  "type": "commonjs",
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsnd src/server.ts",
