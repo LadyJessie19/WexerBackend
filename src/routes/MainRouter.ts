@@ -28,8 +28,8 @@ MainRouter.use(AuthRoutes)
 MainRouter.use(UserRoutes)
 
 /* Private Routes */
-MainRouter.use(AuthenticateMiddleware.checkToken)
 MainRouter.use(FileRoutes)
+MainRouter.use(AuthenticateMiddleware.checkToken)
 MainRouter.use(OccurrenceRoutes)
 MainRouter.use(PatientRoutes)
 MainRouter.use(TimelineRoutes)
