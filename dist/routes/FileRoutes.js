@@ -6,8 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const FileModule_1 = __importDefault(require("../app/File/FileModule"));
 const uploadSingle_1 = __importDefault(require("../middlewares/FileUploadMiddleware/uploadSingle"));
+const AuthenticateMiddleware_1 = __importDefault(require("../middlewares/AuthenticateMiddleware"));
 const FileRoutes = (0, express_1.Router)();
 const fileController = FileModule_1.default.build().controller;
+const authMiddleware = AuthenticateMiddleware_1.default.checkToken;
 const uploadSingle = uploadSingle_1.default.build("file");
 //Create and getAll from a occurrences;
 const occurrencePath = "/occurrences/:occurrence_id/files";
@@ -15,6 +17,7 @@ const occurrencePath = "/occurrences/:occurrence_id/files";
 const commonPath = "/files";
 //GetOne and delete. Yeah!
 const pathWithId = "/files/:file_id";
+FileRoutes.use(authMiddleware);
 //Create and read from a occurrence
 FileRoutes.post(occurrencePath, uploadSingle, fileController.createCon.bind(fileController));
 FileRoutes.get(occurrencePath, fileController.getFromParentCon.bind(fileController));

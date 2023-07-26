@@ -26,9 +26,9 @@ const MainRouter = Router()
 /* Public Routes */
 MainRouter.use(AuthRoutes)
 MainRouter.use(UserRoutes)
+MainRouter.use(FileRoutes)
 
 /* Private Routes */
-MainRouter.use(FileRoutes)
 MainRouter.use(AuthenticateMiddleware.checkToken)
 MainRouter.use(OccurrenceRoutes)
 MainRouter.use(PatientRoutes)
