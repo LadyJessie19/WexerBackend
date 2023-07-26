@@ -1,13 +1,13 @@
 import FileRepository from "../FileRepository"
 import OccurrenceRepository from "../../Occurrence/OccurrenceRepository"
 
-import { FileWithParentIdDTO } from "../FileDTO"
+import { FileWithOccurrenceIdDTO } from "../FileDTO"
 
 import serverError from "../../../utils/ServerError"
 import newSuccess from "../../../utils/SuccessHandler"
 import { ObjectId } from "mongoose"
 
-async function createFile(file:FileWithParentIdDTO, repository:FileRepository, occurrenceRep:OccurrenceRepository){
+async function createFile(file:FileWithOccurrenceIdDTO, repository:FileRepository, occurrenceRep:OccurrenceRepository){
     try {
         const fileCreated = await repository.createRep(file)
         await occurrenceRep.pushFile(file.occurrenceId as unknown as ObjectId, fileCreated._id as unknown as ObjectId)
