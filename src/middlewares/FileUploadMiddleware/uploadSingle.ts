@@ -8,7 +8,7 @@ class UploadSingle{
       },
       filename(req, file, callback) {
         const [, extension] = file.mimetype.split('/')
-        callback(null, file.fieldname + "-" + new Date().getTime() + "." + extension )  
+        callback(null, file.fieldname + "-" + new Date().getTime() + "." + extension)  
       },
     })
 
