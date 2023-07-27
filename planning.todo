@@ -256,7 +256,7 @@ Sixth - Finalizations:
     Every_Entities_Tasks:
         ☐ Revisar os códigos das requisições;
         ☐ Factory pattern;
-        ☐ Consertar as validações das rotas get e delete.
+        ☐ Consertar as validações das rotas get, update e delete.
         ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
         ☐ Erro de delete - id de outra coleção - msg de sucesso;
             
@@ -264,18 +264,18 @@ Sixth - Finalizations:
         ☐ Profile picture - extra;
         
     Professor_Help:
-        ☐ Tentar consertar a tipagem do FileMapper: droga de any!
-        ☐ Consertar o @types da tipagem de Request - AuthMiddleware
-        ☐ Como remover o id da entidade pai quando ele for deletado?
+        ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
+        ✘ Consertar o @types da tipagem de Request - AuthMiddleware @cancelled(23-07-26 22:20)
+        ✘ Como remover o id da entidade pai quando ele for deletado? @cancelled(23-07-26 22:20)
 
     ☐ merge and delete... you know!
 
 Seventh - Jest:
-    ☐ create branch - seventh_tests
+    ✔ create branch - seventh_tests @done(23-07-26 18:52)
     Initialization:
-        ☐ Configure jest;
-        ☐ Config babel - watch the july, 7th video;
-        ☐ Add jest execution snippet to the script;
+        ✔ Configure jest; @done(23-07-26 22:19)
+        ✘ Config babel - watch the july, 7th video; @cancelled(23-07-26 22:20)
+        ✔ Add jest execution snippet to the script; @done(23-07-26 22:19)
         Note: Not sure if jest.config.ts file needs to be created.
     Testing - Controllers, Services, and Repositories Layers:
         First Step - Preparation;
@@ -299,10 +299,10 @@ Seventh - Jest:
             ☐ Integration test on a user route with supertest;
 Eighth - Finalization:
     Deploy:
-        ☐ Railway account;
-        ☐ Set all the env var;
-        ☐ Deploy the project;
-        ☐ Test all the requisitions - the server is Railway(I think...);
+        ✔ Railway account; @done(23-07-26 22:20)
+        ✔ Set all the env var; @done(23-07-26 22:20)
+        ✔ Deploy the project; @done(23-07-26 22:20)
+        ✔ Test all the requisitions - the server is Railway(I think...); @done(23-07-26 22:20)
     Documentation:
         ☐ Finish documentation;
             ☐ Explain the declare global at MainRouter;
