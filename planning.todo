@@ -267,21 +267,20 @@ Sixth - Finalizations:
         ✘ Profile picture - extra; @cancelled(23-07-28 03:09)
         
     Professor_Help:
-        ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
         ✔ Como remover o id da entidade pai quando ele for deletado? @done(23-07-28 02:42)
+        ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
         ☐ Consertar o @types da tipagem de Request - AuthMiddleware
         
     Last_Tasks:
         ✔ tsconfig.json @done(23-07-28 03:41)
         ✔ Configurar babel; @done(23-07-28 03:41)
         ✔ Factory pattern; @done(23-07-28 04:23)
-        ☐ Consertar o lugar onde fazer o express.static;
-        ☐ Fazer o merge com a main e testar o deploy
-        ☐ Fazer um método para aparecer o link da foto quando a ocorrência for buscada.
-        ☐ O link para o link não está funcionando. BUAAAA!
-
+        ✔ Consertar o lugar onde fazer o express.static; @done(23-07-28 05:17)
         ✔ Consertar as tipagens dos schemas @done(23-07-28 03:48)
+        ✘ Fazer um método para aparecer o link da foto quando a ocorrência for buscada. @cancelled(23-07-28 05:33)
+        ✘ O link para o file não está funcionando. BUAAAA! @cancelled(23-07-28 05:33)
         ✘ Consertar os dtos de create--- nas features @cancelled(23-07-28 03:53)
+        ☐ Fazer o merge com a main e testar o deploy
 
     ☐ merge and delete... you know!
 

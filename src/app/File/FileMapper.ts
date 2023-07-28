@@ -3,7 +3,7 @@ dotenv.config()
 
 const url = process.env.USER_URL
 
-class FileMapper {//testar com ...file, link. 
+class FileMapper {
     static toClient(file:any) {
         return {
             "link": `${url}${file.filename}`,
