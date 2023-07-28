@@ -4,7 +4,7 @@ import createUser from "./createUser.service"
 const repository = UserModule.build().repository
 
 test('should create a new user', async () => {
-  const mock = { email: 'email@email.com', password: '123456', name: 'Someone Someonderson'}
+  const mock = { email: 'email@email.com', password: '123456', name: 'Someone Someonderson', nickname: 'Mustard' }
 
   const expectedResult = {
     message: "Psychologist created with success!",

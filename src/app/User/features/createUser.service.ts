@@ -14,6 +14,11 @@ async function createUser(payload:CreateUserDTO, repository:UserRepository) {
         return newError('A psychologist with this email already exists', 400, "isAnOldUser")
     }
 
+    const nicknameExists = await repository.findByNicknameRep(payload.nickname)
+    if(nicknameExists){
+        return newError('This nickname isn`t available. Try another one, please.', 400, 'nicknameExists')
+    }
+
     try {
         const passwordHashed = DataEncrypt.hash(payload.password, 8)
         const user = {...payload, password: passwordHashed}

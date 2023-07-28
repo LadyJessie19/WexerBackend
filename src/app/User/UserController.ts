@@ -18,8 +18,8 @@ class UserController {
     
         try{
             await UserYupSchema.create().validate(payload)
-        } catch(err:any){
-            return res.status(400).json({errors:err.errors})
+        } catch(error:any){
+            return res.status(400).json(newError(error.message, 400))
         }
         
         const result = await this.service.createSer(payload)

@@ -13,7 +13,7 @@ class UserRepository {
 
     async getAllRep(skip:number, limit:number){
         const totalItems = await this.model.countDocuments();
-        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("patients").populate("photo")
+        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate("patients")
         return { totalItems, result }
     }
 
@@ -32,6 +32,10 @@ class UserRepository {
     async findByEmailRep(email:string){
         return await this.model.findOne({ email }).select('+password')
     }
+
+    async findByNicknameRep(nickname:string){
+        return await this.model.findOne({ nickname })
+    }
     
     async pushPatient(userId: ObjectId, patientId: ObjectId){
         return await this.model.findByIdAndUpdate(userId, {
@@ -42,18 +46,6 @@ class UserRepository {
     async pullPatient(userId: ObjectId, patientId: ObjectId){
         return await this.model.findByIdAndUpdate(userId, {
             $pull: { patients: patientId }
-        }, { new: true })
-    }
-
-    async pushFile(userId:ObjectId, fileId:ObjectId){//isso precisa de revisão
-        return await this.model.findByIdAndUpdate(userId, {
-            $push: { image: [fileId] }
-        }, { new: true })
-    }
-
-    async pullFile(userId:ObjectId, fileId:ObjectId){//isso tb precisa de revisão
-        return await this.model.findByIdAndUpdate(userId, {
-            $pull: { image: fileId }
         }, { new: true })
     }
 }
