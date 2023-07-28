@@ -284,9 +284,10 @@ Final_ToDos:
     ✔ Conta do railaway vai parar de funfar; @done(23-07-28 15:44)
     ☐ Tests - 5 tests;
     ☐ Finish documentation;
+    ✔ Fix the 'There is' and 'There are' issue @done(23-07-28 17:44)
     ✔ Post at Arnia's gdrive the project; @done(23-07-28 16:44)
-    ☐ Fix user entity nickname
-    ☐ Email and nickname are unique and required
+    ✔ Fix user entity nickname @done(23-07-28 17:45)
+    ✔ Email and nickname are unique and required @done(23-07-28 17:45)
     ☐ Hasta La Vista, Baby!
 
 Extras_ToDo:

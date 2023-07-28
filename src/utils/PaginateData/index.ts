@@ -24,16 +24,17 @@ async function PaginateData(page:number, limit:number, entityName:string, reposi
     const { totalItems, result } = paginatedData;
 
     const entityCall = totalItems < 2 ? `${entityName}` : `${entityName}s`;
+    const contentCall = totalItems < 2 ? `There is` : `There are`;
     const totalPages = Math.ceil(totalItems / limit);
 
-    const answerToGetAll = `There is ${totalItems} ${entityCall} at the database.`
-    const answerToGetFromParent = `There is ${totalItems} ${entityCall} from the id ${findId}.`
+    const answerToGetAll = `${contentCall} ${totalItems} ${entityCall} at the database.`
+    const answerToGetFromParent = `${contentCall} ${totalItems} ${entityCall} from the id ${findId}.`
 
     let message:string;
     let statusCode:number;
 
     if (totalItems < 1) {
-        message = `There is no ${entityName}s at this collection.`
+        message = `There are no ${entityName}s at this collection.`
         statusCode = 404
         return { message, statusCode }
     } else if (page > totalPages){
