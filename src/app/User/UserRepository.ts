@@ -39,9 +39,21 @@ class UserRepository {
         }, { new: true })
     }
 
+    async pullPatient(userId: ObjectId, patientId: ObjectId){
+        return await this.model.findByIdAndUpdate(userId, {
+            $pull: { patients: patientId }
+        }, { new: true })
+    }
+
     async pushFile(userId:ObjectId, fileId:ObjectId){//isso precisa de revisão
         return await this.model.findByIdAndUpdate(userId, {
             $push: { image: [fileId] }
+        }, { new: true })
+    }
+
+    async pullFile(userId:ObjectId, fileId:ObjectId){//isso tb precisa de revisão
+        return await this.model.findByIdAndUpdate(userId, {
+            $pull: { image: fileId }
         }, { new: true })
     }
 }

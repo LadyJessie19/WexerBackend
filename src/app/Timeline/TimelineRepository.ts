@@ -39,7 +39,12 @@ class TimelineRepository {
             $push: { occurrences: [occurrenceId] }
         }, { new: true })
     }
-
+    
+    async pullOccurrence(timelineId:ObjectId, occurrenceId:ObjectId){
+        return await this.model.findByIdAndUpdate(timelineId, {
+            $pull: { occurrences: occurrenceId }
+        }, { new: true })
+    }
 }
 
 export default TimelineRepository

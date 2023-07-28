@@ -35,7 +35,7 @@ class OccurrenceService{
   }
 
   async deleteSer(id:ObjectId){
-    return await deleteOccurrence(id, this.repository)
+    return await deleteOccurrence(id, this.repository, this.TimelineRepository)
   }
 }
 

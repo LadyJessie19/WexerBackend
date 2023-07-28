@@ -16,7 +16,7 @@ class FileRepository {
     }
 
     async getAllRep(skip:number, limit:number){
-        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit).populate('occurrenceId')
+        const result = await this.model.find({}, null, { new: true }).skip(skip).limit(limit)//.populate('occurrenceId')
         const totalItems = await this.model.countDocuments();
         return { totalItems, result }
     }

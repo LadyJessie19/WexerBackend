@@ -32,7 +32,7 @@ class FileService{
     }
 
     async deleteSer(id:ObjectId){
-        return await deleteFile(id, this.repository)
+        return await deleteFile(id, this.repository, this.occurrenceRepository)
     }
 }
 

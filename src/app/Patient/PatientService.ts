@@ -35,7 +35,7 @@ class PatientService{
     }
 
     async deleteSer(id:ObjectId){
-      return await deletePatient(id, this.repository)
+      return await deletePatient(id, this.repository, this.UserRepository)
     }
 }
 

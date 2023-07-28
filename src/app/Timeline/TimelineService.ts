@@ -35,7 +35,7 @@ class TimelineService{
     }
 
     async deleteSer(id:ObjectId){
-      return await deleteTimeline(id, this.repository)
+      return await deleteTimeline(id, this.repository, this.PatientRepository)
     }
 }
 

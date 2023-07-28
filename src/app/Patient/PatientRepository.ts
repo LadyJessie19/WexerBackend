@@ -41,6 +41,12 @@ class PatientRepository {
             $push: { timelines: [timelineId] }
         }, { new: true })
     }
+    
+    async pullTimeline(patientId: ObjectId, timelineId: ObjectId){
+        return await this.model.findByIdAndUpdate(patientId, {
+            $pull: { timelines: timelineId }
+        }, { new: true })
+    }
 }
 
 export default PatientRepository

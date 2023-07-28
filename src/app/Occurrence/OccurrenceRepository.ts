@@ -38,6 +38,12 @@ class OccurrenceRepository {
             $push: { files: [fileId] }
         }, { new: true })
     }
+
+    async pullFile(occurrenceId:ObjectId, fileId:ObjectId){
+        return await this.model.findByIdAndUpdate(occurrenceId, {
+            $pull: { files: fileId }
+        }, { new: true })
+    }
 }
 
 export default OccurrenceRepository
