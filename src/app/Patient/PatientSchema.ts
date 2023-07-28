@@ -8,7 +8,8 @@ class PatientYupSchema {
             birthdate: yup.date().required(),
             contact: yup.string().required(),
             demands: yup.string().required(),
-            personalAnnotations: yup.string().required()
+            personalAnnotations: yup.string().required(),
+            userId: yup.mixed().test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value))
         })
     }
     static update(){

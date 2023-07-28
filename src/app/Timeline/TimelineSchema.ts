@@ -4,7 +4,8 @@ import { Types } from "mongoose"
 class TimelineYupSchema {
     static create(){
         return yup.object().shape({
-            name: yup.string().required()
+            name: yup.string().required(),
+            patientId: yup.mixed().test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value))
         })
     }
     static update(){

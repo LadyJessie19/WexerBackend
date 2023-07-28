@@ -1,6 +1,6 @@
 import UserRepository from "./UserRepository"
 
-import { ServiceUserDTO } from "./UserDTO";
+import { CreateUserDTO, ServiceUserDTO } from "./UserDTO";
 
 import createUser from "./features/createUser.service";
 import getAllUsers from "./features/getAllUsers.service";
@@ -12,7 +12,7 @@ import { ObjectId } from "mongoose";
 class UserService{
     constructor(private repository:UserRepository){}
 
-    async createSer(body:ServiceUserDTO){
+    async createSer(body:CreateUserDTO){
         return await createUser(body, this.repository)
     }
 

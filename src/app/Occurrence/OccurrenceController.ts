@@ -5,6 +5,7 @@ import OccurrenceYupSchema from "./OccurrenceSchema";
 
 import { ObjectId } from "mongoose";
 import newError from "../../utils/ErrorHandler";
+import OccurrenceFactory from "./OccurrenceFactory";
 
 class OccurrenceController{
   constructor(private service: OccurrenceService){}
@@ -12,7 +13,7 @@ class OccurrenceController{
   async createCon(req: Request, res: Response){
       const { body, params: { timeline_id } } = req
 
-      const payload = { ...body, timelineId: timeline_id }
+      const payload = OccurrenceFactory.newOccurrence(body, timeline_id as unknown as ObjectId)
 
       try {
           await OccurrenceYupSchema.create().validate(payload)

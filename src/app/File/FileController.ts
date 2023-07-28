@@ -5,6 +5,7 @@ import FileYupSchema from "./FileSchema";
 
 import newError from "../../utils/ErrorHandler";
 import { ObjectId, Types } from "mongoose";
+import FileFactory from "./FileFactory";
 
 class FileController {
   constructor(private service: FileService) {}
@@ -12,11 +13,12 @@ class FileController {
   async createCon(req: Request, res: Response) {
     const { params: { occurrence_id }, file } = req;
 
-    const payload = {
+    const body = {
       filename: file?.filename,
-      mimetype: file?.mimetype,
-      occurrenceId: occurrence_id as unknown as ObjectId
+      mimetype: file?.mimetype
     }
+
+    const payload = FileFactory.newFile(body, occurrence_id as unknown as ObjectId)
 
     try {
       await FileYupSchema.create().validate(payload);

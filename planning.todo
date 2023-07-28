@@ -244,7 +244,6 @@ Sixth - Finalizations:
 
     ✔ The message getOnePsychologist is missing "was"; @done(23-07-27 20:56)
     ✔ The update function needs to be fixed; @done(23-07-28 00:03)
-    ☐ O link para o link não está funcionando. BUAAAA!
 
     ✔ Perguntar: @done(23-07-27 20:21)
         ✔ Tipagem do teste - babel @done(23-07-27 20:01)
@@ -252,31 +251,37 @@ Sixth - Finalizations:
         ✔ Delete trycatch; @done(23-07-27 20:21)
         ✔ coverage: porcentagem? @done(23-07-27 20:21)
 
-        ☐ tsconfig.json
-        ☐ Ajuda com a tipagem de Request - AuthMiddleware
-
     Quick_Tasks:
-        ☐ Padrão REST - revisar a entidade User;
-        ☐ Consertar o lugar onde fazer o express.static;
-        ☐ trocars os "user" por "result";
-        ☐ Fazer um método para aparecer o link da foto quando o usuário for buscado.
-        ☐ Fazer um método para aparecer o link da foto quando a ocorrência for buscada.
+        ✔ Padrão REST - revisar a entidade User; @done(23-07-28 03:09)
+        ✔ trocars os "user" por "result"; @done(23-07-28 03:09)
+        ✘ Fazer um método para aparecer o link da foto quando o usuário for buscado. @cancelled(23-07-28 03:04)
+        ✔ Remover tudo sobre file da entidade user. @done(23-07-28 03:15)
         
     Every_Entities_Tasks:
-        ☐ Revisar os códigos das requisições;
-        ☐ Factory pattern;
+        ✔ Revisar os códigos das requisições; @done(23-07-28 03:20)
         ✔ Consertar as validações das rotas get, update e delete. @done(23-07-28 00:48)
         ✔ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório. @done(23-07-28 00:24)
         ✔ Erro de delete - id de outra coleção - msg de sucesso; @done(23-07-28 00:24)
-        ☐ Configurar babel
             
     Larger_Tasks:
-        ☐ Profile picture - extra;
+        ✘ Profile picture - extra; @cancelled(23-07-28 03:09)
         
     Professor_Help:
         ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
-        ✘ Consertar o @types da tipagem de Request - AuthMiddleware @cancelled(23-07-26 22:20)
-        ☐ Como remover o id da entidade pai quando ele for deletado?
+        ✔ Como remover o id da entidade pai quando ele for deletado? @done(23-07-28 02:42)
+        ☐ Consertar o @types da tipagem de Request - AuthMiddleware
+        
+    Last_Tasks:
+        ✔ tsconfig.json @done(23-07-28 03:41)
+        ✔ Configurar babel; @done(23-07-28 03:41)
+        ✔ Factory pattern; @done(23-07-28 04:23)
+        ☐ Consertar o lugar onde fazer o express.static;
+        ☐ Fazer o merge com a main e testar o deploy
+        ☐ Fazer um método para aparecer o link da foto quando a ocorrência for buscada.
+        ☐ O link para o link não está funcionando. BUAAAA!
+
+        ✔ Consertar as tipagens dos schemas @done(23-07-28 03:48)
+        ✘ Consertar os dtos de create--- nas features @cancelled(23-07-28 03:53)
 
     ☐ merge and delete... you know!
 
@@ -284,7 +289,7 @@ Seventh - Jest:
     ✔ create branch - seventh_tests @done(23-07-26 18:52)
     Initialization:
         ✔ Configure jest; @done(23-07-26 22:19)
-        ☐ Config babel - watch the july, 7th video;
+        ✔ Config babel - watch the july, 7th video; @done(23-07-28 03:22)
         ✔ Add jest execution snippet to the script; @done(23-07-26 22:19)
         Note: Not sure if jest.config.ts file needs to be created.
     Testing - Controllers, Services, and Repositories Layers:
@@ -306,7 +311,7 @@ Seventh - Jest:
         Note: The controller and service layers are optional.
         Supertest:
             Note: This supertest is optional.
-            ☐ Integration test on a user route with supertest;
+            ✘ Integration test on a user route with supertest; @cancelled(23-07-28 03:24)
 Eighth - Finalization:
     Deploy:
         ✔ Railway account; @done(23-07-26 22:20)
@@ -315,8 +320,8 @@ Eighth - Finalization:
         ✔ Test all the requisitions - the server is Railway(I think...); @done(23-07-26 22:20)
     Documentation:
         ☐ Finish documentation;
-            ☐ Explain the declare global at MainRouter;
-            ☐ Explicar o any da função de paginação!
+            ✘ Explain the declare global at MainRouter; @cancelled(23-07-28 03:24)
+            ✘ Explicar o any da função de paginação! @cancelled(23-07-28 03:24)
 
 Extras_ToDo:
     ✔ Clean Architecture; @done(23-07-21 22:45)

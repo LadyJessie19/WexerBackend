@@ -5,6 +5,7 @@ import TimelineYupSchema from "./TimelineSchema";
 
 import newError from "../../utils/ErrorHandler";
 import { ObjectId } from "mongoose";
+import TimelineFactory from "./TimelineFactory";
 
 class TimelineController{
   constructor(private service: TimelineService){}
@@ -12,7 +13,7 @@ class TimelineController{
   async createCon(req: Request, res: Response){
       const { body, params: { patient_id } } = req
 
-      const payload = { ...body, patientId: patient_id }
+      const payload = TimelineFactory.newTimeline(body, patient_id as unknown as ObjectId)
 
       try {
           await TimelineYupSchema.create().validate(payload)

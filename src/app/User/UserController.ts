@@ -6,20 +6,23 @@ import UserYupSchema from "./UserSchema"
 import serverError from "../../utils/ServerError"
 import newError from "../../utils/ErrorHandler"
 import { ObjectId } from "mongoose"
+import UserFactory from "./UserFactory"
 
 class UserController {
     constructor(private service:UserService){}
 
     async createCon(req:Request, res:Response){
         const { body } = req
+
+        const payload = UserFactory.newUser(body)
     
         try{
-            await UserYupSchema.create().validate(body)
+            await UserYupSchema.create().validate(payload)
         } catch(err:any){
             return res.status(400).json({errors:err.errors})
         }
         
-        const result = await this.service.createSer(body)
+        const result = await this.service.createSer(payload)
         
         if("error" in result){
             return res.status(result.statusCode).json(result)

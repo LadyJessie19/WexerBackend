@@ -5,6 +5,7 @@ import PatientYupSchema from "./PatientSchema";
 
 import newError from "../../utils/ErrorHandler";
 import { ObjectId } from "mongoose";
+import PatientFactory from "./PatientFactory";
 
 class PatientController{
     constructor(private service: PatientService){}
@@ -12,7 +13,7 @@ class PatientController{
     async createCon(req: Request, res: Response){
         const { body, params: { user_id } } = req
 
-        const payload = { ...body, userId: user_id }
+        const payload = PatientFactory.newPatient(body, user_id as unknown as ObjectId)
 
         try {
             await PatientYupSchema.create().validate(payload)

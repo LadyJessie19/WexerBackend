@@ -5,7 +5,8 @@ class FileYupSchema {
     static create(){
         return yup.object().shape({
             filename: yup.string().required(),
-            mimetype: yup.string().required()
+            mimetype: yup.string().required(),
+            occurrenceId: yup.mixed().test('is-valid-objectId', 'The Id is not valid', (value:any) => Types.ObjectId.isValid(value))
         })
     }
     static delete(){

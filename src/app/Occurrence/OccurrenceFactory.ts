@@ -1,11 +1,13 @@
+import { ObjectId } from "mongoose"
 import { CreateOccurrenceDTO } from "./OccurrenceDTO"
 
 class OccurrenceFactory {
-    static newOccurrence(body:CreateOccurrenceDTO){
+    static newOccurrence(body:CreateOccurrenceDTO, timelineId:ObjectId){
         return {
             title: body.title,
             content: body.content,
-            kind: body.kind
+            kind: body.kind,
+            timelineId
         }
     }
 }
