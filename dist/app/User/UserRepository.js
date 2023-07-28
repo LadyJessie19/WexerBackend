@@ -21,7 +21,7 @@ class UserRepository {
     getAllRep(skip, limit) {
         return __awaiter(this, void 0, void 0, function* () {
             const totalItems = yield this.model.countDocuments();
-            const result = yield this.model.find({}, null, { new: true }).skip(skip).limit(limit); //.populate("patients").populate("photo")
+            const result = yield this.model.find({}, null, { new: true }).skip(skip).limit(limit); //.populate("patients")
             return { totalItems, result };
         });
     }
@@ -45,6 +45,11 @@ class UserRepository {
             return yield this.model.findOne({ email }).select('+password');
         });
     }
+    findByNicknameRep(nickname) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.model.findOne({ nickname });
+        });
+    }
     pushPatient(userId, patientId) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield this.model.findByIdAndUpdate(userId, {
@@ -52,10 +57,10 @@ class UserRepository {
             }, { new: true });
         });
     }
-    pushFile(userId, fileId) {
+    pullPatient(userId, patientId) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield this.model.findByIdAndUpdate(userId, {
-                $push: { image: [fileId] }
+                $pull: { patients: patientId }
             }, { new: true });
         });
     }

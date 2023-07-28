@@ -14,13 +14,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const createUser_service_1 = __importDefault(require("./features/createUser.service"));
 const getAllUsers_service_1 = __importDefault(require("./features/getAllUsers.service"));
-const getOneUsers_service_1 = __importDefault(require("./features/getOneUsers.service"));
+const getOneUser_service_1 = __importDefault(require("./features/getOneUser.service"));
 const updateUser_service_1 = __importDefault(require("./features/updateUser.service"));
 const deleteUser_service_1 = __importDefault(require("./features/deleteUser.service"));
 class UserService {
     constructor(repository) {
         this.repository = repository;
-    } //After, add photoRepository
+    }
     createSer(body) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield (0, createUser_service_1.default)(body, this.repository);
@@ -33,7 +33,7 @@ class UserService {
     }
     getOneSer(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield (0, getOneUsers_service_1.default)(id, this.repository);
+            return yield (0, getOneUser_service_1.default)(id, this.repository);
         });
     }
     updateSer(id, body) {

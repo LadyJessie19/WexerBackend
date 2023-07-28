@@ -12,18 +12,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
-const databaseConfig_1 = __importDefault(require("./configs/databaseConfig"));
-const MainRouter_1 = __importDefault(require("./routes/MainRouter"));
-dotenv_1.default.config();
-const app = (0, express_1.default)();
-const port = process.env.PORT;
-app.use(express_1.default.json());
-app.use(MainRouter_1.default);
-(() => __awaiter(void 0, void 0, void 0, function* () {
-    return yield (0, databaseConfig_1.default)();
-}))();
-app.listen(port, () => {
-    console.log(`Server started! Listening port: ${port}`);
-});
+const ErrorHandler_1 = __importDefault(require("../../../utils/ErrorHandler"));
+const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
+const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
+function getOneUser(id, repository) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const result = yield repository.getOneRep(id);
+            if (!result) {
+                return (0, ErrorHandler_1.default)(`The psychologist with the id ${id} wasn't found.`, 404, "!result");
+            }
+            return (0, SuccessHandler_1.default)("Psychologist was successfully found.", 200, result);
+        }
+        catch (error) {
+            return (0, ServerError_1.default)(error, "getOneUser catch");
+        }
+    });
+}
+exports.default = getOneUser;

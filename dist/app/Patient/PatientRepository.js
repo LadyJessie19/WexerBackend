@@ -55,5 +55,12 @@ class PatientRepository {
             }, { new: true });
         });
     }
+    pullTimeline(patientId, timelineId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.model.findByIdAndUpdate(patientId, {
+                $pull: { timelines: timelineId }
+            }, { new: true });
+        });
+    }
 }
 exports.default = PatientRepository;

@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const TimelineSchema_1 = __importDefault(require("./TimelineSchema"));
 const ErrorHandler_1 = __importDefault(require("../../utils/ErrorHandler"));
+const TimelineFactory_1 = __importDefault(require("./TimelineFactory"));
 class TimelineController {
     constructor(service) {
         this.service = service;
@@ -21,7 +22,7 @@ class TimelineController {
     createCon(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { body, params: { patient_id } } = req;
-            const payload = Object.assign(Object.assign({}, body), { patientId: patient_id });
+            const payload = TimelineFactory_1.default.newTimeline(body, patient_id);
             try {
                 yield TimelineSchema_1.default.create().validate(payload);
             }
@@ -74,7 +75,7 @@ class TimelineController {
                 yield TimelineSchema_1.default.update().validate(payload);
             }
             catch (error) {
-                return res.status(400).json((0, ErrorHandler_1.default)("The id/body is invalid", 400));
+                return res.status(400).json((0, ErrorHandler_1.default)(error.message, 400));
             }
             const result = yield this.service.updateSer(timeline_id, body);
             if ('error' in result) {

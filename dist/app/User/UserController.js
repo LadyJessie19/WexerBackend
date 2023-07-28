@@ -15,20 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const UserSchema_1 = __importDefault(require("./UserSchema"));
 const ServerError_1 = __importDefault(require("../../utils/ServerError"));
 const ErrorHandler_1 = __importDefault(require("../../utils/ErrorHandler"));
+const UserFactory_1 = __importDefault(require("./UserFactory"));
 class UserController {
     constructor(service) {
         this.service = service;
     }
     createCon(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { body } = req; //don't forget to add _file_ to req destruct
+            const { body } = req;
+            const payload = UserFactory_1.default.newUser(body);
             try {
-                yield UserSchema_1.default.create().validate(body);
+                yield UserSchema_1.default.create().validate(payload);
             }
-            catch (err) {
-                return res.status(400).json({ errors: err.errors });
+            catch (error) {
+                return res.status(400).json((0, ErrorHandler_1.default)(error.message, 400));
             }
-            const result = yield this.service.createSer(body); //.createSer(payload) as any
+            const result = yield this.service.createSer(payload);
             if ("error" in result) {
                 return res.status(result.statusCode).json(result);
             }
@@ -63,7 +65,7 @@ class UserController {
                 yield UserSchema_1.default.update().validate(payload);
             }
             catch (error) {
-                return res.status(400).json((0, ErrorHandler_1.default)("The id/body is invalid", 400));
+                return res.status(400).json((0, ErrorHandler_1.default)(error.message, 400));
             }
             const result = yield this.service.updateSer(id, body);
             if ('error' in result) {

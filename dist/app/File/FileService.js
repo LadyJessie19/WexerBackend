@@ -44,7 +44,7 @@ class FileService {
     }
     deleteSer(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield (0, deleteFile_service_1.default)(id, this.repository);
+            return yield (0, deleteFile_service_1.default)(id, this.repository, this.occurrenceRepository);
         });
     }
 }

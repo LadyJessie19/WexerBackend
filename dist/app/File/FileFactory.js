@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class FileFactory {
-    static newFile(body) {
+    static newFile(body, occurrenceId) {
         return {
             filename: body.filename,
-            mimetype: body.mimetype
+            mimetype: body.mimetype,
+            occurrenceId
         };
     }
 }

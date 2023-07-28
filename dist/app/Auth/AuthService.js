@@ -29,18 +29,18 @@ class AuthService {
             const secretKey = process.env.SECRET_KEY;
             const currentToken = new TokenHandler_1.default(secretKey);
             try {
-                const user = yield this.repository.findByEmailRep(email);
-                if (!user) {
-                    return (0, ErrorHandler_1.default)("Not valid email/password.", 403, "!user");
+                const result = yield this.repository.findByEmailRep(email);
+                if (!result) {
+                    return (0, ErrorHandler_1.default)("Not valid email/password.", 403, "!result");
                 }
-                const isThePasswordValid = DataEncrypt_1.default.compare(password, user.password);
+                const isThePasswordValid = DataEncrypt_1.default.compare(password, result.password);
                 if (!isThePasswordValid) {
                     return (0, ErrorHandler_1.default)("Not valid email/password.", 403, "!isThePasswordValid");
                 }
                 const payload = {
-                    userId: user._id,
-                    name: user.name,
-                    email: user.email
+                    userId: result._id,
+                    name: result.name,
+                    email: result.email
                 };
                 const options = {
                     expiresIn: "7d",

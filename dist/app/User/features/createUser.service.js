@@ -22,6 +22,10 @@ function createUser(payload, repository) {
         if (isAnOldUser) {
             return (0, ErrorHandler_1.default)('A psychologist with this email already exists', 400, "isAnOldUser");
         }
+        const nicknameExists = yield repository.findByNicknameRep(payload.nickname);
+        if (nicknameExists) {
+            return (0, ErrorHandler_1.default)('This nickname isn`t available. Try another one, please.', 400, 'nicknameExists');
+        }
         try {
             const passwordHashed = DataEncrypt_1.default.hash(payload.password, 8);
             const user = Object.assign(Object.assign({}, payload), { password: passwordHashed });

@@ -12,17 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
 const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
-function deleteFile(id, repository) {
+const index_1 = __importDefault(require("../../../utils/ErrorHandler/index"));
+function deleteFile(id, repository, occurrenceRep) {
     return __awaiter(this, void 0, void 0, function* () {
-        repository.deleteRep(id);
-        try {
-            return (0, SuccessHandler_1.default)("The file was successfully removed", 200);
+        const file = yield repository.getOneRep(id);
+        if (file) {
+            yield repository.deleteRep(id);
+            yield occurrenceRep.pullFile(file === null || file === void 0 ? void 0 : file.occurrenceId, id);
+            return (0, SuccessHandler_1.default)('The file was successfully removed.', 200);
         }
-        catch (error) {
-            return (0, ServerError_1.default)(error);
-        }
+        return (0, index_1.default)('The file couldn`t be removed. Please, check the current mongoDB ID.', 400);
     });
 }
 exports.default = deleteFile;

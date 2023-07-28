@@ -54,5 +54,12 @@ class OccurrenceRepository {
             }, { new: true });
         });
     }
+    pullFile(occurrenceId, fileId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.model.findByIdAndUpdate(occurrenceId, {
+                $pull: { files: fileId }
+            }, { new: true });
+        });
+    }
 }
 exports.default = OccurrenceRepository;

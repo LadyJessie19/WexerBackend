@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const FileSchema_1 = __importDefault(require("./FileSchema"));
 const ErrorHandler_1 = __importDefault(require("../../utils/ErrorHandler"));
 const mongoose_1 = require("mongoose");
+const FileFactory_1 = __importDefault(require("./FileFactory"));
 class FileController {
     constructor(service) {
         this.service = service;
@@ -22,11 +23,11 @@ class FileController {
     createCon(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { params: { occurrence_id }, file } = req;
-            const payload = {
+            const body = {
                 filename: file === null || file === void 0 ? void 0 : file.filename,
-                mimetype: file === null || file === void 0 ? void 0 : file.mimetype,
-                occurrenceId: occurrence_id
+                mimetype: file === null || file === void 0 ? void 0 : file.mimetype
             };
+            const payload = FileFactory_1.default.newFile(body, occurrence_id);
             try {
                 yield FileSchema_1.default.create().validate(payload);
             }

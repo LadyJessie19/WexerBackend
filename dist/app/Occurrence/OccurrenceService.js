@@ -50,7 +50,7 @@ class OccurrenceService {
     }
     deleteSer(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield (0, deleteOccurrence_service_1.default)(id, this.repository);
+            return yield (0, deleteOccurrence_service_1.default)(id, this.repository, this.TimelineRepository);
         });
     }
 }

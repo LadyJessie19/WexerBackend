@@ -12,17 +12,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
 const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
+const index_1 = __importDefault(require("../../../utils/ErrorHandler/index"));
 function deleteUser(id, repository) {
     return __awaiter(this, void 0, void 0, function* () {
-        repository.deleteRep(id);
-        try {
-            return (0, SuccessHandler_1.default)("Psychologist successfully removed", 200);
+        const result = yield repository.deleteRep(id);
+        if (!result) {
+            return (0, index_1.default)('The psychologist couldn`t be removed. Please, check the current mongoDB ID.', 400);
         }
-        catch (error) {
-            return (0, ServerError_1.default)(error);
-        }
+        return (0, SuccessHandler_1.default)('The psychologist was successfully removed.', 200);
     });
 }
 exports.default = deleteUser;

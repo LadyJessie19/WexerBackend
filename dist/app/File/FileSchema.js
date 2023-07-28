@@ -29,14 +29,15 @@ class FileYupSchema {
     static create() {
         return yup.object().shape({
             filename: yup.string().required(),
-            mimetype: yup.string().required()
+            mimetype: yup.string().required(),
+            occurrenceId: yup.mixed().test('is-valid-objectId', 'The Id is not valid', (value) => mongoose_1.Types.ObjectId.isValid(value))
         });
     }
     static delete() {
         return yup.object().shape({
             id: yup
                 .mixed()
-                .test('is-valid-objectId', 'The Id is not valid', value => mongoose_1.Types.ObjectId.isValid(value))
+                .test('is-valid-objectId', 'The Id is not valid', (value) => mongoose_1.Types.ObjectId.isValid(value))
         });
     }
 }

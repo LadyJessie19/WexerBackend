@@ -18,11 +18,11 @@ const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"
 function getOneTimeline(id, repository) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const user = yield repository.getOneRep(id);
-            if (!user) {
-                return (0, ErrorHandler_1.default)(`The timeline with the id ${id} wasn't found`, 404, "!user");
+            const result = yield repository.getOneRep(id);
+            if (!result) {
+                return (0, ErrorHandler_1.default)(`The timeline with the id ${id} wasn't found`, 404, "!result");
             }
-            return (0, SuccessHandler_1.default)("The timeline was successfully found.", 200, user);
+            return (0, SuccessHandler_1.default)("The timeline was successfully found.", 200, result);
         }
         catch (error) {
             return (0, ServerError_1.default)(error, "getOneTimeline catch");

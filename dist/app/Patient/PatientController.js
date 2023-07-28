@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const PatientSchema_1 = __importDefault(require("./PatientSchema"));
 const ErrorHandler_1 = __importDefault(require("../../utils/ErrorHandler"));
+const PatientFactory_1 = __importDefault(require("./PatientFactory"));
 class PatientController {
     constructor(service) {
         this.service = service;
@@ -21,7 +22,7 @@ class PatientController {
     createCon(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { body, params: { user_id } } = req;
-            const payload = Object.assign(Object.assign({}, body), { userId: user_id });
+            const payload = PatientFactory_1.default.newPatient(body, user_id);
             try {
                 yield PatientSchema_1.default.create().validate(payload);
             }
@@ -74,7 +75,7 @@ class PatientController {
                 yield PatientSchema_1.default.update().validate(payload);
             }
             catch (error) {
-                return res.status(400).json((0, ErrorHandler_1.default)("The id/body is invalid", 400));
+                return res.status(400).json((0, ErrorHandler_1.default)(error.message, 400));
             }
             const result = yield this.service.updateSer(patient_id, body);
             if ('error' in result) {

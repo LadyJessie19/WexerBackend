@@ -27,7 +27,7 @@ class FileRepository {
     }
     getAllRep(skip, limit) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield this.model.find({}, null, { new: true }).skip(skip).limit(limit).populate('occurrenceId');
+            const result = yield this.model.find({}, null, { new: true }).skip(skip).limit(limit); //.populate('occurrenceId')
             const totalItems = yield this.model.countDocuments();
             return { totalItems, result };
         });

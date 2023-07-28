@@ -54,5 +54,12 @@ class TimelineRepository {
             }, { new: true });
         });
     }
+    pullOccurrence(timelineId, occurrenceId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.model.findByIdAndUpdate(timelineId, {
+                $pull: { occurrences: occurrenceId }
+            }, { new: true });
+        });
+    }
 }
 exports.default = TimelineRepository;

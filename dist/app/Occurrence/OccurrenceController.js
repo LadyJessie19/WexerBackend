@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const OccurrenceSchema_1 = __importDefault(require("./OccurrenceSchema"));
 const ErrorHandler_1 = __importDefault(require("../../utils/ErrorHandler"));
+const OccurrenceFactory_1 = __importDefault(require("./OccurrenceFactory"));
 class OccurrenceController {
     constructor(service) {
         this.service = service;
@@ -21,7 +22,7 @@ class OccurrenceController {
     createCon(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { body, params: { timeline_id } } = req;
-            const payload = Object.assign(Object.assign({}, body), { timelineId: timeline_id });
+            const payload = OccurrenceFactory_1.default.newOccurrence(body, timeline_id);
             try {
                 yield OccurrenceSchema_1.default.create().validate(payload);
             }
@@ -74,7 +75,7 @@ class OccurrenceController {
                 yield OccurrenceSchema_1.default.update().validate(payload);
             }
             catch (error) {
-                return res.status(400).json((0, ErrorHandler_1.default)("The id/body is invalid", 400));
+                return res.status(400).json((0, ErrorHandler_1.default)(error.message, 400));
             }
             const result = yield this.service.updateSer(occurrence_id, body);
             if ('error' in result) {

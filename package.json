@@ -6,7 +6,8 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsnd src/server.ts",
-    "build": "babel src --out-dir dist",
+    "build": "tsc",
+    "babel": "babel src --out-dir dist",
     "start": "babel-node dist/server.cjs",
     "test": "jest",
     "cov": "npx jest --coverage"
