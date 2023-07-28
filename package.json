@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsnd src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.cjs",
+    "start": "node dist/server.js",
     "babel": "babel src --out-dir dist",
     "babel-start": "babel-node dist/server.cjs",
     "test": "jest",

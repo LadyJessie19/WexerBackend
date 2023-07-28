@@ -240,7 +240,7 @@ Sixth - Finalizations:
         
     Professor_Help:
         ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
-        ☐ Consertar o @types da tipagem de Request - AuthMiddleware
+        ✔ Consertar o @types da tipagem de Request - AuthMiddleware @done(23-07-28 18:31)
         
     Last_Tasks:
         ✔ tsconfig.json @done(23-07-28 03:41)

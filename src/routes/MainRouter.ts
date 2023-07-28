@@ -18,7 +18,7 @@ declare global {
         email?: string;
         }
     }
-    }
+}
 }
 
 const MainRouter = Router()
