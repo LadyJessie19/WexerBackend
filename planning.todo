@@ -265,9 +265,9 @@ Sixth - Finalizations:
     Every_Entities_Tasks:
         ☐ Revisar os códigos das requisições;
         ☐ Factory pattern;
-        ☐ Consertar as validações das rotas get, update e delete.
-        ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
-        ☐ Erro de delete - id de outra coleção - msg de sucesso;
+        ✔ Consertar as validações das rotas get, update e delete. @done(23-07-28 00:48)
+        ✔ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório. @done(23-07-28 00:24)
+        ✔ Erro de delete - id de outra coleção - msg de sucesso; @done(23-07-28 00:24)
         ☐ Configurar babel
             
     Larger_Tasks:
@@ -276,7 +276,7 @@ Sixth - Finalizations:
     Professor_Help:
         ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
         ✘ Consertar o @types da tipagem de Request - AuthMiddleware @cancelled(23-07-26 22:20)
-        ✘ Como remover o id da entidade pai quando ele for deletado? @cancelled(23-07-26 22:20)
+        ☐ Como remover o id da entidade pai quando ele for deletado?
 
     ☐ merge and delete... you know!
 
