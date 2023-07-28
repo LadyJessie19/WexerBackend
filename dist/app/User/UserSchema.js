@@ -43,7 +43,7 @@ class UserYupSchema {
                 .object()
                 .test('is-valid-key', 'The object key is not valid', (value, context) => {
                 const { path, createError } = context;
-                const allowedKeys = ['name', 'email', 'nickname'];
+                const allowedKeys = ['name', 'email'];
                 const isValidKey = Object.keys(value).every(key => allowedKeys.includes(key));
                 if (!isValidKey) {
                     return createError({ path, message: 'The object key is not valid' });
