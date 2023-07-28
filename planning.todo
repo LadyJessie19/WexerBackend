@@ -280,9 +280,9 @@ Sixth - Finalizations:
         ✘ Fazer um método para aparecer o link da foto quando a ocorrência for buscada. @cancelled(23-07-28 05:33)
         ✘ O link para o file não está funcionando. BUAAAA! @cancelled(23-07-28 05:33)
         ✘ Consertar os dtos de create--- nas features @cancelled(23-07-28 03:53)
-        ☐ Fazer o merge com a main e testar o deploy
+        ✔ Fazer o merge com a main e testar o deploy @done(23-07-28 05:55)
 
-    ☐ merge and delete... you know!
+    ✔ merge and delete... you know! @done(23-07-28 05:55)
 
 Seventh - Jest:
     ✔ create branch - seventh_tests @done(23-07-26 18:52)
@@ -301,7 +301,7 @@ Seventh - Jest:
     Counter:
         Note: Coverage should be 70% for each layer.
         Service:
-            ☐ Auth;
+            ✘ Auth; @cancelled(23-07-28 06:02)
             ☐ User;
             ☐ Patient;
             ☐ Timeline;
@@ -321,6 +321,12 @@ Eighth - Finalization:
         ☐ Finish documentation;
             ✘ Explain the declare global at MainRouter; @cancelled(23-07-28 03:24)
             ✘ Explicar o any da função de paginação! @cancelled(23-07-28 03:24)
+Final_ToDos:
+    ☐ Conta do railaway vai vencer;
+    ☐ Tests - 5 tests;
+    ☐ Finish documentation;
+    ☐ Post at Arnia's gdrive the project;
+    ☐ Hasta La Vista, Baby!
 
 Extras_ToDo:
     ✔ Clean Architecture; @done(23-07-21 22:45)
