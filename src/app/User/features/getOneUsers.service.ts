@@ -13,7 +13,7 @@ async function getOneUser(id:ObjectId, repository:UserRepository){
         return newError(`The psychologist with the id ${id} wasn't found.`, 404, "!user")
         }
 
-        return newSuccess("Psychologist successfully found.", 200, user)
+        return newSuccess("Psychologist was successfully found.", 200, user)
 
     } catch (error: any) {
         return serverError(error, "getOneUser catch")

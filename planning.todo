@@ -240,11 +240,20 @@ Sixth - Finalizations:
     ✔ One full test to all the entities and layers @done(23-07-22 01:39)
     ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 22:43)
     
-    ☐ create branch - sixth_finalizations
+    ✔ create branch - sixth_finalizations @done(23-07-27 20:56)
 
-    ☐ The message getOnePsychologist is missing "was";
-    ☐ The update function needs to be fixed;
+    ✔ The message getOnePsychologist is missing "was"; @done(23-07-27 20:56)
+    ✔ The update function needs to be fixed; @done(23-07-28 00:03)
     ☐ O link para o link não está funcionando. BUAAAA!
+
+    ✔ Perguntar: @done(23-07-27 20:21)
+        ✔ Tipagem do teste - babel @done(23-07-27 20:01)
+        ✔ Teste ok? @done(23-07-27 20:21)
+        ✔ Delete trycatch; @done(23-07-27 20:21)
+        ✔ coverage: porcentagem? @done(23-07-27 20:21)
+
+        ☐ tsconfig.json
+        ☐ Ajuda com a tipagem de Request - AuthMiddleware
 
     Quick_Tasks:
         ☐ Padrão REST - revisar a entidade User;
@@ -259,6 +268,7 @@ Sixth - Finalizations:
         ☐ Consertar as validações das rotas get, update e delete.
         ☐ As rotas de update precisam ser melhoradas. Yup sem nada obrigatório.
         ☐ Erro de delete - id de outra coleção - msg de sucesso;
+        ☐ Configurar babel
             
     Larger_Tasks:
         ☐ Profile picture - extra;
@@ -274,7 +284,7 @@ Seventh - Jest:
     ✔ create branch - seventh_tests @done(23-07-26 18:52)
     Initialization:
         ✔ Configure jest; @done(23-07-26 22:19)
-        ✘ Config babel - watch the july, 7th video; @cancelled(23-07-26 22:20)
+        ☐ Config babel - watch the july, 7th video;
         ✔ Add jest execution snippet to the script; @done(23-07-26 22:19)
         Note: Not sure if jest.config.ts file needs to be created.
     Testing - Controllers, Services, and Repositories Layers:

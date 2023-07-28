@@ -57,7 +57,7 @@ class UserController {
         try {
             await UserYupSchema.update().validate(payload)
         } catch (error: any) {
-            return res.status(400).json(newError("The id/body is invalid", 400))
+            return res.status(400).json(newError(error.message, 400))
         }
         
         const result = await this.service.updateSer(id as unknown as ObjectId, body)

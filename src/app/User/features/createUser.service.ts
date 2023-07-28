@@ -1,13 +1,13 @@
 import UserRepository from "../UserRepository"
 
-import { ServiceUserDTO } from "../UserDTO"
+import { CreateUserDTO, ServiceUserDTO } from "../UserDTO"
 
 import newError from "../../../utils/ErrorHandler"
 import serverError from "../../../utils/ServerError"
 import newSuccess from "../../../utils/SuccessHandler"
 import DataEncrypt from "../../../utils/DataEncrypt"
 
-async function createUser(payload:ServiceUserDTO, repository:UserRepository) {
+async function createUser(payload:CreateUserDTO, repository:UserRepository) {
     
     const isAnOldUser = await repository.findByEmailRep(payload.email)
     if(isAnOldUser){

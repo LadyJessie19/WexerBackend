@@ -8,7 +8,8 @@
     "dev": "tsnd src/server.ts",
     "build": "tsc",
     "start": "node dist/server.cjs",
-    "test": "jest"
+    "test": "jest",
+    "cov": "npx jest --coverage"
   },
   "repository": {
     "type": "git",
