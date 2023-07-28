@@ -20,8 +20,6 @@ const UserSchema = new mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId, 
         ref: 'Patient'
     }]
-    //this is for the photo
-    // photo: { type: mongoose.SchemaTypes.ObjectId, ref: 'Photo', required: true },
 }, {timestamps: true})
 
 const User = mongoose.model("User", UserSchema)

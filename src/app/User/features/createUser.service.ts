@@ -1,6 +1,6 @@
 import UserRepository from "../UserRepository"
 
-import { CreateUserDTO, ServiceUserDTO } from "../UserDTO"
+import { CreateUserDTO } from "../UserDTO"
 
 import newError from "../../../utils/ErrorHandler"
 import serverError from "../../../utils/ServerError"

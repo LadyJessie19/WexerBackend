@@ -1,4 +1,3 @@
-import { CreateFileDTO } from "../File/FileDTO"
 import { CreatePatientDTO } from "../Patient/PatientDTO";
 
 interface CreateUserDTO {
@@ -9,7 +8,6 @@ interface CreateUserDTO {
 
 interface ServiceUserDTO extends CreateUserDTO {
     patients: Array<CreatePatientDTO>
-    image: CreateFileDTO;
 }
 
 export { CreateUserDTO, ServiceUserDTO }

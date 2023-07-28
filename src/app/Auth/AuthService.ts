@@ -20,21 +20,21 @@ class AuthService{
         const currentToken = new TokenHandler(secretKey)
 
         try {
-            const user = await this.repository.findByEmailRep(email)
+            const result = await this.repository.findByEmailRep(email)
 
-            if (!user) {
-                return newError("Not valid email/password.", 403, "!user")
+            if (!result) {
+                return newError("Not valid email/password.", 403, "!result")
             }
             
-            const isThePasswordValid = DataEncrypt.compare(password, user.password);
+            const isThePasswordValid = DataEncrypt.compare(password, result.password);
             if (!isThePasswordValid) {
                 return newError("Not valid email/password.", 403, "!isThePasswordValid")
             }
 
             const payload = {
-            userId: user._id,
-            name: user.name,
-            email: user.email
+            userId: result._id,
+            name: result.name,
+            email: result.email
             };
         
             const options = {

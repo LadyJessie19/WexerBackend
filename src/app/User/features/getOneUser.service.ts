@@ -7,13 +7,13 @@ import { ObjectId } from "mongoose";
 
 async function getOneUser(id:ObjectId, repository:UserRepository){
     try {
-        const user = await repository.getOneRep(id);
+        const result = await repository.getOneRep(id);
 
-        if (!user) {
-        return newError(`The psychologist with the id ${id} wasn't found.`, 404, "!user")
+        if (!result) {
+        return newError(`The psychologist with the id ${id} wasn't found.`, 404, "!result")
         }
 
-        return newSuccess("Psychologist was successfully found.", 200, user)
+        return newSuccess("Psychologist was successfully found.", 200, result)
 
     } catch (error: any) {
         return serverError(error, "getOneUser catch")

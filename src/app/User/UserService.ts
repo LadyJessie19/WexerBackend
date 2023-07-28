@@ -4,15 +4,15 @@ import { ServiceUserDTO } from "./UserDTO";
 
 import createUser from "./features/createUser.service";
 import getAllUsers from "./features/getAllUsers.service";
-import getOneUser from "./features/getOneUsers.service";
+import getOneUser from "./features/getOneUser.service";
 import updateUser from "./features/updateUser.service";
 import deleteUser from "./features/deleteUser.service";
 import { ObjectId } from "mongoose";
 
 class UserService{
-    constructor(private repository:UserRepository){}//After, add photoRepository
+    constructor(private repository:UserRepository){}
 
-    async createSer(body:ServiceUserDTO){//exchange the DTO to the one with photo
+    async createSer(body:ServiceUserDTO){
         return await createUser(body, this.repository)
     }
 

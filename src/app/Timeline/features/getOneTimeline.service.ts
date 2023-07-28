@@ -7,13 +7,13 @@ import { ObjectId } from "mongoose";
 
 async function getOneTimeline(id:ObjectId, repository:TimelineRepository){
     try {
-        const user = await repository.getOneRep(id);
+        const result = await repository.getOneRep(id);
 
-        if (!user) {
-        return newError(`The timeline with the id ${id} wasn't found`, 404, "!user")
+        if (!result) {
+        return newError(`The timeline with the id ${id} wasn't found`, 404, "!result")
         }
 
-        return newSuccess("The timeline was successfully found.", 200, user)
+        return newSuccess("The timeline was successfully found.", 200, result)
 
     } catch (error: any) {
         return serverError(error, "getOneTimeline catch")

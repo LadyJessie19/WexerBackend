@@ -1,7 +1,7 @@
-import UserController from "./UserController";
 import User from "./UserEntity";
 import UserRepository from "./UserRepository";
 import UserService from "./UserService";
+import UserController from "./UserController";
 
 class UserModule{
     static build(){

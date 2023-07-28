@@ -11,7 +11,7 @@ class UserController {
     constructor(private service:UserService){}
 
     async createCon(req:Request, res:Response){
-        const { body } = req //don't forget to add _file_ to req destruct
+        const { body } = req
     
         try{
             await UserYupSchema.create().validate(body)
@@ -19,7 +19,7 @@ class UserController {
             return res.status(400).json({errors:err.errors})
         }
         
-        const result = await this.service.createSer(body)//.createSer(payload) as any
+        const result = await this.service.createSer(body)
         
         if("error" in result){
             return res.status(result.statusCode).json(result)

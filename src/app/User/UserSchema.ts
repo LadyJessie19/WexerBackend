@@ -13,13 +13,13 @@ class UserYupSchema {
         return yup.object().shape({
             id: yup
             .mixed()
-            .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any)),
+            .test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value as any)),
             body: yup
             .object()
-            .test('is-valid-key', 'The object key is not valid', (value, context) => {
+            .test('is-valid-key', 'The object key is not valid', (value:any, context:any) => {
                 const { path, createError } = context;
 
-                const allowedKeys = ['name', 'email', 'password'];
+                const allowedKeys = ['name', 'email'];
                 const isValidKey = Object.keys(value).every(key => allowedKeys.includes(key));
 
                 if (!isValidKey) {
@@ -27,7 +27,7 @@ class UserYupSchema {
                 
                 return true;
             })
-            .test('is-not-empty', 'The body is empty', value => {
+            .test('is-not-empty', 'The body is empty', (value:any) => {
                 return value ? Object.keys(value).length > 0 : false;
             }).required('The body is required')
         })
@@ -36,8 +36,8 @@ class UserYupSchema {
         return yup.object().shape({
             id: yup
             .mixed()
-            .test('is-valid-objectId', 'The ID is not valid', value => Types.ObjectId.isValid(value as any))
-    })
+            .test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value as any))
+        })
     }
 }
 export default UserYupSchema
