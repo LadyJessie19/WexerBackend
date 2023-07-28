@@ -13,7 +13,7 @@ class UserYupSchema {
         return yup.object().shape({
             id: yup
             .mixed()
-            .test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value as any)),
+            .test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value)),
             body: yup
             .object()
             .test('is-valid-key', 'The object key is not valid', (value:any, context:any) => {
@@ -36,7 +36,7 @@ class UserYupSchema {
         return yup.object().shape({
             id: yup
             .mixed()
-            .test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value as any))
+            .test('is-valid-objectId', 'The ID is not valid', (value:any) => Types.ObjectId.isValid(value))
         })
     }
 }
