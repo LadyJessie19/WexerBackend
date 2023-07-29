@@ -5,18 +5,11 @@ import { ObjectId } from 'mongoose';
 const repository = UserModule.build().repository
 const id = "yN9HjL3oXxR7gFtDcVbAqW2e" as unknown as ObjectId
 
-const mock = {
-    message: 'Psychologist was successfully found.',
-    statusCode: 200,
-    result: { id: '1', name: 'Psychologist 1' },
-}
-
 test('should return success object with paginated data', async () => {
 
     const mock = {
         message: 'Psychologist was successfully found.',
-        statusCode: 200,
-        result: { id: '1', name: 'Psychologist 1' },
+        statusCode: 200
     }
     
     jest.spyOn(repository, 'getOneRep').mockResolvedValue(mock as any)

@@ -62,7 +62,5 @@ test('should return an error when creating the user goes wrong at the database',
 
   const result = await createUser(mock, repository)
 
-  const error = { message: 'Something went wrong' }
-
   expect(result.statusCode).toBe(400)
 })

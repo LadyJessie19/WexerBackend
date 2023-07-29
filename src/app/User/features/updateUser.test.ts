@@ -32,18 +32,3 @@ test('should update the user by the id', async () => {
   expect(result.statusCode).toBe(expectedResult.statusCode)
   expect(result.message).toBe(expectedResult.message)
 })
-
-/* test('should return a error when deleting the user by id', async () => {
-
-  const expectedResult = {
-    message: "The psychologist couldn`t be removed. Please, check the current mongoDB ID.",
-    statusCode: 400
-  }
-  
-  jest.spyOn(repository, 'deleteRep').mockResolvedValue(null)
-
-  const result = await deleteUser(id, repository)
-
-  expect(result.statusCode).toBe(expectedResult.statusCode)
-  expect(result.message).toBe(expectedResult.message)
-}) */
