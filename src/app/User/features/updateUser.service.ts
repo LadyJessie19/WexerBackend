@@ -9,7 +9,7 @@ import { ObjectId } from "mongoose";
 async function updateUser(id:ObjectId, body:CreateUserDTO, repository:UserRepository){
     const update = await repository.updateRep(id, body)
     try {
-        return newSuccess("Psychologist was successfully updated!", 200, update as object)
+        return newSuccess("The psychologist was successfully updated!", 200, update as object)
     } catch(error:any) {
         return serverError(error)
     }    
