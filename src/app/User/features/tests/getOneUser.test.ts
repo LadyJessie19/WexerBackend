@@ -27,7 +27,7 @@ test('shouldn`t return any result', async () => {
         statusCode: 404
     }
     
-    jest.spyOn(repository, 'getOneRep').mockResolvedValue(undefined as any)
+    jest.spyOn(repository, 'getOneRep').mockReturnValue(undefined as any)
 
     const result = await getOneUser(id, repository);
 

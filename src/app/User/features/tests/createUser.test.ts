@@ -8,7 +8,7 @@ const mock = { email: 'email@email.com', password: '123456', name: 'Someone Some
 test('should create a new user', async () => {
 
   const expectedResult = {
-    message: "Psychologist created with success!",
+    message: "The psychologist was created with success!",
     statusCode: 201,
     data: mock
   }

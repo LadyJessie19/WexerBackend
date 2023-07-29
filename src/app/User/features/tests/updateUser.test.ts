@@ -19,7 +19,7 @@ test('should update the user by the id', async () => {
     }
 
    const expectedResult = {
-    message: "Psychologist was successfully updated!",
+    message: "The psychologist was successfully updated!",
     statusCode: 200
   }
 
