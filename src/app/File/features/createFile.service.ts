@@ -12,7 +12,7 @@ async function createFile(file:FileWithOccurrenceIdDTO, repository:FileRepositor
     const fileCreated = await repository.createRep(file)
 
     if(!fileCreated){
-        newError("Could not create file.", 400)
+        return newError("Could not create file.", 400)
     }
     
     await occurrenceRep.pushFile(file.occurrenceId as unknown as ObjectId, fileCreated._id as unknown as ObjectId)
