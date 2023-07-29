@@ -263,11 +263,11 @@ Seventh - Jest:
     Testing - Services Layers:
     Counter:
         Service:
-            ✘ Auth; @cancelled(23-07-28 06:02)
-            ☐ User;
-            ☐ Patient;
-            ☐ Timeline;
-            ☐ Occurrence;
+            ✔ User; @done(23-07-29 08:01)
+            ✔ Patient; @done(23-07-29 08:01)
+            ✔ Timeline; @done(23-07-29 08:01)
+            ✔ Occurrence; @done(23-07-29 08:01)
+            ✔ File; @done(23-07-29 08:01)
         Supertest:
             ✘ Integration test on a user route with supertest; @cancelled(23-07-28 03:24)
 Eighth - Finalization:
@@ -282,7 +282,7 @@ Eighth - Finalization:
             ✘ Explicar o any da função de paginação! @cancelled(23-07-28 03:24)
 Final_ToDos:
     ✔ Conta do railaway vai parar de funfar; @done(23-07-28 15:44)
-    ☐ Tests - 5 tests;
+    ✔ Tests - 5 tests; @done(23-07-29 08:01)
     ☐ Finish documentation;
     ✔ Fix the 'There is' and 'There are' issue @done(23-07-28 17:44)
     ✔ Post at Arnia's gdrive the project; @done(23-07-28 16:44)
