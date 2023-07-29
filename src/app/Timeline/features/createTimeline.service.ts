@@ -12,7 +12,7 @@ async function createTimeline(timeline:TimelineWithPatientIdDTO, repository:Time
     const timelineCreated = await repository.createRep(timeline)
 
     if(!timelineCreated){
-        newError("Could not create timeline.", 400)
+        return newError("Could not create timeline.", 400)
     }
 
     await patientRep.pushTimeline(timeline.patientId, timelineCreated._id as unknown as ObjectId)
