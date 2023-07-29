@@ -12,7 +12,7 @@ async function createOccurrence(occurrence:OccurrenceWithTimelineIdDTO, reposito
         const occurrenceCreated = await repository.createRep(occurrence)
 
         if(!occurrenceCreated){
-            newError("Could not create occurrence.", 400)
+            return newError("Could not create occurrence.", 400)
         }
 
         await timelineRep.pushOccurrence(occurrence.timelineId, occurrenceCreated._id as unknown as ObjectId)
