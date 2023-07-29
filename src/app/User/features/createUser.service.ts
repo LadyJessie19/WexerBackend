@@ -3,7 +3,6 @@ import UserRepository from "../UserRepository"
 import { CreateUserDTO } from "../UserDTO"
 
 import newError from "../../../utils/ErrorHandler"
-import serverError from "../../../utils/ServerError"
 import newSuccess from "../../../utils/SuccessHandler"
 import DataEncrypt from "../../../utils/DataEncrypt"
 
@@ -26,11 +25,8 @@ async function createUser(payload:CreateUserDTO, repository:UserRepository) {
         return newSuccess("Psychologist created with success!", 201, result)
 
     } catch (error:any) {
-        if (error.errors) {
-        return newError(error.message, 400, "createUser catch")
+        return newError('Something went wrong at the database. ', 400, "createUser catch")
     }
-    return serverError(error)
-}
 }
 
 export default createUser
