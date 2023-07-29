@@ -22,7 +22,7 @@ async function createUser(payload:CreateUserDTO, repository:UserRepository) {
         const passwordHashed = DataEncrypt.hash(payload.password, 8)
         const user = {...payload, password: passwordHashed}
         const result = await repository.createRep(user)
-        return newSuccess("Psychologist created with success!", 201, result)
+        return newSuccess("The psychologist was created with success!", 201, result)
 
     } catch (error:any) {
         return newError('Something went wrong at the database. ', 400, "createUser catch")
