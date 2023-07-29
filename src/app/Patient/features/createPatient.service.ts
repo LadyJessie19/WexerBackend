@@ -12,11 +12,11 @@ async function createPatient(patient:PatientWithUserIdDTO, repository:PatientRep
     const patientCreated = await repository.createRep(patient)
     
     if(!patientCreated){
-        newError("Could not create patient.", 400)
+        return newError("Could not create patient.", 400)
     }
 
     await userRep.pushPatient(patient.userId, patientCreated._id as unknown as ObjectId)
-    return newSuccess("The patient created with success!", 201, {patientCreated})
+    return newSuccess("The patient was created with success!", 201, {patientCreated})
 }
 
 export default createPatient
