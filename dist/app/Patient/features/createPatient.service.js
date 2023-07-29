@@ -12,18 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
 const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
+const ErrorHandler_1 = __importDefault(require("../../../utils/ErrorHandler"));
 function createPatient(patient, repository, userRep) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const patientCreated = yield repository.createRep(patient);
-            yield userRep.pushPatient(patient.userId, patientCreated._id);
-            return (0, SuccessHandler_1.default)("The patient created with success!", 201, { patientCreated });
+        const patientCreated = yield repository.createRep(patient);
+        if (!patientCreated) {
+            return (0, ErrorHandler_1.default)("Could not create patient.", 400);
         }
-        catch (error) {
-            return (0, ServerError_1.default)(error);
-        }
+        yield userRep.pushPatient(patient.userId, patientCreated._id);
+        return (0, SuccessHandler_1.default)("The patient was created with success!", 201, { patientCreated });
     });
 }
 exports.default = createPatient;

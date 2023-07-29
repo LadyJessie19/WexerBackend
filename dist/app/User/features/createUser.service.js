@@ -13,7 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ErrorHandler_1 = __importDefault(require("../../../utils/ErrorHandler"));
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
 const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
 const DataEncrypt_1 = __importDefault(require("../../../utils/DataEncrypt"));
 function createUser(payload, repository) {
@@ -30,13 +29,10 @@ function createUser(payload, repository) {
             const passwordHashed = DataEncrypt_1.default.hash(payload.password, 8);
             const user = Object.assign(Object.assign({}, payload), { password: passwordHashed });
             const result = yield repository.createRep(user);
-            return (0, SuccessHandler_1.default)("Psychologist created with success!", 201, result);
+            return (0, SuccessHandler_1.default)("The psychologist was created with success!", 201, result);
         }
         catch (error) {
-            if (error.errors) {
-                return (0, ErrorHandler_1.default)(error.message, 400, "createUser catch");
-            }
-            return (0, ServerError_1.default)(error);
+            return (0, ErrorHandler_1.default)('Something went wrong at the database. ', 400, "createUser catch");
         }
     });
 }

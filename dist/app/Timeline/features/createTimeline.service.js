@@ -12,18 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
 const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
+const ErrorHandler_1 = __importDefault(require("../../../utils/ErrorHandler"));
 function createTimeline(timeline, repository, patientRep) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const timelineCreated = yield repository.createRep(timeline);
-            yield patientRep.pushTimeline(timeline.patientId, timelineCreated._id);
-            return (0, SuccessHandler_1.default)("The timeline was created with success!", 201, { timelineCreated });
+        const timelineCreated = yield repository.createRep(timeline);
+        if (!timelineCreated) {
+            return (0, ErrorHandler_1.default)("Could not create timeline.", 400);
         }
-        catch (error) {
-            return (0, ServerError_1.default)(error);
-        }
+        yield patientRep.pushTimeline(timeline.patientId, timelineCreated._id);
+        return (0, SuccessHandler_1.default)("The timeline was created with success!", 201, { timelineCreated });
     });
 }
 exports.default = createTimeline;

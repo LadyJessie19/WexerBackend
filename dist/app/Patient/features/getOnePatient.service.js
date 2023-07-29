@@ -13,20 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ErrorHandler_1 = __importDefault(require("../../../utils/ErrorHandler"));
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
 const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
 function getOnePatient(id, repository) {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const result = yield repository.getOneRep(id);
-            if (!result) {
-                return (0, ErrorHandler_1.default)(`The patient with the id ${id} wasn't found`, 404, "!result");
-            }
-            return (0, SuccessHandler_1.default)("The pacient was successfully found.", 200, result);
+        const result = yield repository.getOneRep(id);
+        if (!result) {
+            return (0, ErrorHandler_1.default)(`The patient with the id ${id} wasn't found.`, 404, "!result");
         }
-        catch (error) {
-            return (0, ServerError_1.default)(error, "getOnePatient catch");
-        }
+        return (0, SuccessHandler_1.default)("The pacient was successfully found.", 200, result);
     });
 }
 exports.default = getOnePatient;

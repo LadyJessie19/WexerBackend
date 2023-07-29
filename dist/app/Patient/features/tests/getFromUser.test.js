@@ -12,17 +12,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SuccessHandler_1 = __importDefault(require("../../../utils/SuccessHandler"));
-const ServerError_1 = __importDefault(require("../../../utils/ServerError"));
-function updateUser(id, body, repository) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const update = yield repository.updateRep(id, body);
-        try {
-            return (0, SuccessHandler_1.default)("The psychologist was successfully updated!", 200, update);
-        }
-        catch (error) {
-            return (0, ServerError_1.default)(error);
-        }
-    });
-}
-exports.default = updateUser;
+const getFromUser_service_1 = __importDefault(require("../getFromUser.service"));
+const PatientModule_1 = __importDefault(require("../../PatientModule"));
+const repository = PatientModule_1.default.build().repository;
+const id = "yN9HjL3oXxR7gFtDcVbAqW2e";
+const mock = {
+    message: 'Data fetched successfully',
+    statusCode: 200,
+    pageInfo: { currentPage: 1, totalPages: 3, hasNextPage: true },
+    result: [{ id: '1', name: 'item 1' }, { id: '2', name: 'item 2' }],
+};
+test('should return the patients from the choosen id', () => __awaiter(void 0, void 0, void 0, function* () {
+    const page = 1;
+    const limit = 2;
+    jest.spyOn(repository, 'getFromParentRep').mockResolvedValue(mock);
+    const result = yield (0, getFromUser_service_1.default)(id, page, limit, repository);
+    expect(result.statusCode).toBe(mock.statusCode);
+}));
