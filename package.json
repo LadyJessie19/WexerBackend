@@ -6,7 +6,8 @@
     "main": "src/server.ts",
     "scripts": {
       "dev": "tsnd src/server.ts",
-      "start": "tsc && node dist/server.js",
+      "start": "node dist/server.js",
+      "build": "tsc",
       "babel": "babel src --out-dir dist",
       "babel-start": "babel-node dist/server.js",
       "test": "jest",
