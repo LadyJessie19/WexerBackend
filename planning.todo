@@ -1,4 +1,4 @@
-Third Module of Arnia Project - Wexer Psi Backend
+Arnia Third Module - Wexer Psi Backend
 Project Specifications ⬇
 
 Class: T32022
@@ -47,8 +47,6 @@ First - Start:
     MongoDB | Mongoose:
         ✔ Define MongoDB URL in the .env file; @done(23-07-04 21:45)
         ✔ Create a database folder and a config.ts file; @done(23-07-04 21:47) 
-        obs: It's db.ts the database config file.
-        update(2023-07-10): I'm deleting this folder and putting the mongo connection at configs/databaseConfig.ts
         ✔ Initialize database connection; @done(23-07-04 21:47)
 Second - Folder Creation | Entity Sketches:
     ✔ branch creation - second_folders; @done(23-07-04 23:00)
@@ -56,16 +54,6 @@ Second - Folder Creation | Entity Sketches:
         ✔ root (dotenv | package.json | tsconfig | gitignore | node_modules | uploads) @done(23-07-04 23:01)
             ✔ src (app | database | routes | server.ts file | utils | middlewares) @done(23-07-04 23:02)
     App Folder:
-        Legend: *these words are very long*
-            con -> controllers
-            ser -> services
-            rep -> repositories
-            ent -> entities
-            fac -> factories
-            mod -> module
-
-        Note: Each task in this section is a folder. Inside the parentheses are the files in that folder.
-
         ✔ Auth (con|dtos|schemas|ser|mod); @done(23-07-04 23:11)
         ✔ User:(con|dtos|ent|fac|mapper|rep|schema|ser|mod) @done(23-07-05 00:06)
         ✔ Patient;(con|dtos|ent|rep|fac|schemas|ser|mod) @done(23-07-05 00:32)
@@ -83,11 +71,11 @@ Third - Middlewares | Models | Interfaces | DTOs:
     Functions:
         ✔ Error handling function; @done(23-07-10 16:48)
         ✔ encrypt data; @done(23-07-10 17:08)
-        ✔ Token Verification Class; @done(23-07-10 16:28)
+        ✔ Token Verification; @done(23-07-10 16:28)
     Entity Modeling:
         ✔ Yup validation schema in the Controller;@done(23-07-11 17:07)
         ✔ Mongoose schema and model; @done(23-07-11 20:01)
-        ✔ DTO for "inter-layer communication"; @done(23-07-11 18:26)
+        ✔ DTO; @done(23-07-11 18:26)
         ✔ Don't forget the module, which creates everything; @done(23-07-11 21:04)
         Counter:
             ✔ Auth; @done(23-07-11 21:04)
@@ -132,8 +120,6 @@ Fifth - Features:
         ✔ Find by email - just noting; @done(23-07-10 23:08)
 
         ✔ Stoped at auth middleware; @est(2023-07-14 23:59) @done(23-07-14 15:40)
-        ✔ How I know that the user is with his correct token? @done(23-07-14 15:39)
-        ✘ PARAMS! forget this! @cancelled(23-07-14 15:40)
 
         ✔ Add pagination to GET - extra; @done(23-07-14 20:11)
         ✔ Authentication; @done(23-07-14 15:40)
@@ -182,9 +168,7 @@ Fifth - Features:
         ✔ Associate a file with Occurrence; @done(23-07-21 22:43)
         ✔ Find all files of an Occurrence; @done(23-07-21 22:43)
         ✔ Delete a file; @done(23-07-21 22:43)
-        ✔ Build the User Mapper @done(23-07-21 22:43)
-        ✘ Find all files of a Patient; @cancelled(23-07-21 22:43)
-        ✘ Find all files of a User; @cancelled(23-07-21 22:43)
+        ✔ Build the File Mapper @done(23-07-21 22:43)
 
     Counter:
         ✔ Auth; @done(23-07-13 23:01)
@@ -209,7 +193,6 @@ Sixth - Finalizations:
     ✔ Ver a melhor forma de usar o middleware de auth @done(23-07-21 22:43)
     ✔ Clean this .todo!!! It's so messy! @done(23-07-21 22:43)
     ✔ One full test to all the entities and layers @done(23-07-22 01:39)
-    ✘ Eu devo fazer "getOneFromParent" na entidade file? @cancelled(23-07-21 22:43)
     
     ✔ create branch - sixth_finalizations @done(23-07-27 20:56)
 
@@ -225,8 +208,8 @@ Sixth - Finalizations:
     Quick_Tasks:
         ✔ Padrão REST - revisar a entidade User; @done(23-07-28 03:09)
         ✔ trocars os "user" por "result"; @done(23-07-28 03:09)
-        ✘ Fazer um método para aparecer o link da foto quando o usuário for buscado. @cancelled(23-07-28 03:04)
         ✔ Remover tudo sobre file da entidade user. @done(23-07-28 03:15)
+        ✘ Fazer um método para aparecer o link da foto quando o usuário for buscado. @cancelled(23-07-28 03:04)
         
     Every_Entities_Tasks:
         ✔ Revisar os códigos das requisições; @done(23-07-28 03:20)
@@ -239,8 +222,7 @@ Sixth - Finalizations:
         ✔ Como remover o id da entidade pai quando ele for deletado? @done(23-07-28 02:42)
         
     Professor_Help:
-        ✘ Tentar consertar a tipagem do FileMapper: droga de any! @cancelled(23-07-26 22:20)
-        ✔ Consertar o @types da tipagem de Request - AuthMiddleware @done(23-07-28 18:31)
+         ✔ Consertar o @types da tipagem de Request - AuthMiddleware @done(23-07-28 18:31)
         
     Last_Tasks:
         ✔ tsconfig.json @done(23-07-28 03:41)
@@ -248,10 +230,10 @@ Sixth - Finalizations:
         ✔ Factory pattern; @done(23-07-28 04:23)
         ✔ Consertar as tipagens dos schemas @done(23-07-28 03:48)
         ✔ Fazer o merge com a main e testar o deploy @done(23-07-28 05:55)
+        ✔ Consertar os dtos de create nas features @done(23-07-30 12:59)
         ✘ Consertar o lugar onde fazer o express.static; @cancelled(23-07-28 16:55)
         ✘ Fazer um método para aparecer o link da foto quando a ocorrência for buscada. @cancelled(23-07-28 05:33)
         ✘ O link para o file não está funcionando. BUAAAA! @cancelled(23-07-28 05:33)
-        ✘ Consertar os dtos de create nas features @cancelled(23-07-28 03:53)
 
     ✔ merge and delete... you know! @done(23-07-28 05:55)
 Seventh - Jest:
@@ -277,24 +259,22 @@ Eighth - Finalization:
         ✔ Deploy the project; @done(23-07-26 22:20)
         ✔ Test all the requisitions - the server is Railway(I think...); @done(23-07-26 22:20)
     Documentation:
-        ☐ Finish documentation;
-            ✘ Explain the declare global at MainRouter; @cancelled(23-07-28 03:24)
-            ✘ Explicar o any da função de paginação! @cancelled(23-07-28 03:24)
+        ✔ Finish documentation; @done(23-07-30 12:53)
+            ✔ Explain the declare global at MainRouter; @done(23-07-30 12:59)
 Final_ToDos:
     ✔ Conta do railaway vai parar de funfar; @done(23-07-28 15:44)
     ✔ Tests - 5 tests; @done(23-07-29 08:01)
-    ☐ Finish documentation;
+    ✔ Finish documentation; @done(23-07-30 12:53)
     ✔ Fix the 'There is' and 'There are' issue @done(23-07-28 17:44)
     ✔ Post at Arnia's gdrive the project; @done(23-07-28 16:44)
     ✔ Fix user entity nickname @done(23-07-28 17:45)
     ✔ Email and nickname are unique and required @done(23-07-28 17:45)
-    ☐ Hasta La Vista, Baby!
+    ✔ ACABOU! @done(23-07-30 12:53)
 
 Extras_ToDo:
     ✔ Clean Architecture; @done(23-07-21 22:45)
     ✔ Port/Adapter; @done(23-07-21 22:45)
     ✔ Hexagonal Architecture; @done(23-07-21 22:44)
-    ✔ Better folder structure -> 03.2-http-3 -> user; @done(23-07-21 22:45)
     ✔ Mapper - link to files; @done(23-07-21 22:44)
     ✔ Pagination; @done(23-07-17 20:44)
     ✔ Request typing -> use the revision exercise; @done(23-07-21 22:44)
