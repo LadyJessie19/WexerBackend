@@ -92,27 +92,37 @@ Foram implementadas rotas públicas, para criar novos usuários e autenticar usu
 ### Rotas públicas
 
 POST '/users'
+
 POST '/auth'
 
 ### Rotas privadas
 
 GET '/users'
+
 GET PATCH DELETE '/users/:id'
+
 POST GET '/users/:user_id/patients'
 
 GET '/patients'
+
 GET PATCH DELETE '/patients/:patient_id'
+
 POST GET '/patients/:patient_id/timelines'
 
 GET '/timelines'
+
 GET PATCH DELETE '/timelines/:timeline_id'
+
 POST GET '/timelines/:timeline_id/occurrences'
 
 GET '/occurrences'
+
 GET PATCH DELETE '/occurrences/:occurrence_id'
+
 POST GET '/occurrences/:occurrence_id/files' 
 
 GET '/files'
+
 GET DELETE '/files/:file_id'
 
 ## Scripts do projeto
@@ -182,3 +192,5 @@ Este comando iniciará a execução do projeto. Dependendo do que foi definido n
 Após seguir todos os passos acima, o seu projeto deve estar rodando corretamente no ambiente especificado. Lembre-se de ler o arquivo README.md do repositório, pois pode conter informações adicionais sobre o projeto, requisitos específicos e outras instruções úteis para o desenvolvimento e execução do código.
 
 ---
+
+Este projeto de backend foi desenvolvido com foco em criar uma aplicação robusta, escalável e segura. Ele utiliza tecnologias modernas e segue boas práticas de desenvolvimento. O objetivo é fornecer uma base sólida para a construção de uma aplicação web completa.
