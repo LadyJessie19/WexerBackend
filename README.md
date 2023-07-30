@@ -157,7 +157,7 @@ Comando para executar os testes e gerar o relatório de cobertura de código com
 
 ## Como rodar o projeto
 
-Passo 1: Clonar o repositório
+Passo 1: Clonar o repositório e entrar na pasta
 
 ```
 git clone git@github.com:LadyJessie19/wexerBackend.git
