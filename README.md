@@ -188,7 +188,7 @@ Passo 4: Construir o projeto
 npm run build
 ```
 
-Este comando irá construir o projeto. Dependendo da configuração do projeto, ele pode executar a transpilação do código (caso esteja usando TypeScript ou Babel), gerar arquivos otimizados ou preparar o projeto para ser executado.
+Este comando irá construir o projeto. Na configuração do projeto, a transpilação do código TypeScript também pode ser feita com Babel através do comando `npm run babel`.
 
 Passo 5: Iniciar o projeto
 
@@ -196,7 +196,7 @@ Passo 5: Iniciar o projeto
 npm start
 ```
 
-Este comando iniciará a execução do projeto. Dependendo do que foi definido no arquivo package.json, ele pode iniciar o servidor da aplicação ou qualquer outra ação necessária para o funcionamento do projeto.
+Este comando iniciará a execução do projeto e o servidor será iniciado.
 
 Após seguir todos os passos acima, o seu projeto deve estar rodando corretamente no ambiente especificado. Lembre-se de ler o arquivo README.md do repositório, pois pode conter informações adicionais sobre o projeto, requisitos específicos e outras instruções úteis para o desenvolvimento e execução do código.
 
