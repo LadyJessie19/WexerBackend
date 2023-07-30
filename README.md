@@ -90,27 +90,37 @@ Foram implementadas rotas públicas, para criar novos usuários e autenticar usu
 ### Rotas públicas
 
 POST '/users'
+
 POST '/auth'
 
 ### Rotas privadas
 
 GET '/users'
+
 GET PATCH DELETE '/users/:id'
+
 POST GET '/users/:user_id/patients'
 
 GET '/patients'
+
 GET PATCH DELETE '/patients/:patient_id'
+
 POST GET '/patients/:patient_id/timelines'
 
 GET '/timelines'
+
 GET PATCH DELETE '/timelines/:timeline_id'
+
 POST GET '/timelines/:timeline_id/occurrences'
 
 GET '/occurrences'
+
 GET PATCH DELETE '/occurrences/:occurrence_id'
+
 POST GET '/occurrences/:occurrence_id/files' 
 
 GET '/files'
+
 GET DELETE '/files/:file_id'
 
 ## Scripts do projeto
