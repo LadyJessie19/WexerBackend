@@ -6,6 +6,8 @@ O Wexer Psi Backend é o projeto do terceiro módulo da Arnia, sendo um Gerencia
 
 Seu objetivo é desenvolver o backend responsável por gerenciar informações relacionadas a usuários, pacientes, linhas do tempo, ocorrências e arquivos.
 
+Este projeto de backend foi desenvolvido com foco em criar uma aplicação robusta, escalável e segura para fornecer uma base sólida para a construção de uma aplicação web completa.
+
 ## Características Principais
 
 O projeto de backend possui as seguintes características principais:
@@ -143,6 +145,40 @@ Comando para executar os testes usando o Jest.
 
 Comando para executar os testes e gerar o relatório de cobertura de código com o Jest.
 
----
+## Como rodar o projeto
 
-Este projeto de backend foi desenvolvido com foco em criar uma aplicação robusta, escalável e segura. Ele utiliza tecnologias modernas e segue boas práticas de desenvolvimento. O objetivo é fornecer uma base sólida para a construção de uma aplicação web completa.
+Passo 1: Clonar o repositório
+
+```
+git clone git@github.com:LadyJessie19/wexerBackend.git
+```
+
+Este comando irá clonar o repositório do GitHub para o seu computador. Certifique-se de que você tenha o Git instalado e tenha permissão de acesso para clonar o repositório.
+
+Passo 2: Instalar as dependências
+
+```
+npm i
+```
+
+Este comando instalará todas as dependências do projeto listadas no arquivo package.json. Certifique-se de que você tenha o Node.js instalado no seu computador.
+
+Passo 3: Construir o projeto
+
+```
+npm run build
+```
+
+Este comando irá construir o projeto. Dependendo da configuração do projeto, ele pode executar a transpilação do código (caso esteja usando TypeScript ou Babel), gerar arquivos otimizados ou preparar o projeto para ser executado.
+
+Passo 4: Iniciar o projeto
+
+```
+npm start
+```
+
+Este comando iniciará a execução do projeto. Dependendo do que foi definido no arquivo package.json, ele pode iniciar o servidor da aplicação ou qualquer outra ação necessária para o funcionamento do projeto.
+
+Após seguir todos os passos acima, o seu projeto deve estar rodando corretamente no ambiente especificado. Lembre-se de ler o arquivo README.md do repositório, pois pode conter informações adicionais sobre o projeto, requisitos específicos e outras instruções úteis para o desenvolvimento e execução do código.
+
+---
