@@ -19,10 +19,6 @@ const pathWithId = "/files/:file_id"
 FileRoutes.use(express.static(path.join(__dirname, "..", '../../uploads')))
 FileRoutes.use(express.static('../../uploads'))
 
-/* FileRoutes.get('/uploads', uploadSingle, (req, res) => {
-    res.status(200).send(req.file?.path)
-}) */
-
 FileRoutes.use(authMiddleware)
 
 //Create and read from a occurrence

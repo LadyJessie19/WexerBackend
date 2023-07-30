@@ -173,7 +173,16 @@ npm i
 
 Este comando instalará todas as dependências do projeto listadas no arquivo package.json. Certifique-se de que você tenha o Node.js instalado no seu computador.
 
-Passo 3: Construir o projeto
+Passo 3: Configurar as variáveis de ambiente
+
+É preciso criar um arquivo .env com as variáveis de ambiente. Um arquivo .env.example está na pasta raiz do projeto.
+
+- URL: O endereço url do banco de dados mongoDB que será manipulado.
+- PORT: O número da porta onde o servidor express será iniciado.
+- SECRET_KEY: A chave secreta que será usada com a biblioteca JWT para criação de tokens de autenticação.
+- USER_URL: O endereço que deve ser concatenado com filename para retornar o arquivo com link para o usuário.
+
+Passo 4: Construir o projeto
 
 ```
 npm run build
@@ -181,7 +190,7 @@ npm run build
 
 Este comando irá construir o projeto. Dependendo da configuração do projeto, ele pode executar a transpilação do código (caso esteja usando TypeScript ou Babel), gerar arquivos otimizados ou preparar o projeto para ser executado.
 
-Passo 4: Iniciar o projeto
+Passo 5: Iniciar o projeto
 
 ```
 npm start
