@@ -201,5 +201,7 @@ Este comando iniciará a execução do projeto e o servidor será iniciado.
 Após seguir todos os passos acima, o seu projeto deve estar rodando corretamente no ambiente especificado. Lembre-se de ler o arquivo README.md do repositório, pois pode conter informações adicionais sobre o projeto, requisitos específicos e outras instruções úteis para o desenvolvimento e execução do código.
 
 ---
+## Entidades do projeto
 
-Este projeto de backend foi desenvolvido com foco em criar uma aplicação robusta, escalável e segura. Ele utiliza tecnologias modernas e segue boas práticas de desenvolvimento. O objetivo é fornecer uma base sólida para a construção de uma aplicação web completa.
+![image.png](https://media.discordapp.net/attachments/1080178640756691157/1125691832773378148/diagrama.PNG.png?width=1020&height=384)
+---
