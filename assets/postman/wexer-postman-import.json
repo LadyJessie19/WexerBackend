@@ -1,0 +1,2718 @@
+{
+	"info": {
+		"_postman_id": "0b18fc46-a7b0-46f6-9f9e-1d68001d526a",
+		"name": "Wexer Psi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24571507"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Set token environment variable\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.environment.set(\"token\", jsonData.token);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"email@email.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"email\": \"email@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "317"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13d-RM1qO1zPkFKmgDreznilC2G/IBA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2024 22:37:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login was successfully. Token created.\",\n    \"statusCode\": 200,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGMxNmM4ZTVkYjRlNTJhZDc3ZDg0NDkiLCJuYW1lIjoiSm9obm55IFdobyIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIiwiaWF0IjoxNzI0ODg0NjQyLCJleHAiOjE3MjU0ODk0NDJ9.EDw3_-mbvHvEYT8f2WlxTueCbH9bFAQUU7e-XLBzEQE\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nome\",\r\n    \"nickname\": \"apelido\",\r\n    \"email\": \"email@email.com\",\r\n    \"password\": \"senha\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"nome\",\r\n    \"nickname\": \"apelido\",\r\n    \"email\": \"email@email.com\",\r\n    \"password\": \"senha\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "351"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15f-XQuHn7M5g+w4Px8nojB6lV0K4is\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:54:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The psychologist was created with success!\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"name\": \"nome\",\n        \"nickname\": \"apelido\",\n        \"email\": \"email2@email.com\",\n        \"password\": \"$2b$08$LxMHKibK3CNxCi.2BrJFGOIDi1FQkXzUlqCHGGBUAPN7q2xnT9HaC\",\n        \"patients\": [],\n        \"_id\": \"66cff0db0f317eef7e964317\",\n        \"createdAt\": \"2024-08-29T03:54:03.278Z\",\n        \"updatedAt\": \"2024-08-29T03:54:03.278Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "707"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c3-4Mh5y/DZyx+RPKwZ7p03XsTL5HM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:57:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There are 2 psychologists at the database.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c16c8e5db4e52ad77d8449\",\n                \"name\": \"Somebody\",\n                \"email\": \"email@email.com\",\n                \"patients\": [\n                    \"64c1707d5db4e52ad77d8458\",\n                    \"64c172fd5db4e52ad77d846a\",\n                    \"64c173e05db4e52ad77d8474\"\n                ],\n                \"createdAt\": \"2023-07-26T18:57:18.131Z\",\n                \"updatedAt\": \"2024-08-29T03:56:22.640Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64c312529637916736c27cc3\",\n                \"name\": \"Teste Testerson\",\n                \"email\": \"teste@teste.com\",\n                \"patients\": [\n                    \"64c324b656bfb3a2ffd248d0\",\n                    \"64c33f6cc479fa34d2486ea5\",\n                    \"64c341bc1681e77b5be8e78a\",\n                    \"64c346f133fd9b29d152b1e1\"\n                ],\n                \"createdAt\": \"2023-07-28T00:56:50.701Z\",\n                \"updatedAt\": \"2023-07-28T05:34:12.150Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/64c16c8e5db4e52ad77d8449",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"64c16c8e5db4e52ad77d8449"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/64c16c8e5db4e52ad77d8449",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"64c16c8e5db4e52ad77d8449"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45f-Nz9dLmlov2qdFBv3D8cNWVaaeE0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:56:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Psychologist was successfully found.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"64c16c8e5db4e52ad77d8449\",\n        \"name\": \"Somebody\",\n        \"email\": \"email@email.com\",\n        \"patients\": [\n            {\n                \"_id\": \"64c1707d5db4e52ad77d8458\",\n                \"name\": \"Teddy Bear\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"teddy@email.com\",\n                \"demands\": \"To be a normal boy.\",\n                \"personalAnnotations\": \"Teddy says that he doesn't like to be a bear. He wants to be a normal boy.\",\n                \"timelines\": [\n                    \"64c174ae5db4e52ad77d8483\",\n                    \"64c1766a5db4e52ad77d8495\"\n                ],\n                \"userId\": \"64c16c8e5db4e52ad77d8449\",\n                \"createdAt\": \"2023-07-26T19:14:05.513Z\",\n                \"updatedAt\": \"2023-07-28T02:16:04.845Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64c173e05db4e52ad77d8474\",\n                \"name\": \"Narissa: Queen of Darkness\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"evilqueen@email.com\",\n                \"demands\": \"To be reconized as the queen of darkness.\",\n                \"personalAnnotations\": \"She said that her treatment was urgent. Actually, she demanded me.\",\n                \"timelines\": [],\n                \"userId\": \"64c16c8e5db4e52ad77d8449\",\n                \"createdAt\": \"2023-07-26T19:28:32.780Z\",\n                \"updatedAt\": \"2023-07-26T19:28:32.780Z\",\n                \"__v\": 0\n            }\n        ],\n        \"createdAt\": \"2023-07-26T18:57:18.131Z\",\n        \"updatedAt\": \"2024-08-29T03:56:22.640Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Somebody\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/64c16c8e5db4e52ad77d8449",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"64c16c8e5db4e52ad77d8449"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Somebody\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/64c16c8e5db4e52ad77d8449",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"64c16c8e5db4e52ad77d8449"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "339"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"153-iRqtlP0p0ObyeQF/SZ5vf/C1rtg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:56:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The psychologist was successfully updated!\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"64c16c8e5db4e52ad77d8449\",\n        \"name\": \"Somebody\",\n        \"email\": \"email@email.com\",\n        \"patients\": [\n            \"64c1707d5db4e52ad77d8458\",\n            \"64c172fd5db4e52ad77d846a\",\n            \"64c173e05db4e52ad77d8474\"\n        ],\n        \"createdAt\": \"2023-07-26T18:57:18.131Z\",\n        \"updatedAt\": \"2024-08-29T03:56:22.640Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/66cff0db0f317eef7e964317",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"66cff0db0f317eef7e964317"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/66cff0db0f317eef7e964317",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"66cff0db0f317eef7e964317"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-cGuUjFX3Gi8RRPg2uzAbSirtLwE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:55:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The psychologist was successfully removed.\",\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "All Patients From User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/64c16c8e5db4e52ad77d8449/patients",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"64c16c8e5db4e52ad77d8449",
+								"patients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Patients From User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/64c16c8e5db4e52ad77d8449/patients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"64c16c8e5db4e52ad77d8449",
+										"patients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1275"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4fb-d+fS4OljZEtJ8Y7K8BxghDWf7vI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:55:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There are 2 patients from the id 64c16c8e5db4e52ad77d8449.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c1707d5db4e52ad77d8458\",\n                \"name\": \"Teddy Bear\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"teddy@email.com\",\n                \"demands\": \"To be a normal boy.\",\n                \"personalAnnotations\": \"Teddy says that he doesn't like to be a bear. He wants to be a normal boy.\",\n                \"timelines\": [\n                    {\n                        \"_id\": \"64c174ae5db4e52ad77d8483\",\n                        \"name\": \"Ser um menino de verdade\",\n                        \"occurrences\": [\n                            \"64c178805db4e52ad77d84a6\",\n                            \"64c178cd5db4e52ad77d84b3\",\n                            \"66cf9a3632c7ddd0a76ed733\"\n                        ],\n                        \"patientId\": \"64c1707d5db4e52ad77d8458\",\n                        \"createdAt\": \"2023-07-26T19:31:58.592Z\",\n                        \"updatedAt\": \"2024-08-29T03:52:01.506Z\",\n                        \"__v\": 0\n                    }\n                ],\n                \"userId\": \"64c16c8e5db4e52ad77d8449\",\n                \"createdAt\": \"2023-07-26T19:14:05.513Z\",\n                \"updatedAt\": \"2023-07-28T02:16:04.845Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64c173e05db4e52ad77d8474\",\n                \"name\": \"Narissa: Queen of Darkness\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"evilqueen@email.com\",\n                \"demands\": \"To be reconized as the queen of darkness.\",\n                \"personalAnnotations\": \"She said that her treatment was urgent. Actually, she demanded me.\",\n                \"timelines\": [],\n                \"userId\": \"64c16c8e5db4e52ad77d8449\",\n                \"createdAt\": \"2023-07-26T19:28:32.780Z\",\n                \"updatedAt\": \"2023-07-26T19:28:32.780Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"João da Silva\",\r\n    \"birthdate\": \"1980-01-01T00:00:00.000Z\",\r\n    \"contact\": \"(21) 99999-8888\",\r\n    \"demands\": \"Dor nas costas\",\r\n    \"personalAnnotations\": \"Paciente com histórico de problemas de coluna.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/66ca3fb19c6808615951ed57/patients",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"66ca3fb19c6808615951ed57",
+								"patients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"João da Silva\",\r\n    \"birthdate\": \"1980-01-01T00:00:00.000Z\",\r\n    \"contact\": \"(21) 99999-8888\",\r\n    \"demands\": \"Dor nas costas\",\r\n    \"personalAnnotations\": \"Paciente com histórico de problemas de coluna.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/66ca3fb19c6808615951ed57/patients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"66ca3fb19c6808615951ed57",
+										"patients"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "456"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c8-qTgScmzXG2w85CoqJQ1k5mOSaLA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:59:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The patient was created with success!\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"patientCreated\": {\n            \"name\": \"João da Silva\",\n            \"birthdate\": \"1980-01-01T00:00:00.000Z\",\n            \"contact\": \"(21) 99999-8888\",\n            \"demands\": \"Dor nas costas\",\n            \"personalAnnotations\": \"Paciente com histórico de problemas de coluna.\",\n            \"timelines\": [],\n            \"userId\": \"66ca3fb19c6808615951ed57\",\n            \"_id\": \"66cff2080f317eef7e964322\",\n            \"createdAt\": \"2024-08-29T03:59:04.026Z\",\n            \"updatedAt\": \"2024-08-29T03:59:04.026Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/patients",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/patients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"patients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1751"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d7-g7ycyOGkAnr7cW3oKsCgCPkyI8g\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:59:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There are 4 patients at the database.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c1707d5db4e52ad77d8458\",\n                \"name\": \"Teddy Bear\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"teddy@email.com\",\n                \"demands\": \"To be a normal boy.\",\n                \"personalAnnotations\": \"Teddy says that he doesn't like to be a bear. He wants to be a normal boy.\",\n                \"timelines\": [\n                    \"64c174ae5db4e52ad77d8483\",\n                    \"64c1766a5db4e52ad77d8495\"\n                ],\n                \"userId\": \"64c16c8e5db4e52ad77d8449\",\n                \"createdAt\": \"2023-07-26T19:14:05.513Z\",\n                \"updatedAt\": \"2023-07-28T02:16:04.845Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64c173e05db4e52ad77d8474\",\n                \"name\": \"Narissa: Queen of Darkness\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"evilqueen@email.com\",\n                \"demands\": \"To be reconized as the queen of darkness.\",\n                \"personalAnnotations\": \"She said that her treatment was urgent. Actually, she demanded me.\",\n                \"timelines\": [],\n                \"userId\": \"64c16c8e5db4e52ad77d8449\",\n                \"createdAt\": \"2023-07-26T19:28:32.780Z\",\n                \"updatedAt\": \"2023-07-26T19:28:32.780Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"64c324b656bfb3a2ffd248d0\",\n                \"name\": \"Super Mario\",\n                \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n                \"contact\": \"mario@email.com\",\n                \"demands\": \"A mushroom trauma\",\n                \"personalAnnotations\": \"He has eaten a rotten mushroom and now he is traumatized.\",\n                \"timelines\": [],\n                \"userId\": \"64c312529637916736c27cc3\",\n                \"createdAt\": \"2023-07-28T02:15:18.961Z\",\n                \"updatedAt\": \"2023-07-29T11:09:41.217Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"66cff2080f317eef7e964322\",\n                \"name\": \"João da Silva\",\n                \"birthdate\": \"1980-01-01T00:00:00.000Z\",\n                \"contact\": \"(21) 99999-8888\",\n                \"demands\": \"Dor nas costas\",\n                \"personalAnnotations\": \"Paciente com histórico de problemas de coluna.\",\n                \"timelines\": [],\n                \"userId\": \"66ca3fb19c6808615951ed57\",\n                \"createdAt\": \"2024-08-29T03:59:04.026Z\",\n                \"updatedAt\": \"2024-08-29T03:59:04.026Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/patients/66cff2080f317eef7e964322",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"patients",
+								"66cff2080f317eef7e964322"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/patients/66cff2080f317eef7e964322",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"patients",
+										"66cff2080f317eef7e964322"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "413"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19d-PVdOK0ubeMmEhJ2LVGjd6D25Zmc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:00:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The pacient was successfully found.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"66cff2080f317eef7e964322\",\n        \"name\": \"João da Silva\",\n        \"birthdate\": \"1980-01-01T00:00:00.000Z\",\n        \"contact\": \"(21) 99999-8888\",\n        \"demands\": \"Dor nas costas\",\n        \"personalAnnotations\": \"Paciente com histórico de problemas de coluna.\",\n        \"timelines\": [],\n        \"userId\": null,\n        \"createdAt\": \"2024-08-29T03:59:04.026Z\",\n        \"updatedAt\": \"2024-08-29T03:59:04.026Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Joãozin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/patients/66cff2080f317eef7e964322",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"patients",
+								"66cff2080f317eef7e964322"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Joãozin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/patients/66cff2080f317eef7e964322",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"patients",
+										"66cff2080f317eef7e964322"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "431"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1af-z2m4GWJTqCb/52gZtrC4ZGswCaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:00:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The patient was successfully updated!\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"66cff2080f317eef7e964322\",\n        \"name\": \"Joãozin\",\n        \"birthdate\": \"1980-01-01T00:00:00.000Z\",\n        \"contact\": \"(21) 99999-8888\",\n        \"demands\": \"Dor nas costas\",\n        \"personalAnnotations\": \"Paciente com histórico de problemas de coluna.\",\n        \"timelines\": [],\n        \"userId\": \"66ca3fb19c6808615951ed57\",\n        \"createdAt\": \"2024-08-29T03:59:04.026Z\",\n        \"updatedAt\": \"2024-08-29T04:00:51.523Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/patients/66cff2080f317eef7e964322",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"patients",
+								"66cff2080f317eef7e964322"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/patients/66cff2080f317eef7e964322",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"patients",
+										"66cff2080f317eef7e964322"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-T7US2UPn+eMZGO0NX6b++UYdOLw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:01:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The patient was successfully removed.\",\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "All Timelines From Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/patients/64c1707d5db4e52ad77d8458/timelines",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"patients",
+								"64c1707d5db4e52ad77d8458",
+								"timelines"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Timelines From Patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/patients/64c1707d5db4e52ad77d8458/timelines",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"patients",
+										"64c1707d5db4e52ad77d8458",
+										"timelines"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "923"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39b-kr0P12NxCvvLTVBLXFW9CyEu5bo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:02:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There is 1 timeline from the id 64c1707d5db4e52ad77d8458.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c174ae5db4e52ad77d8483\",\n                \"name\": \"Ser um menino de verdade\",\n                \"occurrences\": [\n                    {\n                        \"_id\": \"64c178805db4e52ad77d84a6\",\n                        \"title\": \"Primeira Sessão\",\n                        \"content\": \"lorem lorem lorem lorem lorem\",\n                        \"kind\": \"relevant-fact\",\n                        \"files\": [\n                            \"66cfeed80f317eef7e9642fd\"\n                        ],\n                        \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n                        \"createdAt\": \"2023-07-26T19:48:16.096Z\",\n                        \"updatedAt\": \"2024-08-29T03:45:28.117Z\",\n                        \"__v\": 0\n                    },\n                    {\n                        \"_id\": \"66cf9a3632c7ddd0a76ed733\",\n                        \"title\": \"Session 2\",\n                        \"content\": \"Hoje conversamos sobre...\",\n                        \"kind\": \"relevant-fact\",\n                        \"files\": [],\n                        \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n                        \"createdAt\": \"2024-08-28T21:44:22.416Z\",\n                        \"updatedAt\": \"2024-08-29T03:47:24.029Z\",\n                        \"__v\": 0\n                    }\n                ],\n                \"patientId\": \"64c1707d5db4e52ad77d8458\",\n                \"createdAt\": \"2023-07-26T19:31:58.592Z\",\n                \"updatedAt\": \"2024-08-29T03:52:01.506Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Timelines",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teddy Treatment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/patients/64c1707d5db4e52ad77d8458/timelines",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"patients",
+								"64c1707d5db4e52ad77d8458",
+								"timelines"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Teddy Treatment\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/patients/64c1707d5db4e52ad77d8458/timelines",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"patients",
+										"64c1707d5db4e52ad77d8458",
+										"timelines"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-yBWqs6YydUO7CRIudOWunDEJoCc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:03:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The timeline was created with success!\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"timelineCreated\": {\n            \"name\": \"Teddy Treatment\",\n            \"occurrences\": [],\n            \"patientId\": \"64c1707d5db4e52ad77d8458\",\n            \"_id\": \"66cff3050f317eef7e964333\",\n            \"createdAt\": \"2024-08-29T04:03:17.118Z\",\n            \"updatedAt\": \"2024-08-29T04:03:17.118Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/timelines",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"timelines"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timelines",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timelines"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "644"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"284-wm6GQpH8yGIlTicQUDoCwxNx7jE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:04:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There are 2 timelines at the database.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c174ae5db4e52ad77d8483\",\n                \"name\": \"Ser um menino de verdade\",\n                \"occurrences\": [\n                    \"64c178805db4e52ad77d84a6\",\n                    \"64c178cd5db4e52ad77d84b3\",\n                    \"66cf9a3632c7ddd0a76ed733\"\n                ],\n                \"patientId\": \"64c1707d5db4e52ad77d8458\",\n                \"createdAt\": \"2023-07-26T19:31:58.592Z\",\n                \"updatedAt\": \"2024-08-29T03:52:01.506Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"66cff3050f317eef7e964333\",\n                \"name\": \"Teddy Treatment\",\n                \"occurrences\": [],\n                \"patientId\": \"64c1707d5db4e52ad77d8458\",\n                \"createdAt\": \"2024-08-29T04:03:17.118Z\",\n                \"updatedAt\": \"2024-08-29T04:03:17.118Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/timelines/66cff3050f317eef7e964333",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"timelines",
+								"66cff3050f317eef7e964333"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timelines/66cff3050f317eef7e964333",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timelines",
+										"66cff3050f317eef7e964333"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "719"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2cf-g2frYubhA/eDt1jWk26xH5SIkGI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:05:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The timeline was successfully found.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"66cff3050f317eef7e964333\",\n        \"name\": \"Teddy Treatment\",\n        \"occurrences\": [],\n        \"patientId\": {\n            \"_id\": \"64c1707d5db4e52ad77d8458\",\n            \"name\": \"Teddy Bear\",\n            \"birthdate\": \"2000-04-03T00:00:00.000Z\",\n            \"contact\": \"teddy@email.com\",\n            \"demands\": \"To be a normal boy.\",\n            \"personalAnnotations\": \"Teddy says that he doesn't like to be a bear. He wants to be a normal boy.\",\n            \"timelines\": [\n                \"64c174ae5db4e52ad77d8483\",\n                \"64c1766a5db4e52ad77d8495\",\n                \"66cff3050f317eef7e964333\"\n            ],\n            \"userId\": \"64c16c8e5db4e52ad77d8449\",\n            \"createdAt\": \"2023-07-26T19:14:05.513Z\",\n            \"updatedAt\": \"2024-08-29T04:03:17.204Z\",\n            \"__v\": 0\n        },\n        \"createdAt\": \"2024-08-29T04:03:17.118Z\",\n        \"updatedAt\": \"2024-08-29T04:03:17.118Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tratamento do Teddy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/timelines/66cff3050f317eef7e964333",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"timelines",
+								"66cff3050f317eef7e964333"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Tratamento do Teddy\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/timelines/66cff3050f317eef7e964333",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timelines",
+										"66cff3050f317eef7e964333"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a-2s0PG2q6CgwzRtJzzGwTDlm09NU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:05:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The timeline was successfully updated!\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"66cff3050f317eef7e964333\",\n        \"name\": \"Tratamento do Teddy\",\n        \"occurrences\": [],\n        \"patientId\": \"64c1707d5db4e52ad77d8458\",\n        \"createdAt\": \"2024-08-29T04:03:17.118Z\",\n        \"updatedAt\": \"2024-08-29T04:05:51.841Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/timelines/66cff3050f317eef7e964333",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"timelines",
+								"66cff3050f317eef7e964333"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timelines/66cff3050f317eef7e964333",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timelines",
+										"66cff3050f317eef7e964333"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-bcAXYLQlzTeHEOxhwRnDU3349nw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:13:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The timeline was successfully removed.\",\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "All Occurrences From Timeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/timelines/64c174ae5db4e52ad77d8483/occurrences",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"timelines",
+								"64c174ae5db4e52ad77d8483",
+								"occurrences"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Occurrences From Timeline",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timelines/64c174ae5db4e52ad77d8483/occurrences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timelines",
+										"64c174ae5db4e52ad77d8483",
+										"occurrences"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1442"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5a2-EROmI6PlEud9pojjPhL+lxf2TDs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 04:09:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There are 2 occurrences from the id 64c174ae5db4e52ad77d8483.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c178805db4e52ad77d84a6\",\n                \"title\": \"Primeira Sessão\",\n                \"content\": \"lorem lorem lorem lorem lorem\",\n                \"kind\": \"relevant-fact\",\n                \"files\": [\n                    {\n                        \"_id\": \"66cfeed80f317eef7e9642fd\",\n                        \"filename\": \"file-1724903128034.jpeg\",\n                        \"mimetype\": \"image/jpeg\",\n                        \"occurrenceId\": \"64c178805db4e52ad77d84a6\",\n                        \"createdAt\": \"2024-08-29T03:45:28.067Z\",\n                        \"updatedAt\": \"2024-08-29T03:45:28.067Z\",\n                        \"__v\": 0\n                    }\n                ],\n                \"timelineId\": {\n                    \"_id\": \"64c174ae5db4e52ad77d8483\",\n                    \"name\": \"Ser um menino de verdade\",\n                    \"occurrences\": [\n                        \"64c178805db4e52ad77d84a6\",\n                        \"64c178cd5db4e52ad77d84b3\",\n                        \"66cf9a3632c7ddd0a76ed733\"\n                    ],\n                    \"patientId\": \"64c1707d5db4e52ad77d8458\",\n                    \"createdAt\": \"2023-07-26T19:31:58.592Z\",\n                    \"updatedAt\": \"2024-08-29T03:52:01.506Z\",\n                    \"__v\": 0\n                },\n                \"createdAt\": \"2023-07-26T19:48:16.096Z\",\n                \"updatedAt\": \"2024-08-29T03:45:28.117Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"66cf9a3632c7ddd0a76ed733\",\n                \"title\": \"Session 2\",\n                \"content\": \"Hoje conversamos sobre...\",\n                \"kind\": \"relevant-fact\",\n                \"files\": [],\n                \"timelineId\": {\n                    \"_id\": \"64c174ae5db4e52ad77d8483\",\n                    \"name\": \"Ser um menino de verdade\",\n                    \"occurrences\": [\n                        \"64c178805db4e52ad77d84a6\",\n                        \"64c178cd5db4e52ad77d84b3\",\n                        \"66cf9a3632c7ddd0a76ed733\"\n                    ],\n                    \"patientId\": \"64c1707d5db4e52ad77d8458\",\n                    \"createdAt\": \"2023-07-26T19:31:58.592Z\",\n                    \"updatedAt\": \"2024-08-29T03:52:01.506Z\",\n                    \"__v\": 0\n                },\n                \"createdAt\": \"2024-08-28T21:44:22.416Z\",\n                \"updatedAt\": \"2024-08-29T03:47:24.029Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Occurrences",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Teste ocorrência\",\r\n    \"content\": \"Que tal?\",\r\n    \"kind\": \"session\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/timelines/64c174ae5db4e52ad77d8483/occurrences",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"timelines",
+								"64c174ae5db4e52ad77d8483",
+								"occurrences"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Teste ocorrência\",\r\n    \"content\": \"Que tal?\",\r\n    \"kind\": \"session\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/timelines/64c174ae5db4e52ad77d8483/occurrences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timelines",
+										"64c174ae5db4e52ad77d8483",
+										"occurrences"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "338"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"152-HdqzjDQf6TRK/9RU+0uS6Rr0N4s\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:51:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The occurrence was created with success!\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"occurrenceCreated\": {\n            \"title\": \"Teste ocorrência\",\n            \"content\": \"Que tal?\",\n            \"kind\": \"session\",\n            \"files\": [],\n            \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n            \"_id\": \"66cff0420f317eef7e96430d\",\n            \"createdAt\": \"2024-08-29T03:51:30.984Z\",\n            \"updatedAt\": \"2024-08-29T03:51:30.984Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/occurrences",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"occurrences"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/occurrences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"occurrences"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "696"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b8-C1eJSm6CJvhBrryrfgUjvY8JwU8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:50:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There are 2 occurrences at the database.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"64c178805db4e52ad77d84a6\",\n                \"title\": \"Primeira Sessão\",\n                \"content\": \"lorem lorem lorem lorem lorem\",\n                \"kind\": \"relevant-fact\",\n                \"files\": [\n                    \"66cfeed80f317eef7e9642fd\"\n                ],\n                \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n                \"createdAt\": \"2023-07-26T19:48:16.096Z\",\n                \"updatedAt\": \"2024-08-29T03:45:28.117Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"66cf9a3632c7ddd0a76ed733\",\n                \"title\": \"Session 2\",\n                \"content\": \"Hoje conversamos sobre...\",\n                \"kind\": \"relevant-fact\",\n                \"files\": [],\n                \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n                \"createdAt\": \"2024-08-28T21:44:22.416Z\",\n                \"updatedAt\": \"2024-08-29T03:47:24.029Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/occurrences/64c178805db4e52ad77d84a6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"occurrences",
+								"64c178805db4e52ad77d84a6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/occurrences/64c178805db4e52ad77d84a6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"occurrences",
+										"64c178805db4e52ad77d84a6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "827"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33b-O+6y3LwEZqTx7HTe7vKSHrv3a0Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:45:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The occurrence was successfully found.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"64c178805db4e52ad77d84a6\",\n        \"title\": \"Primeira Sessão\",\n        \"content\": \"lorem lorem lorem lorem lorem\",\n        \"kind\": \"relevant-fact\",\n        \"files\": [\n            {\n                \"_id\": \"66cfeed80f317eef7e9642fd\",\n                \"filename\": \"file-1724903128034.jpeg\",\n                \"mimetype\": \"image/jpeg\",\n                \"occurrenceId\": \"64c178805db4e52ad77d84a6\",\n                \"createdAt\": \"2024-08-29T03:45:28.067Z\",\n                \"updatedAt\": \"2024-08-29T03:45:28.067Z\",\n                \"__v\": 0\n            }\n        ],\n        \"timelineId\": {\n            \"_id\": \"64c174ae5db4e52ad77d8483\",\n            \"name\": \"Ser um menino de verdade\",\n            \"occurrences\": [\n                \"64c178805db4e52ad77d84a6\",\n                \"64c178cd5db4e52ad77d84b3\",\n                \"66cf9a3632c7ddd0a76ed733\"\n            ],\n            \"patientId\": \"64c1707d5db4e52ad77d8458\",\n            \"createdAt\": \"2023-07-26T19:31:58.592Z\",\n            \"updatedAt\": \"2024-08-29T03:44:42.891Z\",\n            \"__v\": 0\n        },\n        \"createdAt\": \"2023-07-26T19:48:16.096Z\",\n        \"updatedAt\": \"2024-08-29T03:45:28.117Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Session 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/occurrences/66cf9a3632c7ddd0a76ed733",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"occurrences",
+								"66cf9a3632c7ddd0a76ed733"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Session 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/occurrences/66cf9a3632c7ddd0a76ed733",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"occurrences",
+										"66cf9a3632c7ddd0a76ed733"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "331"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14b-49VPBnczgN5vCcuwuFC3GaJD6Ek\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:47:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The occurrence was successfully updated!\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"_id\": \"66cf9a3632c7ddd0a76ed733\",\n        \"title\": \"Session 2\",\n        \"content\": \"Hoje conversamos sobre...\",\n        \"kind\": \"relevant-fact\",\n        \"files\": [],\n        \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n        \"createdAt\": \"2024-08-28T21:44:22.416Z\",\n        \"updatedAt\": \"2024-08-29T03:47:24.029Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/occurrences/66cfa89927ca5b54a9321775",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"occurrences",
+								"66cfa89927ca5b54a9321775"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/occurrences/66cfa89927ca5b54a9321775",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"occurrences",
+										"66cfa89927ca5b54a9321775"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-ak1eXBaqTWZKzDASWQCX+yOv0tc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:44:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The occurrence was successfully removed.\",\n    \"statusCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "All Files From Occurrences",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/occurrences/64c178805db4e52ad77d84a6/files",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"occurrences",
+								"64c178805db4e52ad77d84a6",
+								"files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Files From Occurrences",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/occurrences/64c178805db4e52ad77d84a6/files",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"occurrences",
+										"64c178805db4e52ad77d84a6",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "653"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28d-X7n4wGdVtCMxHhp2gnH7gULuNns\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:48:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There is 1 file from the id 64c178805db4e52ad77d84a6.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"66cfeed80f317eef7e9642fd\",\n                \"filename\": \"file-1724903128034.jpeg\",\n                \"mimetype\": \"image/jpeg\",\n                \"occurrenceId\": {\n                    \"_id\": \"64c178805db4e52ad77d84a6\",\n                    \"title\": \"Primeira Sessão\",\n                    \"content\": \"lorem lorem lorem lorem lorem\",\n                    \"kind\": \"relevant-fact\",\n                    \"files\": [\n                        \"66cfeed80f317eef7e9642fd\"\n                    ],\n                    \"timelineId\": \"64c174ae5db4e52ad77d8483\",\n                    \"createdAt\": \"2023-07-26T19:48:16.096Z\",\n                    \"updatedAt\": \"2024-08-29T03:45:28.117Z\",\n                    \"__v\": 0\n                },\n                \"createdAt\": \"2024-08-29T03:45:28.067Z\",\n                \"updatedAt\": \"2024-08-29T03:45:28.067Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Lenovo S400/Downloads/upload.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/occurrences/64c178805db4e52ad77d84a6/files",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"occurrences",
+								"64c178805db4e52ad77d84a6",
+								"files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Lenovo S400/Downloads/upload.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/occurrences/66cfa89927ca5b54a9321775/files",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"occurrences",
+										"66cfa89927ca5b54a9321775",
+										"files"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "312"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"138-ZQkDAjmRLZ8FWBm8V+NTNfBVwRc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:33:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The file was created with success!\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"fileCreated\": {\n            \"filename\": \"file-1724902382644.jpeg\",\n            \"mimetype\": \"image/jpeg\",\n            \"occurrenceId\": \"66cfa89927ca5b54a9321775\",\n            \"_id\": \"66cfebee0f317eef7e9642eb\",\n            \"createdAt\": \"2024-08-29T03:33:02.774Z\",\n            \"updatedAt\": \"2024-08-29T03:33:02.774Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/files",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/files",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"171-IeLBoR7yUPwjzGukmZOtjGWogDI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:43:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"There is 1 file at the database.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"pageInfo\": {\n            \"totalPages\": 1,\n            \"limitPerPage\": 10,\n            \"currentPage\": 1\n        },\n        \"result\": [\n            {\n                \"_id\": \"66cfebee0f317eef7e9642eb\",\n                \"filename\": \"file-1724902382644.jpeg\",\n                \"mimetype\": \"image/jpeg\",\n                \"occurrenceId\": \"66cfa89927ca5b54a9321775\",\n                \"createdAt\": \"2024-08-29T03:33:02.774Z\",\n                \"updatedAt\": \"2024-08-29T03:33:02.774Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/files/66cfebee0f317eef7e9642eb",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"files",
+								"66cfebee0f317eef7e9642eb"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/files/66cfebee0f317eef7e9642eb",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"files",
+										"66cfebee0f317eef7e9642eb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-C38fIns1vC0RyYi4SrExES8CGUQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Aug 2024 03:33:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The file was successfully found.\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"link\": \"http://localhost:3434/files/static/file-1724902382644.jpeg\",\n        \"id\": \"66cfebee0f317eef7e9642eb\",\n        \"filename\": \"file-1724902382644.jpeg\",\n        \"mimetype\": \"image/jpeg\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Link to file",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/files/static/file-1724902382644.jpeg",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"files",
+								"static",
+								"file-1724902382644.jpeg"
+							],
+							"query": [
+								{
+									"key": "filename",
+									"value": "{{base_url}}/files/static/{add_the_filename_here}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/files/66cfb29ec2f2945c61135a70",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"files",
+								"66cfb29ec2f2945c61135a70"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/files/64c3824fdf743bf2f1702516",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"files",
+										"64c3824fdf743bf2f1702516"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-Rj4ynxOox455at3OtQDkXlQMJLM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Aug 2024 23:11:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The file was successfully removed.\",\n    \"statusCode\": 200\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -6,7 +6,6 @@ import path from "path";
 
 const FileRoutes = Router()
 const fileController = FileModule.build().controller
-const authMiddleware = AuthenticateMiddleware.checkToken
 const uploadSingle = UploadSingle.build("file")
 
 //Create and getAll from a occurrences;
@@ -15,11 +14,6 @@ const occurrencePath = "/occurrences/:occurrence_id/files"
 const commonPath = "/files"
 //GetOne and delete. Yeah!
 const pathWithId = "/files/:file_id"
-
-FileRoutes.use(express.static(path.join(__dirname, "..", '../../uploads')))
-FileRoutes.use(express.static('../../uploads'))
-
-FileRoutes.use(authMiddleware)
 
 //Create and read from a occurrence
 FileRoutes.post(occurrencePath, uploadSingle, fileController.createCon.bind(fileController))

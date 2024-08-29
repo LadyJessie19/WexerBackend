@@ -7,31 +7,31 @@ import OccurrenceRoutes from "./OccurrenceRoutes";
 import PatientRoutes from "./PatientRoutes";
 import TimelineRoutes from "./TimelineRoutes";
 
-import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware"
+import AuthenticateMiddleware from "../middlewares/AuthenticateMiddleware";
 
 declare global {
-    namespace Express {
+  namespace Express {
     interface Request {
-        user?: {
+      user?: {
         userId?: string;
         name?: string;
         email?: string;
-        }
+      };
     }
-}
+  }
 }
 
-const MainRouter = Router()
+const MainRouter = Router();
 
 /* Public Routes */
-MainRouter.use(AuthRoutes)
-MainRouter.use(UserRoutes)
-MainRouter.use(FileRoutes)
+MainRouter.use(AuthRoutes);
+MainRouter.use(UserRoutes);
 
 /* Private Routes */
-MainRouter.use(AuthenticateMiddleware.checkToken)
-MainRouter.use(OccurrenceRoutes)
-MainRouter.use(PatientRoutes)
-MainRouter.use(TimelineRoutes)
+MainRouter.use(AuthenticateMiddleware.checkToken);
+MainRouter.use(PatientRoutes);
+MainRouter.use(TimelineRoutes);
+MainRouter.use(OccurrenceRoutes);
+MainRouter.use(FileRoutes);
 
-export default MainRouter
+export default MainRouter;
