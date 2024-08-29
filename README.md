@@ -30,7 +30,7 @@
 - 🧪 **Jest** para testes automatizados.
 - 🟠 **Postman** como interface visual para teste de requisições.
 
-🚈 **Link de Deploy no Railway:** [_link_](https://wexerbackend-production.up.railway.app)  
+🚈 **Link de Deploy no Railway:** [_link_](https://wexer.up.railway.app)  
 🟠 **Link para Importação Postman:** [_link_](./assets/postman/wexer-postman-import.json)  
 📋 **Link para o Arquivo de Planejamento de Tarefas:** [_link_](./planning.todo)
 
@@ -137,7 +137,7 @@ npm run cov
 3. Defina a variável de ambiente `base_url` com o endereço do servidor:
 
    - Se estiver rodando localmente, a base_url será `http://localhost:<porta_selecionada>`.
-   - Se estiver rodando no Railway, a base_url será `https://wexerbackend-production.up.railway.app`.
+   - Se estiver rodando no Railway, a base_url será `https://wexer.up.railway.app`.
    - **Nota**: Prefiro não incluir a barra "/" no final da variável `base_url`, então a adiciono manualmente em cada rota.
 
 4. Defina outra variável de ambiente chamada `token` para o token de autenticação:
