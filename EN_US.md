@@ -102,7 +102,7 @@ Create a `.env` file with the necessary variables. An example `.env.example` is 
 - **URL:** MongoDB database address.
 - **PORT:** Port where the Express server will start.
 - **SECRET_KEY:** Secret key for creating JWT tokens.
-- **USER_URL:** The url that must be concatenated with the filename to return the file with the link for the user.
+- **USER_URL:** The url that must be concatenated with the filename to return the file with the link for the user. More info at [Running with Postman](#running-with-postman).
 
 ## Running the Application 🚀
 
@@ -128,7 +128,7 @@ npm run test
 npm run cov
 ```
 
-## How to Run Tests with Postman 🟠
+## Running with Postman
 
 1. Import the [`wexer-postman-import.json`](./assets/postman/wexer-postman-import.json) file into Postman.
 2. Create a new environment in Postman.
