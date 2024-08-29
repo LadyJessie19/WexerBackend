@@ -9,7 +9,7 @@
 **Project Name:** Wexer Psi 💬🆘💾  
 **Development Start Date:** 07/03/2024 ⏩  
 **Development End Date:** 07/30/2024 🏁  
-**Status:** Completed ✅  
+**Status:** Completed ✅ <br />
 **Project Completion:** 100% 🔥
 
 **Technologies Used:**
@@ -28,7 +28,7 @@
 - 🧪 **Jest** for automated testing.
 - 🟠 **Postman** as a visual interface for request testing.
 
-🚈 **Deployment Link on Railway:** [_link_](https://wexerbackend-production.up.railway.app)  
+🚈 **Deployment Link on Railway:** [_link_](https://wexer.up.railway.app)  
 🟠 **Postman Import Link:** [_link_](./assets/postman/wexer-postman-import.json)  
 📋 **Task Planning File Link:** [_link_](./planning.todo)
 
@@ -135,7 +135,7 @@ npm run cov
 3. Set the `base_url` environment variable to the server address:
 
    - If running locally, the `base_url` will be `http://localhost:<selected_port>`.
-   - If running on Railway, the `base_url` will be `https://wexerbackend-production.up.railway.app`.
+   - If running on Railway, the `base_url` will be `https://wexer.up.railway.app`.
    - **Note**: I prefer not to include the "/" at the end of the `base_url` variable, so I add it manually to each route.
 
 4. Set another environment variable named `token` for the authentication token:
