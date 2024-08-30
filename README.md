@@ -118,7 +118,7 @@ npm run dev
 npm start
 ```
 
-## Testes ✅
+## Testes 🧪
 
 ```bash
 # testes unitários
